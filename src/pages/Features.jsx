@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { FiPlay, FiCheckCircle } from 'react-icons/fi'
+import { FiPlay, FiPause, FiCheckCircle } from 'react-icons/fi'
+import DemoVideo from '../assets/NovaCoreTechnology.mp4'
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 30 },
@@ -13,6 +14,19 @@ const staggerContainer = {
 }
 
 export default function Features() {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+    }
+  };
+
   return (
     <motion.div 
       className="min-h-screen bg-[#050507] text-slate-200"
@@ -40,20 +54,32 @@ export default function Features() {
             className="group relative rounded-[3rem] bg-[#0d0f14] border border-white/10 overflow-hidden shadow-2xl transition-all hover:border-[#00f2fe33] aspect-video"
             variants={fadeUpVariant}
           >
-            {/* Simulation Placeholder */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 bg-[radial-gradient(circle_at_center,_#050507_0%,_#0d0f14_100%)]">
-              <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-              
-              <div className="relative w-24 h-24 rounded-full bg-[#050507] border border-white/10 flex items-center justify-center group-hover:bg-[#00f2fe] group-hover:text-[#050507] group-hover:border-[#00f2fe] group-hover:scale-110 transition-all duration-500 shadow-xl mb-8 group-hover:shadow-[0_0_40px_rgba(0,242,254,0.3)] cursor-pointer">
-                <FiPlay size={36} className="ml-1" />
-              </div>
-              
-              <h3 className="text-2xl font-heading font-bold text-white mb-2 relative z-10 transition-colors group-hover:text-[#00f2fe]">Interactive Admin Dashboard Trailer</h3>
-              <p className="text-slate-500 font-display font-medium relative z-10">Click to play demo (Simulation)</p>
+            <video 
+              ref={videoRef}
+              src={DemoVideo} 
+              className="w-full h-full object-cover rounded-[3rem]"
+              controls
+              controlsList="nodownload"
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+              onEnded={() => setIsPlaying(false)}
+              onClick={togglePlay}
+            />
+            
+            {/* Custom Center Play/Pause Button Overlay */}
+            <div 
+              className={`absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100 bg-black/40'}`}
+            >
+              <button 
+                onClick={togglePlay}
+                className="pointer-events-auto w-24 h-24 rounded-full bg-[#050507]/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-[#00f2fe] hover:text-[#050507] hover:border-[#00f2fe] hover:scale-110 transition-all duration-300 shadow-xl cursor-pointer"
+              >
+                {isPlaying ? <FiPause size={36} /> : <FiPlay size={36} className="ml-2" />}
+              </button>
             </div>
             
             {/* Animated Borders */}
-            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[#00f2fe] to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+            <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-[#00f2fe] to-transparent pointer-events-none transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
           </motion.div>
         </div>
       </section>

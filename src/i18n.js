@@ -21,12 +21,11 @@ const resources = {
         rights: "All rights reserved.",
         tagline: "Built with precision · Powered by innovation",
         servicesList: {
-          app: "Custom Web Applications",
-          school: "School Management Systems",
-          dash: "Admin Dashboards",
-          db: "Database Design",
-          api: "API Development",
-          maint: "System Maintenance"
+          web: "Enterprise Web Applications",
+          school: "School Management Ecosystems",
+          mobile: "Native & Hybrid Mobile Apps",
+          cyber: "Cybersecurity & Auditing",
+          data: "Data & Analytics Dashboards"
         }
       },
       home: {
@@ -93,13 +92,13 @@ const resources = {
         teamDesc: "The architects behind Novacoretechnology's vision. A strictly currated team of specialists who dictate the standards of our codebases and design systems.",
         roles: {
           ceo: "Chief Executive Officer & Founder",
-          cto: "Chief Technology Officer",
-          design: "Head of Product Design"
+          cto: "Co-Founder & Chief Technology Officer",
+          design: "Co-Founder & Head of Product Design"
         },
         bios: {
-          ceo: "Former enterprise systems architect with over a decade of experience scaling digital infrastructure across emerging markets.",
-          cto: "Lead engineer specialized in distributed databases and high-availability cloud architecture. Ex-AWS Senior Developer.",
-          design: "Award-winning creative director obsessed with micro-interactions, cognitive load reduction, and human-computer interfaces."
+          ceo: "Founder of NovaCoreTechnology and a passionate full-stack developer focused on building practical, impactful digital solutions. Prince leads the vision and development of the company, driving projects from concept to deployment. He has developed multiple systems including Wi-Fi request platforms, document management systems, and academic tools, with a strong focus on security, usability, and real-world application.",
+          cto: "Full-stack developer specializing in backend architecture and system development. Jacob is responsible for designing and maintaining the core technology behind NovaCoreTechnology’s products. He ensures that applications are efficient, scalable, and reliable, while contributing to the continuous improvement of development processes and system performance.",
+          design: "Frontend developer with a strong eye for design and user experience. Joseph leads the product design direction, ensuring that every application is intuitive, responsive, and visually engaging. He focuses on creating clean interfaces that enhance usability while aligning with modern design standards."
         }
       },
       services: {
@@ -146,10 +145,21 @@ const resources = {
             archDesc: "Security is not a plugin—it’s an architectural pattern. We conduct aggressive penetration testing, implement zero-trust network boundaries, OAuth2/OIDC SSO integrations, and AES-256 database encryption.",
             outcomeLabel: "The Outcome",
             outcomeDesc: "Absolute peace of mind. Your data lakes and user credentials remain protected against modern attack vectors and ransomware."
+          },
+          data: {
+            title: "Data & Analytics Dashboards",
+            tagline: "TURNING RAW DATA INTO STRATEGIC CLARITY.",
+            challengeLabel: "The Challenge",
+            challengeDesc: "Organizations collect enormous volumes of operational data but lack the tools to interpret it in real time. Static spreadsheet reports are too slow for modern decision-making.",
+            archLabel: "Our Architecture",
+            archDesc: "We build high-performance interactive dashboards using React, Vue, Python, and GraphQL. We connect directly to your existing databases and APIs to surface live KPIs, transaction flows, and trend forecasts with role-based data visibility.",
+            outcomeLabel: "The Outcome",
+            outcomeDesc: "A real-time command center for your business — executives and managers see exactly what they need, when they need it, with zero lag and full drill-down capability."
           }
         },
         ctaTitle: "Don't See Your Specific Needs?",
         ctaDesc: "Our engineering team excels in tackling undocumented, complex problems. We build APIs, cloud architectures, and IoT integrations.",
+        ctaParagraph: "Every business is unique. Tell us your challenge and we'll architect a tailored solution and get back to you within 48 hours.",
         ctaBtn: "Request Custom Analysis"
       }
     }
@@ -173,12 +183,11 @@ const resources = {
         rights: "Tous droits réservés.",
         tagline: "Construit avec précision · Propulsé par l'innovation",
         servicesList: {
-          app: "Applications Web sur mesure",
-          school: "Systèmes de Gestion Scolaire",
-          dash: "Tableaux de Bord d'Administration",
-          db: "Conception de Bases de Données",
-          api: "Développement d'API",
-          maint: "Maintenance de Systèmes"
+          web: "Applications Web d'Entreprise",
+          school: "Écosystèmes de Gestion Scolaire",
+          mobile: "Applications Mobiles Natives et Hybrides",
+          cyber: "Cybersécurité et Audit",
+          data: "Tableaux de Bord de Données & Analytique"
         }
       },
       home: {
@@ -298,10 +307,21 @@ const resources = {
             archDesc: "La sécurité n'est pas un plugin — c'est un modèle architectural. Nous effectuons des tests d'intrusion agressifs, mettons en œuvre des limites de réseau zero-trust, des intégrations SSO OAuth2/OIDC et un chiffrement de base de données AES-256.",
             outcomeLabel: "Le Résultat",
             outcomeDesc: "Tranquillité d'esprit absolue. Vos lacs de données et identifiants d'utilisateurs restent protégés contre les vecteurs d'attaque modernes et les ransomwares."
+          },
+          data: {
+            title: "Tableaux de Bord de Données & Analytique",
+            tagline: "TRANSFORMER LES DONNÉES BRUTES EN CLARTÉ STRATÉGIQUE.",
+            challengeLabel: "Le Défi",
+            challengeDesc: "Les organisations collectent d'énormes volumes de données mais manquent d'outils pour les interpréter en temps réel. Les rapports statiques sont trop lents pour la prise de décision moderne.",
+            archLabel: "Notre Architecture",
+            archDesc: "Nous concevons des tableaux de bord interactifs haute performance à l'aide de React, Vue, Python et GraphQL. Nous nous connectons à vos bases de données pour afficher des KPI en direct avec une visibilité basée sur les rôles.",
+            outcomeLabel: "Le Résultat",
+            outcomeDesc: "Un centre de commandement en temps réel pour votre entreprise — voyez exactement ce que vous devez voir, quand vous devez le voir, sans délai."
           }
         },
         ctaTitle: "Vous ne voyez pas vos besoins spécifiques ?",
         ctaDesc: "Notre équipe d'ingénieurs excelle dans la résolution de problèmes complexes et non documentés. Nous construisons des API, des architectures cloud et des intégrations IoT.",
+        ctaParagraph: "Chaque entreprise est unique. Parlez-nous de vos défis et nous concevrons une solution sur mesure pour vous répondre sous 48 heures.",
         ctaBtn: "Demander une Analyse Personnalisée"
       }
     }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
@@ -9,6 +9,7 @@ import Services from './pages/Services'
 import Portfolio from './pages/Portfolio'
 import Features from './pages/Features'
 import Contact from './pages/Contact'
+import PageLoader from './components/PageLoader'
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -27,11 +28,24 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
+  const [loadingComplete, setLoadingComplete] = useState(false)
+
   return (
     <BrowserRouter>
-      <Navbar />
-      <AnimatedRoutes />
-      <Footer />
+      {!loadingComplete && <PageLoader onComplete={() => setLoadingComplete(true)} />}
+      
+      {/* Site Content Wrapper */}
+      <div 
+        style={{ 
+          opacity: loadingComplete ? 1 : 0, 
+          transition: 'opacity 400ms ease-in-out',
+          pointerEvents: loadingComplete ? 'auto' : 'none'
+        }}
+      >
+        <Navbar />
+        <AnimatedRoutes />
+        <Footer />
+      </div>
     </BrowserRouter>
   )
 }

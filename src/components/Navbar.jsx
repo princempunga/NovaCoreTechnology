@@ -37,18 +37,18 @@ export default function Navbar() {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-[1000] px-6 md:px-24 py-4 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-[1200] px-6 md:px-24 py-4 transition-all duration-300 ${
           scrolled ? 'bg-[#0d0f14db] backdrop-blur-xl border-b border-white/10 shadow-lg py-3' : 'bg-transparent'
         }`}
       >
         <div className="max-w-[1280px] mx-auto flex justify-between items-center gap-8">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0" onClick={() => setMenuOpen(false)}>
-            <div className="w-[38px] h-[38px] rounded-[10px] bg-gradient-to-br from-[#00f2fe] to-[#4facfe] flex items-center justify-center font-heading font-black text-[1.1rem] text-white shadow-[0_0_15px_rgba(0,242,254,0.4)]">
-              <span>N</span>
+            <div className="w-[42px] h-[42px] rounded-[10px] overflow-hidden shadow-[0_0_15px_rgba(0,242,254,0.4)] border border-[#00f2fe]/20">
+              <img src="/logo.png" alt="NovaCore Logo" className="w-full h-full object-cover" />
             </div>
             <span className="font-heading text-[1.1rem] font-bold text-white tracking-tight">
-              Nova<span className="text-[#00f2fe]">core</span>
+              NovaCore<span className="text-[#00f2fe]">Technology</span>
             </span>
           </Link>
 

@@ -18,24 +18,32 @@ export default function Footer() {
   const { t } = useTranslation()
 
   return (
-    <footer className="bg-[#050507] border-t border-white/5 pt-24">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-24">
+    <footer className="w-full bg-[#050507] border-t border-[#00f2fe26] pt-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Footer Top Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20">
           
           {/* Brand Column */}
           <div className="flex flex-col gap-6">
             <Link to="/" className="flex items-center gap-3 w-fit group">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#00f2fe] to-[#4facfe] flex items-center justify-center font-heading font-black text-white text-sm shadow-[0_0_15px_rgba(0,242,254,0.3)] group-hover:shadow-[0_0_20px_rgba(0,242,254,0.5)] transition-all">
-                N
+              <div className="w-[42px] h-[42px] rounded-[10px] overflow-hidden shadow-[0_0_15px_rgba(0,242,254,0.4)] border border-[#00f2fe]/20 group-hover:shadow-[0_0_20px_rgba(0,242,254,0.6)] transition-all">
+                <img src="/logo.png" alt="NovaCore Logo" className="w-full h-full object-cover" />
               </div>
-              <span className="font-heading text-lg font-bold text-white">
-                Nova<span className="text-[#00f2fe]">core</span>
+              <span className="font-heading text-lg font-bold text-white tracking-tight">
+                NovaCore<span className="text-[#00f2fe]">Technology</span>
               </span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-[280px]">
               {t('footer.desc')}
             </p>
+            
+            <div className="mt-2 mb-2 flex items-center gap-2 text-sm">
+              <span className="text-slate-400">Ready to start a project?</span>
+              <Link to="/contact" className="text-[#00ffff] hover:underline transition-all">
+                Let's Talk →
+              </Link>
+            </div>
+
             <div className="flex items-center gap-4">
               {[
                 { icon: <FiGithub />, label: 'GitHub' },
@@ -48,9 +56,9 @@ export default function Footer() {
                   target="_blank" 
                   rel="noreferrer" 
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-[#00f2fe] hover:bg-[#00f2fe1a] transition-all"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-slate-400 text-xl hover:text-[#00ffff] hover:border-[#00ffff] hover:shadow-[0_0_15px_rgba(0,255,255,0.4)] transition-all duration-300"
                 >
-                  {social.icon}
+                  {React.cloneElement(social.icon, { size: 20 })}
                 </a>
               ))}
             </div>
@@ -75,11 +83,14 @@ export default function Footer() {
             <h4 className="font-heading text-sm font-bold text-white uppercase tracking-widest mb-8">{t('footer.services')}</h4>
             <ul className="flex flex-col gap-4">
               {[
-                { key: 'app' }, { key: 'school' }, { key: 'dash' }, 
-                { key: 'db' }, { key: 'api' }, { key: 'maint' }
+                { key: 'web',   id: '01' }, 
+                { key: 'school', id: '02' }, 
+                { key: 'mobile', id: '03' }, 
+                { key: 'cyber',  id: '04' }, 
+                { key: 'data',   id: '05' }
               ].map((svc) => (
                 <li key={svc.key}>
-                  <Link to="/services" className="text-slate-400 text-sm hover:text-[#00f2fe] hover:translate-x-1 transition-all inline-block">
+                  <Link to={`/services#service-${svc.id}`} className="text-slate-400 text-sm hover:text-[#00f2fe] hover:translate-x-1 transition-all inline-block">
                     {t(`footer.servicesList.${svc.key}`)}
                   </Link>
                 </li>
@@ -93,20 +104,20 @@ export default function Footer() {
             <ul className="flex flex-col gap-6">
               <li className="flex items-start gap-3">
                 <FiMail className="text-[#00f2fe] mt-1 shrink-0" />
-                <a href="mailto:info@novacoretechnology.com" className="text-slate-400 text-sm hover:text-white transition-colors">
-                  info@novacoretechnology.com
+                <a href="mailto:princempunga5@gmail.com" className="text-slate-400 text-sm hover:text-white transition-colors">
+                  princempunga5@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <FiPhone className="text-[#ff6a00] mt-1 shrink-0" />
-                <a href="tel:+243000000000" className="text-slate-400 text-sm hover:text-white transition-colors">
-                  +243 000 000 000
+                <a href="tel:+256784630448" className="text-slate-400 text-sm hover:text-white transition-colors">
+                  +256 784630448
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <FiMapPin className="text-[#00f2fe] mt-1 shrink-0" />
                 <span className="text-slate-400 text-sm">
-                  Kinshasa, DR Congo
+                  Kampala, Uganda
                 </span>
               </li>
             </ul>

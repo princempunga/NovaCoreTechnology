@@ -1,51 +1,62 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FiMonitor, FiSmartphone, FiDatabase, FiLock, FiCheck, FiArrowRight } from 'react-icons/fi'
+import { FiMonitor, FiSmartphone, FiDatabase, FiLock, FiArrowRight, FiCheck, FiBarChart2 } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-const fadeUpVariant = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
-}
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 0) => ({
+    opacity: 1, y: 0,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }
+  })
 }
 
 const SERVICES_FULL = [
   {
-    id: "enterprise-web",
-    transKey: "web",
-    icon: <FiMonitor size={36} />,
-    color: 'text-[#00f2fe]',
-    bg: 'bg-[#00f2fe1a]',
-    border: 'border-[#00f2fe33]'
+    id: 'enterprise-web',
+    transKey: 'web',
+    icon: <FiMonitor size={32} />,
+    accent: '#00f2fe',
+    glow: 'rgba(0,242,254,0.12)',
+    tags: ['REACT', 'NEXT.JS', 'NODE.JS', 'POSTGRESQL'],
+    clientType: 'Startups & Corporate Enterprises'
   },
   {
-    id: "school-systems",
-    transKey: "school",
-    icon: <FiDatabase size={36} />,
-    color: 'text-[#ff6a00]',
-    bg: 'bg-[#ff6a001a]',
-    border: 'border-[#ff6a0033]'
+    id: 'school-systems',
+    transKey: 'school',
+    icon: <FiDatabase size={32} />,
+    accent: '#ff6a00',
+    glow: 'rgba(255,106,0,0.12)',
+    tags: ['LARAVEL', 'MYSQL', 'REST API', 'SMS GATEWAY'],
+    clientType: 'Schools, Universities & Training Institutes'
   },
   {
-    id: "mobile-dev",
-    transKey: "mobile",
-    icon: <FiSmartphone size={36} />,
-    color: 'text-[#00f2fe]',
-    bg: 'bg-[#00f2fe1a]',
-    border: 'border-[#00f2fe33]'
+    id: 'mobile-dev',
+    transKey: 'mobile',
+    icon: <FiSmartphone size={32} />,
+    accent: '#00f2fe',
+    glow: 'rgba(0,242,254,0.12)',
+    tags: ['FLUTTER', 'REACT NATIVE', 'KOTLIN', 'SWIFT'],
+    clientType: 'Businesses Targeting Mobile-First Users'
   },
   {
-    id: "cybersecurity",
-    transKey: "cyber",
-    icon: <FiLock size={36} />,
-    color: 'text-[#ff6a00]',
-    bg: 'bg-[#ff6a001a]',
-    border: 'border-[#ff6a0033]'
+    id: 'cybersecurity',
+    transKey: 'cyber',
+    icon: <FiLock size={32} />,
+    accent: '#ff6a00',
+    glow: 'rgba(255,106,0,0.12)',
+    tags: ['OAUTH2', 'AES-256', 'ZERO TRUST', 'PENETRATION TESTING'],
+    clientType: 'Fintech, Healthcare & Government Institutions'
+  },
+  {
+    id: 'data-analytics',
+    transKey: 'data',
+    icon: <FiBarChart2 size={32} />,
+    accent: '#00f2fe',
+    glow: 'rgba(0,242,254,0.12)',
+    tags: ['REACT', 'PYTHON', 'GRAPHQL', 'AWS'],
+    clientType: 'Executives, Finance Teams & Operations Managers'
   }
 ]
 
@@ -53,20 +64,24 @@ export default function Services() {
   const { t } = useTranslation()
 
   return (
-    <motion.div 
+    <motion.div
       className="min-h-screen bg-[#050507] text-slate-200"
-      initial="hidden" animate="visible" exit={{ opacity: 0 }} variants={staggerContainer}
+      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
     >
       {/* Header */}
-      <section className="relative pt-40 pb-20 overflow-hidden">
-        <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[radial-gradient(circle,_#00f2fe1a_0%,_transparent_60%)] rounded-full blur-[60px] pointer-events-none z-0"></div>
-        
+      <section className="relative pt-40 pb-24 overflow-hidden">
+        <motion.div
+          className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(0,242,254,0.08) 0%, transparent 60%)' }}
+          animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 8, repeat: Infinity }}
+        />
         <div className="max-w-[1280px] mx-auto px-6 md:px-24 text-center relative z-10">
-          <motion.div variants={fadeUpVariant}>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ff6a001a] border border-[#ff6a0033] text-[#ff6a00] font-display text-xs font-bold tracking-widest uppercase mb-6">
+          <motion.div variants={fadeUp} initial="hidden" animate="visible">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#ff6a0020] border border-[#ff6a0040] text-[#ff6a00] font-display text-xs font-bold tracking-widest uppercase mb-6">
               {t('services.headerLabel')}
             </div>
-            <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
               {t('services.headerTitle')}
             </h1>
             <p className="text-slate-400 mx-auto max-w-3xl text-lg md:text-xl leading-relaxed">
@@ -76,83 +91,146 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services Detailed List */}
-      <section className="pb-24">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-24">
-          <div className="flex flex-col gap-12">
-            {SERVICES_FULL.map((srv) => (
-              <motion.div 
-                key={srv.id}
-                className="p-10 md:p-16 rounded-[3rem] bg-[#0d0f14cc] backdrop-blur-3xl border border-white/5 hover:border-white/10 transition-all shadow-xl group"
-                initial="hidden" whileInView="visible" viewport={{ once:true, margin: "-100px" }}
-                variants={fadeUpVariant}
-              >
-                {/* Service Header */}
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16 border-b border-white/5 pb-12">
-                  <div className={`w-20 h-20 shrink-0 flex items-center justify-center rounded-2xl bg-white/[0.02] border border-white/5 ${srv.color} group-hover:shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all`}>
+      {/* Services Cards */}
+      <section className="pb-16">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-24 flex flex-col gap-8">
+          {SERVICES_FULL.map((srv, idx) => (
+            <motion.div
+              key={srv.id}
+              id={`service-0${idx + 1}`}
+              className={`group relative rounded-3xl overflow-hidden bg-[#0d0f14] ${idx === 0 ? 'border border-[#00f2fe60] shadow-[0_0_30px_rgba(0,242,254,0.1)]' : 'border border-white/5'}`}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: idx * 0.05 }}
+              whileHover={{ y: -4, transition: { duration: 0.25 } }}
+            >
+              {/* Animated top border */}
+              <div
+                className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{ background: `linear-gradient(90deg, transparent, ${srv.accent}, transparent)` }}
+              />
+              {/* Corner glow */}
+              <div
+                className="absolute top-0 left-0 w-64 h-64 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                style={{ background: `radial-gradient(circle at top left, ${srv.glow} 0%, transparent 70%)` }}
+              />
+
+              {idx === 0 && (
+                <div className="absolute top-6 right-6 border border-[#00f2fe40] bg-[#00f2fe15] text-[#00f2fe] px-3 py-1 rounded-full text-[0.65rem] font-display font-bold tracking-widest uppercase hidden md:flex items-center shadow-[0_0_15px_rgba(0,242,254,0.3)]">
+                  Core Service
+                </div>
+              )}
+
+              <div className="relative p-10 md:p-14">
+                {/* Header row */}
+                <div className="flex flex-col sm:flex-row items-start gap-6 mb-10 pb-10 border-b border-white/5">
+                  <motion.div
+                    className="w-16 h-16 shrink-0 flex items-center justify-center rounded-2xl border border-white/10 group-hover:scale-110 transition-transform duration-300"
+                    style={{ backgroundColor: `${srv.accent}15`, color: srv.accent }}
+                  >
                     {srv.icon}
-                  </div>
-                  <div className="text-center md:text-left">
-                    <h2 className="text-3xl font-heading font-bold text-white mb-2">{t(`services.items.${srv.transKey}.title`)}</h2>
-                    <p className={`${srv.color} font-display font-bold tracking-[0.2em] uppercase text-xs`}>
+                  </motion.div>
+                  <div>
+                    <div
+                      className="text-xs font-display font-bold uppercase tracking-widest mb-1"
+                      style={{ color: srv.accent }}
+                    >
                       {t(`services.items.${srv.transKey}.tagline`)}
+                    </div>
+                    <div className="text-[10px] font-display font-bold text-slate-500 uppercase tracking-widest mb-3">
+                      FOR: {srv.clientType}
+                    </div>
+                    <h2 className="text-3xl font-heading font-bold text-white">
+                      {t(`services.items.${srv.transKey}.title`)}
+                    </h2>
+                  </div>
+                  <span
+                    className="hidden sm:flex ml-auto text-xs font-display font-bold uppercase tracking-widest items-center gap-2 px-4 py-2 rounded-full border opacity-60 group-hover:opacity-100 transition-opacity"
+                    style={{ borderColor: `${srv.accent}40`, color: srv.accent }}
+                  >
+                    Service #{String(idx + 1).padStart(2, '0')}
+                  </span>
+                </div>
+
+                {/* Details grid */}
+                <div className="grid md:grid-cols-3 gap-8">
+                  {/* Challenge */}
+                  <div className="flex flex-col gap-3">
+                    <h4 className="text-xs font-display font-bold text-slate-500 uppercase tracking-widest flex items-center gap-2">
+                      <span className="w-4 h-[1px] bg-slate-600 inline-block" />
+                      {t(`services.items.${srv.transKey}.challengeLabel`)}
+                    </h4>
+                    <p className="text-slate-400 leading-relaxed text-sm">{t(`services.items.${srv.transKey}.challengeDesc`)}</p>
+                  </div>
+
+                  {/* Architecture */}
+                  <div className="flex flex-col gap-3">
+                    <h4 className="text-xs font-display font-bold text-slate-500 uppercase tracking-widest flex items-center gap-2">
+                      <span className="w-4 h-[1px] bg-slate-600 inline-block" />
+                      {t(`services.items.${srv.transKey}.archLabel`)}
+                    </h4>
+                    <p className="text-slate-400 leading-relaxed text-sm">{t(`services.items.${srv.transKey}.archDesc`)}</p>
+                  </div>
+
+                  {/* Outcome */}
+                  <div
+                    className="flex flex-col gap-3 p-6 rounded-2xl border"
+                    style={{ backgroundColor: `${srv.accent}08`, borderColor: `${srv.accent}20` }}
+                  >
+                    <h4 className="text-xs font-display font-bold uppercase tracking-widest flex items-center gap-2" style={{ color: srv.accent }}>
+                      <FiCheck size={14} />
+                      {t(`services.items.${srv.transKey}.outcomeLabel`)}
+                    </h4>
+                    <p className="text-slate-300 leading-relaxed text-sm italic">
+                      "{t(`services.items.${srv.transKey}.outcomeDesc`)}"
                     </p>
                   </div>
                 </div>
 
-                {/* Service Details Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
-                  <div className="flex flex-col gap-4">
-                    <h4 className="font-heading text-sm font-bold text-white uppercase tracking-widest flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-slate-600"></span>
-                      {t(`services.items.${srv.transKey}.challengeLabel`)}
-                    </h4>
-                    <p className="text-slate-400 leading-relaxed">{t(`services.items.${srv.transKey}.challengeDesc`)}</p>
-                  </div>
-                  
-                  <div className="flex flex-col gap-4">
-                    <h4 className="font-heading text-sm font-bold text-white uppercase tracking-widest flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-slate-600"></span>
-                      {t(`services.items.${srv.transKey}.archLabel`)}
-                    </h4>
-                    <p className="text-slate-400 leading-relaxed">{t(`services.items.${srv.transKey}.archDesc`)}</p>
-                  </div>
-
-                  <div className="flex flex-col gap-6 p-8 rounded-3xl bg-white/[0.02] border border-white/5">
-                    <h4 className="font-heading text-sm font-bold text-white uppercase tracking-widest flex items-center gap-3">
-                      <span className={`w-2 h-2 rounded-full ${srv.color.replace('text', 'bg')}`}></span>
-                      {t(`services.items.${srv.transKey}.outcomeLabel`)}
-                    </h4>
-                    <p className="text-slate-300 leading-relaxed italic">"{t(`services.items.${srv.transKey}.outcomeDesc`)}"</p>
-                    <div className={`mt-2 ${srv.color}`}>
-                      <FiCheck size={28} />
-                    </div>
-                  </div>
+                {/* Tags */}
+                <div className="mt-8 pt-6 border-t border-white/5 flex flex-wrap gap-2">
+                  {srv.tags.map(tag => (
+                    <span key={tag} className="px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 text-[0.65rem] font-display font-bold text-slate-400 uppercase tracking-widest">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 md:py-32">
+      {/* CTA */}
+      <section className="pb-24 md:pb-32">
         <div className="max-w-[1280px] mx-auto px-6 md:px-24">
-           <div className="relative p-12 md:p-24 rounded-[3.5rem] bg-gradient-to-br from-[#0d0f14] via-[#050507] to-[#0d0f14] border border-white/5 text-center overflow-hidden">
-             {/* Glow spheres */}
-             <div className="absolute top-0 right-0 w-80 h-80 bg-[#00f2fe0a] blur-[100px]"></div>
-             <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#ff6a000a] blur-[100px]"></div>
-             
-             <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-8 relative z-10">{t('services.ctaTitle')}</h2>
-             <p className="text-slate-400 mx-auto max-w-2xl text-lg mb-12 relative z-10">
-               {t('services.ctaDesc')}
-             </p>
-             <div className="relative z-10">
-               <Link to="/contact" className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#00f2fe] to-[#4facfe] text-[#050507] font-display font-bold shadow-xl hover:-translate-y-1 hover:shadow-cyan-500/30 transition-all">
-                 {t('services.ctaBtn')} <FiArrowRight />
-               </Link>
-             </div>
-           </div>
+          <motion.div
+            className="relative p-12 md:p-24 rounded-[3rem] overflow-hidden text-center"
+            style={{ background: 'linear-gradient(135deg, #0d0f14 0%, #111318 50%, #0d0f14 100%)' }}
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+          >
+            <div className="absolute inset-0 border border-white/5 rounded-[3rem]" />
+            <motion.div className="absolute top-0 right-0 w-80 h-80 rounded-full opacity-40"
+              style={{ background: 'radial-gradient(circle, rgba(0,242,254,0.15) 0%, transparent 70%)' }}
+              animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 6, repeat: Infinity }}
+            />
+            <motion.div className="absolute bottom-0 left-0 w-80 h-80 rounded-full opacity-40"
+              style={{ background: 'radial-gradient(circle, rgba(255,106,0,0.15) 0%, transparent 70%)' }}
+              animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 7, repeat: Infinity, delay: 1.5 }}
+            />
+            <div className="relative z-10">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">{t('services.ctaTitle')}</h2>
+              <p className="text-slate-400 max-w-2xl mx-auto text-lg mb-2">{t('services.ctaDesc')}</p>
+              <p className="text-white max-w-2xl mx-auto text-lg font-medium mb-12">{t('services.ctaParagraph')}</p>
+              <Link to="/contact"
+                className="group inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#00f2fe] to-[#4facfe] text-[#050507] font-display font-bold text-lg shadow-xl hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,242,254,0.3)] transition-all"
+              >
+                {t('services.ctaBtn')}
+                <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </motion.div>
