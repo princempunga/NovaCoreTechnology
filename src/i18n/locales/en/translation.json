@@ -202,24 +202,130 @@
     },
     "projects": {
       "item1": {
+        "slug": "edusphere",
         "title": "EduSphere Admin Portal",
         "desc": "A comprehensive school management system handling 50,000+ active student records with real-time grading, attendance, and fee processing.",
         "caseStudy": "View Case Study"
       },
       "item2": {
+        "slug": "fincore",
         "title": "FinCore Dashboard",
         "desc": "High-performance interactive financial dashboard providing deep analytics and real-time transaction monitoring for corporate clients.",
         "caseStudy": "View Case Study"
       },
       "item3": {
+        "slug": "healthlink",
         "title": "HealthLink Mobile",
         "desc": "Cross-platform telemedicine application facilitating secure patient-doctor consultations, e-prescriptions, and health tracking.",
         "caseStudy": "View Case Study"
       },
       "item4": {
+        "slug": "ecologistics",
         "title": "EcoLogistics Platform",
         "desc": "IoT integrated supply chain tracker for eco-friendly logistics optimization, reducing carbon footprint through smart route planning.",
         "caseStudy": "View Case Study"
+      }
+    },
+    "caseStudies": {
+      "edusphere": {
+        "title": "EduSphere Admin Portal",
+        "category": "Education Ecosystem",
+        "year": "2024",
+        "description": "A comprehensive cloud-based academic management platform designed to replace disjointed manual processes with a unified digital backbone for large-scale institutions.",
+        "challenge": {
+          "title": "The Challenge",
+          "content": "The institution was struggling with massive data silos. Student enrollment, fee payments, and grading were all handled in separate physical ledgers and disconnected spreadsheets. This led to high administrative overhead, frequent data entry errors, and zero real-time visibility into the school's financial health. Scaling beyond 5,000 students was becoming operationally impossible."
+        },
+        "solution": {
+          "title": "The Architecture",
+          "content": "We engineered a centralized Multi-Tenant SaaS architecture using React for the admin dashboard and a high-performance Node.js REST API. We implemented a strict RBAC (Role-Based Access Control) system to manage 50,000+ student records securely. For financial transparency, we integrated a real-time Mobile Money gateway (MTN/Airtel) that automatically reconciles fee payments with student accounts."
+        },
+        "impact": [
+          { "label": "Admin efficiency", "value": "+65%" },
+          { "label": "Payment transparency", "value": "100%" },
+          { "label": "Active students", "value": "50K+" }
+        ],
+        "features": [
+          "Real-time Academic Reporting",
+          "Automated Fee Reconciliation",
+          "Biometric Attendance Integration",
+          "Secure Parent Portals"
+        ]
+      },
+      "fincore": {
+        "title": "FinCore Dashboard",
+        "category": "Fintech Analytics",
+        "year": "2024",
+        "description": "A high-performance interactive financial command center providing real-time transaction monitoring and predictive analytics for corporate holdings.",
+        "challenge": {
+          "title": "The Challenge",
+          "content": "Our client needed to monitor thousands of daily transactions across four regional branches. Existing tools were too slow, often lagging behind live data by several hours. Decision-makers required a sub-second interactive experience to detect anomalies and manage liquidity across diverse portfolios without waiting for end-of-day reports."
+        },
+        "solution": {
+          "title": "The Architecture",
+          "content": "We developed a real-time data orchestration layer using GraphQL and PostgreSQL. By implementing specialized materialized views and Redis caching, we reduced query latency from 8 seconds to under 150ms. The UI features interactive WebGL-based visualization charts that handle massive datasets without dropping frame rates, giving executives instant tactical clarity."
+        },
+        "impact": [
+          { "label": "Query latency", "value": "<150ms" },
+          { "label": "Transaction visibility", "value": "Live" },
+          { "label": "Daily volume", "value": "100K+" }
+        ],
+        "features": [
+          "Predictive Flow Modeling",
+          "Fraud Detection Engine",
+          "Cross-Branch Liquidity View",
+          "Multi-Currency Auto-Sync"
+        ]
+      },
+      "healthlink": {
+        "title": "HealthLink Mobile",
+        "category": "Healthcare Connectivity",
+        "year": "2023",
+        "description": "An offline-first telemedicine application bridging the gap between remote patients and urban medical specialists through secure mobile technology.",
+        "challenge": {
+          "title": "The Challenge",
+          "content": "Field agents and nurses in rural areas often operate with zero or intermittent network connectivity. Standard telemedicine apps would lose data or crash when the connection dropped. The challenge was to maintain full medical record integrity and enable consultations in areas where 2G or edge networks are the norm."
+        },
+        "solution": {
+          "title": "The Architecture",
+          "content": "We built a robust React Native application with an 'Offline-First' architecture using WatermelonDB for local persistence. Data is synced in the background using a state-machine-driven conflict resolution strategy once the network is restored. All patient data is encrypted locally using AES-256 before being transmitted via TLS 1.3 to a HIPAA-compliant cloud storage."
+        },
+        "impact": [
+          { "label": "Offline functionality", "value": "100%" },
+          { "label": "Sync success rate", "value": "99.9%" },
+          { "label": "Rural reach", "value": "15 Districts" }
+        ],
+        "features": [
+          "End-to-End Encrypted Messaging",
+          "Remote Voucher Redemption",
+          "E-Prescription Workflow",
+          "Background Data Sync"
+        ]
+      },
+      "ecologistics": {
+        "title": "EcoLogistics Platform",
+        "category": "IoT Logistics",
+        "year": "2023",
+        "description": "A smart logistics ecosystem integrating IoT sensors and routing algorithms to optimize supply chains and reduce environmental impact.",
+        "challenge": {
+          "title": "The Challenge",
+          "content": "Logistics companies in growing urban centers face massive delays due to unpredictable traffic and poor road infrastructure. Traditional GPS tracking only showed *where* trucks were, but didn't provide enough data to optimize fuel consumption or reduce empty-mileage trips that hurt both profit and the environment."
+        },
+        "solution": {
+          "title": "The Architecture",
+          "content": "We integrated custom IoT hardware with a Golang-powered event-streaming backend. This allowed for real-time monitoring of engine health, cargo temperature, and vibration. We then implemented a custom A* pathfinding algorithm that considers historical traffic patterns and urban weight restrictions to calculate the most fuel-efficient routes."
+        },
+        "impact": [
+          { "label": "Fuel cost reduction", "value": "22%" },
+          { "label": "Route optimization", "value": "+35%" },
+          { "label": "Sensor uptime", "value": "99.8%" }
+        ],
+        "features": [
+          "IoT Payload Decryption",
+          "Smart Traffic Rerouting",
+          "Carbon Footprint Analytics",
+          "Predictive Fleet Maintenance"
+        ]
       }
     }
   },

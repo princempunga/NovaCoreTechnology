@@ -16,6 +16,8 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 import CookiePolicy from './pages/CookiePolicy'
 
+import CaseStudyDetail from './pages/CaseStudyDetail'
+
 function AnimatedRoutes() {
   const location = useLocation()
   return (
@@ -25,6 +27,7 @@ function AnimatedRoutes() {
         <Route path="/about"     element={<About />} />
         <Route path="/services"  element={<Services />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/portfolio/:slug" element={<CaseStudyDetail />} />
         <Route path="/estimate"  element={<EstimationCalculator />} />
         <Route path="/features"  element={<Features />} />
         <Route path="/contact"   element={<Contact />} />

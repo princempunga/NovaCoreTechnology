@@ -202,24 +202,130 @@
     },
     "projects": {
       "item1": {
+        "slug": "edusphere",
         "title": "Portail Admin EduSphere",
         "desc": "Un système complet de gestion scolaire gérant plus de 50 000 dossiers d'élèves avec notation en temps réel, présence et traitement des frais.",
         "caseStudy": "Voir l'Étude de Cas"
       },
       "item2": {
+        "slug": "fincore",
         "title": "Tableau de Bord FinCore",
         "desc": "Tableau de bord financier interactif haute performance fournissant des analyses approfondies et une surveillance des transactions en temps réel.",
         "caseStudy": "Voir l'Étude de Cas"
       },
       "item3": {
+        "slug": "healthlink",
         "title": "HealthLink Mobile",
         "desc": "Application de télémédecine multiplateforme facilitant les consultations sécurisées patient-médecin, les ordonnances électroniques et le suivi de santé.",
         "caseStudy": "Voir l'Étude de Cas"
       },
       "item4": {
+        "slug": "ecologistics",
         "title": "Plateforme EcoLogistics",
         "desc": "Traqueur de chaîne d'approvisionnement intégré IoT pour l'optimisation de la logistique écologique, réduisant l'empreinte carbone grâce à une planification intelligente.",
         "caseStudy": "Voir l'Étude de Cas"
+      }
+    },
+    "caseStudies": {
+      "edusphere": {
+        "title": "Portail Admin EduSphere",
+        "category": "Écosystème Éducatif",
+        "year": "2024",
+        "description": "Une plateforme complète de gestion académique basée sur le cloud, conçue pour remplacer les processus manuels décousus par une épine dorsale numérique unifiée pour les institutions de grande envergure.",
+        "challenge": {
+          "title": "Le Défi",
+          "content": "L'institution luttait contre d'énormes silos de données. L'inscription des étudiants, le paiement des frais et les notes étaient tous gérés dans des registres physiques distincts et des feuilles de calcul déconnectées. Cela entraînait une charge administrative élevée, de fréquentes erreurs de saisie et une visibilité nulle en temps réel sur la santé financière de l'école. Dépasser les 5 000 étudiants devenait opérationnellement impossible."
+        },
+        "solution": {
+          "title": "L'Architecture",
+          "content": "Nous avons conçu une architecture SaaS multi-tenant centralisée utilisant React pour le tableau de bord admin et une API REST Node.js haute performance. Nous avons implémenté un système de RBAC (contrôle d'accès basé sur les rôles) strict pour gérer plus de 50 000 dossiers d'étudiants en toute sécurité. Pour la transparence financière, nous avons intégré une passerelle Mobile Money en temps réel (MTN/Airtel) qui réconcilie automatiquement les paiements avec les comptes des étudiants."
+        },
+        "impact": [
+          { "label": "Efficacité admin", "value": "+65%" },
+          { "label": "Transparence paiement", "value": "100%" },
+          { "label": "Étudiants actifs", "value": "50K+" }
+        ],
+        "features": [
+          "Rapports Académiques en Temps Réel",
+          "Réconciliation Automatique des Frais",
+          "Intégration de présence Biométrique",
+          "Portails Parents Sécurisés"
+        ]
+      },
+      "fincore": {
+        "title": "Tableau de Bord FinCore",
+        "category": "Analyses Fintech",
+        "year": "2024",
+        "description": "Un centre de commandement financier interactif haute performance fournissant une surveillance des transactions en temps réel et des analyses prédictives pour les holdings d'entreprise.",
+        "challenge": {
+          "title": "Le Défi",
+          "content": "Notre client devait surveiller des milliers de transactions quotidiennes dans quatre branches régionales. Les outils existants étaient trop lents, accusant souvent un retard de plusieurs heures sur les données en direct. Les décideurs avaient besoin d'une expérience interactive à la sous-seconde pour détecter les anomalies et gérer la liquidité sur divers portefeuilles sans attendre les rapports de fin de journée."
+        },
+        "solution": {
+          "title": "L'Architecture",
+          "content": "Nous avons développé une couche d'orchestration de données en temps réel utilisant GraphQL et PostgreSQL. En implémentant des vues matérialisées spécialisées et une mise en cache Redis, nous avons réduit la latence des requêtes de 8 secondes à moins de 150 ms. L'interface utilisateur propose des graphiques de visualisation interactifs basés sur WebGL qui gèrent des ensembles de données massifs sans chute de fluidité, offrant aux dirigeants une clarté tactique instantanée."
+        },
+        "impact": [
+          { "label": "Latence requête", "value": "<150ms" },
+          { "label": "Visibilité transactions", "value": "En direct" },
+          { "label": "Volume quotidien", "value": "100K+" }
+        ],
+        "features": [
+          "Modélisation Prédictive des Flux",
+          "Moteur de Détection de Fraude",
+          "Vue de Liquidité Inter-branches",
+          "Auto-sync Multi-devises"
+        ]
+      },
+      "healthlink": {
+        "title": "HealthLink Mobile",
+        "category": "Connectivité Santé",
+        "year": "2023",
+        "description": "Une application de télémédecine 'Offline-First' comblant l'écart entre les patients éloignés et les spécialistes médicaux urbains grâce à une technologie mobile sécurisée.",
+        "challenge": {
+          "title": "Le Défi",
+          "content": "Les agents de terrain et les infirmières dans les zones rurales opèrent souvent avec une connectivité réseau nulle ou intermittente. Les applications de télémédecine standard perdraient des données ou planteraient en cas de coupure de connexion. Le défi était de maintenir l'intégrité totale des dossiers médicaux et de permettre des consultations dans des zones où les réseaux 2G ou Edge sont la norme."
+        },
+        "solution": {
+          "title": "L'Architecture",
+          "content": "Nous avons construit une application React Native robuste avec une architecture 'Offline-First' utilisant WatermelonDB pour la persistance locale. Les données sont synchronisées en arrière-plan à l'aide d'une stratégie de résolution de conflits pilotée par machine d'état une fois le réseau rétabli. Toutes les données des patients sont cryptées localement en AES-256 avant d'être transmises via TLS 1.3 vers un stockage cloud conforme HIPAA."
+        },
+        "impact": [
+          { "label": "Fonctionnalité hors-ligne", "value": "100%" },
+          { "label": "Taux succès sync", "value": "99.9%" },
+          { "label": "Portée rurale", "value": "15 Districts" }
+        ],
+        "features": [
+          "Messagerie Chiffrée de Bout en Bout",
+          "Rachat de Coupons à Distance",
+          "Flux d'Ordonnance Électronique",
+          "Sync des Données en Arrière-plan"
+        ]
+      },
+      "ecologistics": {
+        "title": "Plateforme EcoLogistics",
+        "category": "Logistique IoT",
+        "year": "2023",
+        "description": "Un écosystème logistique intelligent intégrant des capteurs IoT et des algorithmes de routage pour optimiser les chaînes d'approvisionnement et réduire l'impact environnemental.",
+        "challenge": {
+          "title": "Le Défi",
+          "content": "Les entreprises de logistique dans les centres urbains en pleine croissance font face à des retards massifs dus à un trafic imprévisible et à une infrastructure routière médiocre. Le suivi GPS traditionnel montrait seulement *où* se trouvaient les camions, mais ne fournissait pas assez de données pour optimiser la consommation de carburant ou réduire les trajets à vide qui nuisent à la fois au profit et à l'environnement."
+        },
+        "solution": {
+          "title": "L'Architecture",
+          "content": "Nous avons intégré du matériel IoT personnalisé à un backend de streaming d'événements propulsé par Golang. Cela a permis une surveillance en temps réel de la santé du moteur, de la température de la cargaison et des vibrations. Nous avons ensuite implémenté un algorithme de recherche de chemin A* personnalisé qui prend en compte les modèles de trafic historiques et les restrictions de poids urbaines pour calculer les itinéraires les plus économes en carburant."
+        },
+        "impact": [
+          { "label": "Réduction carburant", "value": "22%" },
+          { "label": "Optimisation trajets", "value": "+35%" },
+          { "label": "Disponibilité capteurs", "value": "99.8%" }
+        ],
+        "features": [
+          "Décryptage de Payload IoT",
+          "Routage Intelligent de Trafic",
+          "Analyses d'Empreinte Carbone",
+          "Maintenance Prédictive de Flotte"
+        ]
       }
     }
   },

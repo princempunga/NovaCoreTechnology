@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiExternalLink, FiGithub, FiArrowRight } from 'react-icons/fi'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 
 export default function Portfolio() {
@@ -19,6 +20,7 @@ export default function Portfolio() {
   const PORTFOLIO_ITEMS = [
     {
       id: 1,
+      slug: 'edusphere',
       transKey: 'item1',
       category: 'Web Application',
       categoryKey: 'web',
@@ -29,6 +31,7 @@ export default function Portfolio() {
     },
     {
       id: 2,
+      slug: 'fincore',
       transKey: 'item2',
       category: 'Enterprise Software',
       categoryKey: 'enterprise',
@@ -39,6 +42,7 @@ export default function Portfolio() {
     },
     {
       id: 3,
+      slug: 'healthlink',
       transKey: 'item3',
       category: 'Mobile App',
       categoryKey: 'mobile',
@@ -49,6 +53,7 @@ export default function Portfolio() {
     },
     {
       id: 4,
+      slug: 'ecologistics',
       transKey: 'item4',
       category: 'System Architecture',
       categoryKey: 'architecture',
@@ -56,18 +61,7 @@ export default function Portfolio() {
       image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop',
       accent: '#ff6a00',
       year: '2023',
-    },
-    // Adding few more items with generic translations if specific ones aren't in JSON yet
-    {
-      id: 5,
-      transKey: 'item1', // fallback
-      category: 'Web Application',
-      categoryKey: 'web',
-      tags: ['React', 'Express', 'MongoDB'],
-      image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=1000&auto=format&fit=crop',
-      accent: '#00f2fe',
-      year: '2023',
-    },
+    }
   ]
 
   const fadeUp = {
@@ -220,12 +214,13 @@ export default function Portfolio() {
                     </div>
 
                     {/* View project link */}
-                    <motion.div
+                    <Link
+                      to={`/portfolio/${item.slug}`}
                       className="flex items-center gap-2 text-xs font-display font-bold uppercase tracking-widest mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{ color: item.accent }}
                     >
                       {t(`portfolio.projects.${item.transKey}.caseStudy`)} <FiArrowRight size={13} />
-                    </motion.div>
+                    </Link>
                   </div>
                 </motion.div>
               ))}
