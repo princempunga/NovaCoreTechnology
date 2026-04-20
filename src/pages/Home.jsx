@@ -6,6 +6,9 @@ import { FaReact, FaNodeJs, FaAws, FaDocker, FaPython, FaVuejs, FaSwift } from '
 import { SiPostgresql, SiGraphql, SiGo, SiFlutter, SiTailwindcss } from 'react-icons/si'
 import { useTranslation } from 'react-i18next'
 import AnimatedCounter from '../components/AnimatedCounter'
+import HowWeWork from '../components/HowWeWork'
+import Testimonials from '../components/Testimonials'
+import TechStack from '../components/TechStack'
 
 const TECH_STACK = [
   { name: 'React', icon: <FaReact size={22} color="#61DAFB" /> },
@@ -31,16 +34,16 @@ const fadeUp = {
 }
 
 const FEATURE_CARDS = [
-  { icon: <FiCode size={28} />, titleKey: 'home.card1Title', descKey: 'home.card1Desc', accent: '#00f2fe', glow: 'rgba(0,242,254,0.15)' },
-  { icon: <FiLayout size={28} />, titleKey: 'home.card2Title', descKey: 'home.card2Desc', accent: '#ff6a00', glow: 'rgba(255,106,0,0.15)' },
-  { icon: <FiDatabase size={28} />, titleKey: 'home.card3Title', descKey: 'home.card3Desc', accent: '#00f2fe', glow: 'rgba(0,242,254,0.15)' },
-  { icon: <FiShield size={28} />, titleKey: 'home.card4Title', descKey: 'home.card4Desc', accent: '#ff6a00', glow: 'rgba(255,106,0,0.15)' },
+  { icon: <FiCode size={28} />, titleKey: 'services.service01.title', descKey: 'services.service01.challenge.text', accent: '#00f2fe', glow: 'rgba(0,242,254,0.15)' },
+  { icon: <FiLayout size={28} />, titleKey: 'services.service03.title', descKey: 'services.service03.challenge.text', accent: '#ff6a00', glow: 'rgba(255,106,0,0.15)' },
+  { icon: <FiDatabase size={28} />, titleKey: 'services.service05.title', descKey: 'services.service05.challenge.text', accent: '#00f2fe', glow: 'rgba(0,242,254,0.15)' },
+  { icon: <FiShield size={28} />, titleKey: 'services.service04.title', descKey: 'services.service04.challenge.text', accent: '#ff6a00', glow: 'rgba(255,106,0,0.15)' },
 ]
 
 const PROCESS_STEPS = [
-  { num: '01', titleKey: 'home.meth1Title', descKey: 'home.meth1Desc', accent: '#00f2fe' },
-  { num: '02', titleKey: 'home.meth2Title', descKey: 'home.meth2Desc', accent: '#ff6a00' },
-  { num: '03', titleKey: 'home.meth3Title', descKey: 'home.meth3Desc', accent: '#00f2fe' },
+  { num: '01', titleKey: 'howWeWork.phases.phase01.title', descKey: 'howWeWork.phases.phase01.description', accent: '#00f2fe' },
+  { num: '02', titleKey: 'howWeWork.phases.phase03.title', descKey: 'howWeWork.phases.phase03.description', accent: '#ff6a00' },
+  { num: '03', titleKey: 'howWeWork.phases.phase05.title', descKey: 'howWeWork.phases.phase05.description', accent: '#00f2fe' },
 ]
 
 export default function Home() {
@@ -94,33 +97,23 @@ export default function Home() {
 
         <div className="max-w-[1280px] mx-auto px-6 sm:px-12 md:px-24 grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <div>
-            <motion.div custom={0} variants={fadeUp} initial="hidden" animate="visible"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#ff6a0020] border border-[#ff6a0040] text-[#ff6a00] font-display text-xs font-bold tracking-widest uppercase mb-8"
-            >
-              <motion.span
-                className="w-2 h-2 rounded-full bg-[#ff6a00]"
-                animate={{ opacity: [1, 0.3, 1] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              />
-              {t('home.heroLabel')}
-            </motion.div>
 
             <motion.h1 custom={1} variants={fadeUp} initial="hidden" animate="visible"
               className="text-5xl sm:text-6xl md:text-7xl font-heading font-bold text-white leading-[1.05] tracking-tight mb-8"
             >
-              {t('home.heroTitle1')}{' '}
+              {t('hero.title1')}{' '}
               <span className="relative inline-block">
                 <span className="bg-gradient-to-r from-[#00f2fe] via-[#4facfe] to-[#00f2fe] bg-clip-text text-transparent bg-[length:200%] animate-[shimmer_3s_linear_infinite]">
-                  {t('home.heroTitleHighlight')}
+                  {t('hero.title2')}
                 </span>
               </span>{' '}
-              {t('home.heroTitle2')}
+              {t('hero.title3')} {t('hero.title4')}
             </motion.h1>
 
             <motion.p custom={2} variants={fadeUp} initial="hidden" animate="visible"
               className="text-lg md:text-xl text-slate-400 max-w-xl mb-12 leading-relaxed"
             >
-              {t('home.heroDesc')}
+              {t('hero.subtitle')}
             </motion.p>
 
             <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible"
@@ -129,13 +122,13 @@ export default function Home() {
               <Link to="/contact"
                 className="group relative flex justify-center items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#00f2fe] to-[#4facfe] text-[#050507] font-display font-bold shadow-lg overflow-hidden transition-all hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,242,254,0.3)]"
               >
-                <span className="relative z-10 flex items-center gap-2">{t('home.btnDeploy')} <FiArrowRight className="group-hover:translate-x-1 transition-transform" /></span>
+                <span className="relative z-10 flex items-center gap-2">{t('hero.cta2')} <FiArrowRight className="group-hover:translate-x-1 transition-transform" /></span>
                 <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
               </Link>
               <Link to="/portfolio"
                 className="flex justify-center items-center gap-2 px-8 py-4 rounded-full border border-white/10 text-white font-display font-bold hover:bg-white/5 hover:border-white/20 transition-all"
               >
-                {t('home.btnCase')}
+                {t('hero.cta1')}
               </Link>
             </motion.div>
 
@@ -144,9 +137,9 @@ export default function Home() {
               className="flex flex-col sm:flex-row items-stretch gap-px rounded-2xl overflow-hidden border border-white/5"
             >
               {[
-                { val: '200+', label: t('home.stat1'), color: '#ff6a00' },
-                { val: '99.9%', label: t('home.stat2'), color: '#00f2fe' },
-                { val: '24/7', label: t('home.stat3'), color: '#ffffff' },
+                { val: '10+', label: t('techStack.stats.projects'), color: '#ff6a00' },
+                { val: '99%', label: t('techStack.stats.uptime'), color: '#00f2fe' },
+                { val: '24/7', label: t('contact.info.supportLabel'), color: '#ffffff' },
               ].map((s, i) => (
                 <div key={i} className="flex-1 flex flex-col items-center py-6 bg-[#0d0f14] border-r border-white/5 last:border-r-0 hover:bg-[#161922] transition-colors">
                   <span className="text-3xl font-heading font-bold leading-none mb-2" style={{ color: s.color }}>
@@ -168,9 +161,9 @@ export default function Home() {
           >
             {/* Outer rings & glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,242,254,0.1)_0%,_transparent_70%)] -z-10 rounded-[3rem]" />
-            
+
             <div className="absolute inset-4 rounded-[3rem] border border-white/5 bg-[#0d0f14] overflow-hidden shadow-2xl flex items-center justify-center p-8">
-              
+
               {/* Spinning background rings */}
               <motion.div className="absolute w-[120%] h-[120%] border-[1px] border-dashed border-white/5 rounded-full"
                 animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
@@ -178,7 +171,7 @@ export default function Home() {
               <motion.div className="absolute w-[80%] h-[80%] border-[2px] border-dotted border-[#00f2fe]/20 rounded-full"
                 animate={{ rotate: -360 }} transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
               />
-              
+
               <div className="relative w-full h-full flex items-center justify-center">
                 {/* Central Core */}
                 <motion.div className="relative z-10 w-24 h-24 rounded-full bg-gradient-to-br from-[#00f2fe] to-[#4facfe] shadow-[0_0_40px_rgba(0,242,254,0.6)] flex items-center justify-center"
@@ -237,14 +230,14 @@ export default function Home() {
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
             >
-              ✓ Zero Downtime
+              ✓ Production Ready
             </motion.div>
             <motion.div
               className="absolute -bottom-2 -left-2 px-3 py-2 rounded-xl bg-[#ff6a00] text-white text-xs font-display font-bold shadow-lg"
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
             >
-              ⚡ &lt; 10ms Latency
+              ✓ Secure by Design
             </motion.div>
           </motion.div>
         </div>
@@ -253,7 +246,7 @@ export default function Home() {
       {/* ── TECH MARQUEE ── */}
       <section className="py-16 border-y border-white/5 bg-white/[0.01] overflow-hidden">
         <div className="max-w-[1280px] mx-auto px-6 mb-10 text-center">
-          <p className="font-display text-slate-500 text-xs font-bold tracking-[0.2em] uppercase">{t('home.techBanner')}</p>
+          <p className="font-display text-slate-500 text-xs font-bold tracking-[0.2em] uppercase">{t('techStack.badge')}</p>
         </div>
         <div className="relative flex [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <motion.div
@@ -279,10 +272,10 @@ export default function Home() {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00f2fe1a] border border-[#00f2fe33] text-[#00f2fe] font-display text-xs font-bold tracking-widest uppercase mb-6">
-              {t('home.capLabel')}
+              {t('services.badge')}
             </div>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">{t('home.capTitle')}</h2>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto">{t('home.capDesc')}</p>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">{t('services.title')}</h2>
+            <p className="text-lg text-slate-400 max-w-2xl mx-auto">{t('services.subtitle')}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -337,6 +330,15 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── HOW WE WORK ── */}
+      <HowWeWork />
+
+      {/* ── TESTIMONIALS ── */}
+      <Testimonials />
+
+      {/* ── TECH STACK ── */}
+      <TechStack />
+
       {/* ── PROCESS / METHODOLOGY ── */}
       <section className="py-24 md:py-32 bg-[#0a0c10] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-[0.02]"
@@ -348,10 +350,10 @@ export default function Home() {
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00f2fe1a] border border-[#00f2fe33] text-[#00f2fe] font-display text-xs font-bold tracking-widest uppercase mb-8">
-                {t('home.methLabel')}
+                {t('howWeWork.badge')}
               </div>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">{t('home.methTitle')}</h2>
-              <p className="text-lg text-slate-400 mb-12">{t('home.methDesc')}</p>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">{t('howWeWork.title')}</h2>
+              <p className="text-lg text-slate-400 mb-12">{t('howWeWork.subtitle')}</p>
 
               <div className="flex flex-col gap-0">
                 {PROCESS_STEPS.map((step, i) => (
@@ -396,17 +398,17 @@ export default function Home() {
                 alt="Software Engineering"
                 className="w-full h-full object-cover rounded-[calc(2.5rem-1.5px)]"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#00f2fe15] to-[#ff6a0015] mix-blend-overlay rounded-[calc(2.5rem-1.5px)]" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#050507]/20 to-[#050507]/40 pointer-events-none rounded-[calc(2.5rem-1.5px)]" />
               {/* Floating stat chip */}
               <motion.div
                 className="absolute bottom-8 right-8 px-5 py-3 rounded-2xl bg-[#0d0f14] border border-white/10 flex items-center gap-3"
                 animate={{ y: [0, -4, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               >
-                <FiZap size={18} color="#00f2fe" />
+                <FiCheckCircle size={18} color="#00f2fe" />
                 <div>
-                  <p className="text-white font-heading font-bold text-sm">Enterprise Ready</p>
-                  <p className="text-slate-400 text-xs">ISO 27001 Compliant</p>
+                  <p className="text-white font-heading font-bold text-sm">Production Ready</p>
+                  <p className="text-slate-400 text-xs">Secure by Design</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -436,12 +438,12 @@ export default function Home() {
             />
 
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">{t('home.ctaTitle')}</h2>
-              <p className="text-lg text-slate-400 max-w-xl mx-auto mb-12 leading-relaxed">{t('home.ctaDesc')}</p>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">{t('services.service01.title')}</h2>
+              <p className="text-lg text-slate-400 max-w-xl mx-auto mb-12 leading-relaxed">{t('services.service01.challenge.text')}</p>
               <Link to="/contact"
                 className="group inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#00f2fe] to-[#4facfe] text-[#050507] font-display font-bold text-lg shadow-xl hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,242,254,0.3)] transition-all"
               >
-                {t('home.ctaBtn')}
+                {t('nav.startProject')}
                 <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

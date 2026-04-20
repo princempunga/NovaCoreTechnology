@@ -6,12 +6,13 @@ import {
 import { useTranslation } from 'react-i18next'
 
 const QUICK_LINKS = [
-  { to: '/',          key: 'home' },
-  { to: '/about',     key: 'about' },
-  { to: '/services',  key: 'services' },
+  { to: '/', key: 'home' },
+  { to: '/about', key: 'about' },
+  { to: '/services', key: 'services' },
   { to: '/portfolio', key: 'portfolio' },
-  { to: '/features',  key: 'demo' },
-  { to: '/contact',   key: 'contact' },
+  { to: '/estimate', key: 'estimate' },
+  { to: '/features', key: 'demo' },
+  { to: '/contact', key: 'contact' },
 ]
 
 export default function Footer() {
@@ -22,7 +23,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Footer Top Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20">
-          
+
           {/* Brand Column */}
           <div className="flex flex-col gap-6">
             <Link to="/" className="flex items-center gap-3 w-fit group">
@@ -34,13 +35,13 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-[280px]">
-              {t('footer.desc')}
+              {t('footer.description')}
             </p>
-            
+
             <div className="mt-2 mb-2 flex items-center gap-2 text-sm">
-              <span className="text-slate-400">Ready to start a project?</span>
+              <span className="text-slate-400">{t('footer.cta.text')}</span>
               <Link to="/contact" className="text-[#00ffff] hover:underline transition-all">
-                Let's Talk →
+                {t('footer.cta.link')}
               </Link>
             </div>
 
@@ -50,15 +51,15 @@ export default function Footer() {
                 { icon: <FiLinkedin />, label: 'LinkedIn' },
                 { icon: <FiTwitter />, label: 'Twitter' },
               ].map((social, i) => (
-                <a 
-                  key={i} 
-                  href="#" 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  key={i}
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label={social.label}
                   className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-slate-400 text-xl hover:text-[#00ffff] hover:border-[#00ffff] hover:shadow-[0_0_15px_rgba(0,255,255,0.4)] transition-all duration-300"
                 >
-                  {React.cloneElement(social.icon, { size: 20 })}
+                  {social.icon}
                 </a>
               ))}
             </div>
@@ -71,7 +72,7 @@ export default function Footer() {
               {QUICK_LINKS.map(({ to, key }) => (
                 <li key={to}>
                   <Link to={to} className="text-slate-400 text-sm hover:text-[#00f2fe] hover:translate-x-1 transition-all inline-block">
-                    {t(`navbar.${key}`)}
+                    {t(`nav.${key}`)}
                   </Link>
                 </li>
               ))}
@@ -83,15 +84,15 @@ export default function Footer() {
             <h4 className="font-heading text-sm font-bold text-white uppercase tracking-widest mb-8">{t('footer.services')}</h4>
             <ul className="flex flex-col gap-4">
               {[
-                { key: 'web',   id: '01' }, 
-                { key: 'school', id: '02' }, 
-                { key: 'mobile', id: '03' }, 
-                { key: 'cyber',  id: '04' }, 
-                { key: 'data',   id: '05' }
+                { id: '01' },
+                { id: '02' },
+                { id: '03' },
+                { id: '04' },
+                { id: '05' }
               ].map((svc) => (
-                <li key={svc.key}>
+                <li key={svc.id}>
                   <Link to={`/services#service-${svc.id}`} className="text-slate-400 text-sm hover:text-[#00f2fe] hover:translate-x-1 transition-all inline-block">
-                    {t(`footer.servicesList.${svc.key}`)}
+                    {t(`services.service${svc.id}.title`)}
                   </Link>
                 </li>
               ))}
@@ -105,7 +106,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <FiMail className="text-[#00f2fe] mt-1 shrink-0" />
                 <a href="mailto:princempunga5@gmail.com" className="text-slate-400 text-sm hover:text-white transition-colors">
-                  princempunga5@gmail.com
+                  {t('contact.info.email.value')}
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -117,7 +118,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <FiMapPin className="text-[#00f2fe] mt-1 shrink-0" />
                 <span className="text-slate-400 text-sm">
-                  Kampala, Uganda
+                  {t('contact.info.location.value')}
                 </span>
               </li>
             </ul>
@@ -128,7 +129,7 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className="py-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-slate-500 text-xs">
-            © {new Date().getFullYear()} Novacoretechnology. {t('footer.rights')}
+            {t('footer.copyright')}
           </p>
           <p className="text-slate-500 text-xs italic">
             {t('footer.tagline')}

@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function PageLoader({ onComplete }) {
+  const { t } = useTranslation()
+
   useEffect(() => {
     // Exactly at 3.6 seconds, the intro is done and overlay is functionally invisible.
     // Unmount and handoff to the actual app content fade-in.
@@ -61,18 +64,18 @@ export default function PageLoader({ onComplete }) {
 
       <div className="loader-overlay fixed inset-0 z-[9999] bg-[#0a0a0a] flex flex-col items-center justify-center pointer-events-none">
         <div className="flex flex-col items-center">
-          
+
           {/* Logo */}
           <div className="loader-logo w-[80px] h-[80px] rounded-[18px] overflow-hidden flex items-center justify-center border border-[#00f2fe]/20 bg-[#050507]">
             <img src="/logo.png" alt="NovaCore Logo" className="w-[85%] h-[85%] object-cover p-1" />
           </div>
-          
+
           {/* Tagline */}
           <div className="loader-tagline flex flex-col items-center">
             <p className="mt-8 text-sm font-display text-white/80 tracking-[0.2em] uppercase text-center px-4">
-              Built with precision · Powered by innovation
+              {t('loader.tagline')}
             </p>
-            
+
             {/* Loading Bar */}
             <div className="mt-6 w-[200px] h-[2px] bg-[rgba(255,255,255,0.1)] overflow-hidden">
               <div className="loader-bar-fill h-full bg-[#00ffff] origin-left shadow-[0_0_10px_#00ffff]"></div>

@@ -5,12 +5,13 @@ import { FiMenu, FiX, FiGlobe } from 'react-icons/fi'
 import { useTranslation } from 'react-i18next'
 
 const NAV_KEYS = [
-  { to: '/',          key: 'home' },
-  { to: '/about',     key: 'about' },
-  { to: '/services',  key: 'services' },
+  { to: '/', key: 'home' },
+  { to: '/about', key: 'about' },
+  { to: '/services', key: 'services' },
   { to: '/portfolio', key: 'portfolio' },
-  { to: '/features',  key: 'demo' },
-  { to: '/contact',   key: 'contact' },
+  { to: '/estimate', key: 'estimate' },
+  { to: '/features', key: 'demo' },
+  { to: '/contact', key: 'contact' },
 ]
 
 export default function Navbar() {
@@ -36,10 +37,9 @@ export default function Navbar() {
 
   return (
     <>
-      <header 
-        className={`fixed top-0 left-0 right-0 z-[1200] px-6 md:px-24 py-4 transition-all duration-300 ${
-          scrolled ? 'bg-[#0d0f14db] backdrop-blur-xl border-b border-white/10 shadow-lg py-3' : 'bg-transparent'
-        }`}
+      <header
+        className={`fixed top-0 left-0 right-0 z-[1200] px-6 md:px-24 py-4 transition-all duration-300 ${scrolled ? 'bg-[#0d0f14db] backdrop-blur-xl border-b border-white/10 shadow-lg py-3' : 'bg-transparent'
+          }`}
       >
         <div className="max-w-[1280px] mx-auto flex justify-between items-center gap-8">
           {/* Logo */}
@@ -60,29 +60,28 @@ export default function Navbar() {
                 to={to}
                 end={to === '/'}
                 className={({ isActive }) =>
-                  `px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                    isActive ? 'text-[#00f2fe] bg-[#00f2fe14]' : 'text-slate-400 hover:text-white hover:bg-white/5'
+                  `px-4 py-2 rounded-md text-sm font-medium transition-all ${isActive ? 'text-[#00f2fe] bg-[#00f2fe14]' : 'text-slate-400 hover:text-white hover:bg-white/5'
                   }`
                 }
               >
-                {t(`navbar.${key}`)}
+                {t(`nav.${key}`)}
               </NavLink>
             ))}
           </nav>
 
           {/* Controls */}
           <div className="flex items-center gap-4 ml-auto lg:ml-0">
-            <button 
-              onClick={toggleLanguage} 
+            <button
+              onClick={toggleLanguage}
               className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 text-slate-300 font-display text-xs font-semibold hover:bg-white/5 transition-colors"
               aria-label="Toggle language"
             >
-              <FiGlobe /> {i18n.language.toUpperCase()}
+              <FiGlobe /> {i18n.language.startsWith('fr') ? 'EN' : 'FR'}
             </button>
 
             {/* Hidden on mobile header, shown in hamburger menu */}
             <Link to="/contact" className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#00f2fe] to-[#4facfe] text-[#050507] font-display font-bold text-sm shadow-[0_4px_20px_rgba(0,242,254,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,242,254,0.5)] transition-all">
-              {t('navbar.cta')}
+              {t('nav.startProject')}
             </Link>
 
             {/* Menu Toggle */}
@@ -114,13 +113,12 @@ export default function Navbar() {
                   to={to}
                   end={to === '/'}
                   className={({ isActive }) =>
-                    `px-5 py-4 rounded-xl text-lg font-semibold transition-all ${
-                      isActive ? 'text-[#00f2fe] bg-[#00f2fe14]' : 'text-slate-300 hover:text-white hover:bg-white/5'
+                    `px-5 py-4 rounded-xl text-lg font-semibold transition-all ${isActive ? 'text-[#00f2fe] bg-[#00f2fe14]' : 'text-slate-300 hover:text-white hover:bg-white/5'
                     }`
                   }
                   onClick={() => setMenuOpen(false)}
                 >
-                  {t(`navbar.${key}`)}
+                  {t(`nav.${key}`)}
                 </NavLink>
               ))}
             </nav>
@@ -131,7 +129,7 @@ export default function Navbar() {
                 className="w-full flex justify-center items-center gap-2 px-6 py-4 rounded-2xl bg-gradient-to-r from-[#00f2fe] to-[#4facfe] text-[#050507] font-display font-bold text-lg shadow-lg hover:brightness-110 active:scale-95 transition-all"
                 onClick={() => setMenuOpen(false)}
               >
-                {t('navbar.cta')}
+                {t('nav.startProject')}
               </Link>
             </div>
           </motion.div>

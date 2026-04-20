@@ -19,21 +19,21 @@ const TEAM_MEMBERS = [
     name: 'Prince Mpunga',
     transKey: 'ceo',
     image: '/team/founder3.jpg',
-    accent: '#00f2fe',
+    accent: '#00ffff',
   },
   {
     id: 2,
     name: 'Jacob Kitambala',
     transKey: 'cto',
     image: '/team/founder2.png',
-    accent: '#ff6a00',
+    accent: '#ff6b35',
   },
   {
     id: 3,
     name: 'Joseph Tshimpanga',
     transKey: 'design',
     image: '/team/founder1.png',
-    accent: '#00f2fe',
+    accent: '#00ffff',
   },
 ]
 
@@ -62,16 +62,16 @@ export default function About() {
         <div className="max-w-[1280px] mx-auto px-6 md:px-24 text-center relative z-10">
           <motion.div variants={fadeUp} initial="hidden" animate="visible">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#ff6a0020] border border-[#ff6a0040] text-[#ff6a00] font-display text-xs font-bold tracking-widest uppercase mb-6">
-              {t('about.headerLabel')}
+              {t('about.badge')}
             </div>
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
-              {t('about.headerTitle1')}{' '}
+              {t('about.title')}{' '}
               <span className="bg-gradient-to-r from-[#00f2fe] to-[#4facfe] bg-clip-text text-transparent">
-                {t('about.headerTitleHighlight')}
+                {t('about.titleHighlight')}
               </span>
             </h1>
             <p className="text-slate-400 mx-auto max-w-3xl text-lg md:text-xl leading-relaxed">
-              {t('about.headerDesc')}
+              {t('about.description')}
             </p>
           </motion.div>
         </div>
@@ -83,17 +83,17 @@ export default function About() {
           {[
             {
               icon: <FiTarget size={24} />,
-              title: t('about.philTitle'),
-              desc1: <>{t('about.philDesc1_1')}<strong className="text-white">{t('about.philDesc1_bold')}</strong>{t('about.philDesc1_2')}</>,
-              desc2: t('about.philDesc2'),
+              title: t('about.philosophy.title'),
+              desc1: <>{t('about.philosophy.desc1')}<strong className="text-white">{t('about.philosophy.desc1Bold')}</strong>{t('about.philosophy.desc1Suffix')}</>,
+              desc2: t('about.philosophy.desc2'),
               accent: '#00f2fe',
               delay: 0,
             },
             {
               icon: <FiAward size={24} />,
-              title: t('about.missionTitle'),
-              desc1: t('about.missionDesc1'),
-              desc2: t('about.missionDesc2'),
+              title: t('about.mission.title'),
+              desc1: t('about.mission.desc1'),
+              desc2: t('about.mission.desc2'),
               accent: '#ff6a00',
               delay: 0.1,
             },
@@ -159,17 +159,17 @@ export default function About() {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00f2fe1a] border border-[#00f2fe33] text-[#00f2fe] font-display text-xs font-bold tracking-widest uppercase mb-6">
-              {t('about.statsLabel')}
+              {t('about.stats.badge')}
             </div>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white">{t('about.statsTitle')}</h2>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white">{t('about.stats.title')}</h2>
           </motion.div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { num: t('about.stat1Num'), label: t('about.stat1Label'), accent: '#00f2fe' },
-              { num: t('about.stat2Num'), label: t('about.stat2Label'), accent: '#ff6a00' },
-              { num: t('about.stat3Num'), label: t('about.stat3Label'), accent: '#00f2fe' },
-              { num: t('about.stat4Num'), label: t('about.stat4Label'), accent: '#ffffff' },
+              { num: '10+', label: t('about.stats.stat1'), accent: '#00f2fe' },
+              { num: '99%', label: t('about.stats.stat2'), accent: '#ff6a00' },
+              { num: 'TLS 1.3', label: t('about.stats.stat3'), accent: '#00f2fe' },
+              { num: '< 1h', label: t('about.stats.stat4'), accent: '#ffffff' },
             ].map((stat, i) => (
               <motion.div
                 key={i}
@@ -202,10 +202,10 @@ export default function About() {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#ff6a0020] border border-[#ff6a0040] text-[#ff6a00] font-display text-xs font-bold tracking-widest uppercase mb-6">
-              {t('about.teamLabel')}
+              {t('about.team.badge')}
             </div>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">{t('about.teamTitle')}</h2>
-            <p className="text-slate-400 mx-auto max-w-2xl text-lg leading-relaxed">{t('about.teamDesc')}</p>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">{t('about.team.title')}</h2>
+            <p className="text-slate-400 mx-auto max-w-2xl text-lg leading-relaxed">{t('about.team.description')}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -241,13 +241,13 @@ export default function About() {
                     whileInView={{ y: 0, opacity: 0 }}
                     style={{ translateY: 0 }}
                   >
-                    {[{icon: <FaXTwitter />, link: "#"}, {icon: <FiFacebook />, link: "#"}, {icon: <FiGithub />, link: "#"}].map((social, i) => (
+                    {[{ icon: <FaXTwitter />, link: "#" }, { icon: <FiFacebook />, link: "#" }, { icon: <FiGithub />, link: "#" }].map((social, i) => (
                       <a
-                        key={i} href={social.link} title={`Visit link ${i+1}`}
+                        key={i} href={social.link} title={`Visit link ${i + 1}`}
                         className="w-10 h-10 rounded-full bg-[#050507] border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 hover:bg-[#00f2fe] hover:text-[#050507] hover:border-[#00f2fe] transition-all duration-300"
                         style={{ transitionDelay: `${i * 60}ms` }}
                       >
-                        {React.cloneElement(social.icon, { size: 16 })}
+                        {social.icon}
                       </a>
                     ))}
                   </motion.div>
@@ -268,9 +268,9 @@ export default function About() {
                     className="text-xs font-display font-bold uppercase tracking-widest mb-4"
                     style={{ color: member.accent }}
                   >
-                    {t(`about.roles.${member.transKey}`)}
+                    {t(`about.team.roles.${member.transKey}`)}
                   </p>
-                  <p className="text-slate-400 text-sm leading-relaxed">{t(`about.bios.${member.transKey}`)}</p>
+                  <p className="text-slate-400 text-sm leading-relaxed">{t(`about.team.bios.${member.transKey}`)}</p>
                 </div>
               </motion.div>
             ))}

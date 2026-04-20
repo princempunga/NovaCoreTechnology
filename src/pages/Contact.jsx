@@ -1,15 +1,8 @@
-// EMAILJS & NETLIFY SETUP:
-// 1. Go to your Netlify dashboard
-// 2. Site Settings → Environment Variables
-// 3. Add these 3 variables with their real values:
-//    VITE_EMAILJS_PUBLIC_KEY
-//    VITE_EMAILJS_SERVICE_ID  
-//    VITE_EMAILJS_TEMPLATE_ID
-// 4. Redeploy the site after adding them
-
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
 import { FiMail, FiPhone, FiMapPin, FiSend, FiCheck, FiLoader } from 'react-icons/fi'
+import { useTranslation } from 'react-i18next'
 import emailjs from '@emailjs/browser'
 
 emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
@@ -22,35 +15,39 @@ const fadeUp = {
   })
 }
 
-const CONTACT_METHODS = [
-  {
-    icon: <FiMail size={22} />,
-    title: 'Email Us',
-    info: 'princempunga5@gmail.com',
-    href: 'mailto:princempunga5@gmail.com',
-    accent: '#00f2fe',
-    sub: 'Responses within 24h',
-  },
-  {
-    icon: <FiPhone size={22} />,
-    title: 'Call Us',
-    info: '+256 784630448',
-    href: 'tel:+256784630448',
-    accent: '#ff6a00',
-    sub: 'Mon–Fri, 8am–6pm EAT',
-  },
-  {
-    icon: <FiMapPin size={22} />,
-    title: 'Visit Us',
-    info: 'Kampala, Uganda',
-    accent: '#00f2fe',
-    sub: 'East Africa',
-  },
-]
-
 export default function Contact() {
+  const { t } = useTranslation()
+  const location = useLocation()
+  const presetSubject = location.state?.prefilledSubject || ''
+
+  const CONTACT_METHODS = [
+    {
+      icon: <FiMail size={22} />,
+      title: t('contact.info.email.title'),
+      info: t('contact.info.email.value'),
+      href: `mailto:${t('contact.info.email.value')}`,
+      accent: '#00f2fe',
+      sub: t('contact.info.email.note'),
+    },
+    {
+      icon: <FiPhone size={22} />,
+      title: t('contact.info.phone.title'),
+      info: '+256 784630448',
+      href: 'tel:+256784630448',
+      accent: '#ff6a00',
+      sub: t('contact.info.phone.note'),
+    },
+    {
+      icon: <FiMapPin size={22} />,
+      title: t('contact.info.location.title'),
+      info: t('contact.info.location.value'),
+      accent: '#00f2fe',
+      sub: t('contact.info.location.note'),
+    },
+  ]
+
   const [focused, setFocused] = useState(null)
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
+  const [formData, setFormData] = useState({ name: '', email: '', subject: presetSubject, message: '' })
   const [formErrors, setFormErrors] = useState({})
   const [isLoading, setIsLoading] = useState(false)
   const [statusMsg, setStatusMsg] = useState(null)
@@ -64,14 +61,14 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    
+
     // Validate all fields manually to show inline custom messages
     const errors = {}
     if (!formData.name.trim()) errors.name = true
     if (!formData.email.trim()) errors.email = true
     if (!formData.subject) errors.subject = true
     if (!formData.message.trim()) errors.message = true
-    
+
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors)
       return
@@ -88,21 +85,21 @@ export default function Contact() {
         from_email: formData.email,
         project_type: formData.subject,
         message: formData.message,
-        to_email: "princempunga5@gmail.com"
+        to_email: t('contact.info.email.value')
       }
     ).then(() => {
       setFormData({ name: '', email: '', subject: '', message: '' })
       setIsLoading(false)
       setStatusMsg({
         type: 'success',
-        text: "✓ Your message was sent successfully! We'll get back to you within 24 hours."
+        text: t('contact.form.success')
       })
     }).catch((err) => {
       console.error(err)
       setIsLoading(false)
       setStatusMsg({
         type: 'error',
-        text: "✗ Something went wrong. Please try again or email us directly at princempunga5@gmail.com"
+        text: t('contact.form.error')
       })
     })
   }
@@ -123,16 +120,16 @@ export default function Contact() {
         <div className="max-w-[1280px] mx-auto px-6 md:px-24 text-center relative z-10">
           <motion.div variants={fadeUp} initial="hidden" animate="visible">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00f2fe1a] border border-[#00f2fe33] text-[#00f2fe] font-display text-xs font-bold tracking-widest uppercase mb-6">
-              Connect
+              {t('contact.badge')}
             </div>
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
-              Let's Work{' '}
+              {t('contact.title1')}{' '}
               <span className="bg-gradient-to-r from-[#00f2fe] to-[#4facfe] bg-clip-text text-transparent">
-                Together
+                {t('contact.title2')}
               </span>
             </h1>
             <p className="text-slate-400 mx-auto max-w-2xl text-lg md:text-xl leading-relaxed">
-              Whether you need a complete enterprise system overhaul or a specialized web application, our team is ready to deliver.
+              {t('contact.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -148,9 +145,9 @@ export default function Contact() {
             initial="hidden" animate="visible" variants={fadeUp}
           >
             <div>
-              <h2 className="text-3xl font-heading font-bold text-white mb-4">Technical Consultation</h2>
+              <h2 className="text-3xl font-heading font-bold text-white mb-4">{t('contact.consultation.title')}</h2>
               <p className="text-slate-400 text-lg leading-relaxed">
-                Reach out to us directly or fill out the form, and a technical coordinator will get back to you within 24 hours.
+                {t('contact.consultation.subtitle')}
               </p>
             </div>
 
@@ -204,13 +201,13 @@ export default function Contact() {
               style={{ background: 'radial-gradient(circle, rgba(0,242,254,0.2) 0%, transparent 70%)' }}
             />
 
-            <h3 className="relative text-2xl font-heading font-bold text-white mb-10">Send a Message</h3>
+            <h3 className="relative text-2xl font-heading font-bold text-white mb-10">{t('contact.form.title')}</h3>
 
             <form onSubmit={handleSubmit} noValidate className="relative flex flex-col gap-5">
               <div className="grid sm:grid-cols-2 gap-5">
                 {[
-                  { id: 'name', label: 'Full Name', type: 'text', placeholder: 'John Doe' },
-                  { id: 'email', label: 'Email Address', type: 'email', placeholder: 'john@company.com' },
+                  { id: 'name', label: t('contact.form.fullName'), type: 'text', placeholder: t('contact.form.fullNamePlaceholder') },
+                  { id: 'email', label: t('contact.form.email'), type: 'email', placeholder: t('contact.form.emailPlaceholder') },
                 ].map(field => (
                   <div key={field.id} className="flex flex-col gap-2">
                     <label htmlFor={`contact-${field.id}`} className="text-[0.65rem] font-display font-bold text-slate-500 uppercase tracking-widest ml-1">
@@ -233,7 +230,7 @@ export default function Contact() {
                     <AnimatePresence>
                       {formErrors[field.id] && (
                         <motion.span initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} className="text-red-500 text-[0.7rem] font-medium px-1 mt-[-2px]">
-                          This field is required
+                          {t('contact.form.required')}
                         </motion.span>
                       )}
                     </AnimatePresence>
@@ -243,7 +240,7 @@ export default function Contact() {
 
               <div className="flex flex-col gap-2">
                 <label htmlFor="contact-subject" className="text-[0.65rem] font-display font-bold text-slate-500 uppercase tracking-widest ml-1">
-                  Project Type
+                  {t('contact.form.projectType')}
                 </label>
                 <select
                   id="contact-subject"
@@ -257,16 +254,19 @@ export default function Contact() {
                     boxShadow: focused === 'subject' ? '0 0 0 3px rgba(0,242,254,0.08)' : 'none',
                   }}
                 >
-                  <option value="" className="bg-[#0d0f14]">Select a project type...</option>
-                  <option value="web" className="bg-[#0d0f14]">Web Application</option>
-                  <option value="mobile" className="bg-[#0d0f14]">Mobile App</option>
-                  <option value="school" className="bg-[#0d0f14]">School Management System</option>
-                  <option value="other" className="bg-[#0d0f14]">Other / General Inquiry</option>
+                  <option value="" className="bg-[#0d0f14]">{t('contact.form.projectTypePlaceholder')}</option>
+                  <option value="web" className="bg-[#0d0f14]">{t('nav.services')}</option>
+                  <option value="mobile" className="bg-[#0d0f14]">{t('services.service03.title')}</option>
+                  <option value="enterprise" className="bg-[#0d0f14]">{t('services.service01.title')}</option>
+                  <option value="analytics" className="bg-[#0d0f14]">{t('services.service05.title')}</option>
+                  <option value="cyber" className="bg-[#0d0f14]">{t('services.service04.title')}</option>
+                  <option value="school" className="bg-[#0d0f14]">{t('services.service02.title')}</option>
+                  <option value="other" className="bg-[#0d0f14]">{t('faq.categories.general')}</option>
                 </select>
                 <AnimatePresence>
                   {formErrors.subject && (
                     <motion.span initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} className="text-red-500 text-[0.7rem] font-medium px-1 mt-[-2px]">
-                      This field is required
+                      {t('contact.form.required')}
                     </motion.span>
                   )}
                 </AnimatePresence>
@@ -274,13 +274,13 @@ export default function Contact() {
 
               <div className="flex flex-col gap-2">
                 <label htmlFor="contact-message" className="text-[0.65rem] font-display font-bold text-slate-500 uppercase tracking-widest ml-1">
-                  Project Details
+                  {t('contact.form.projectDetails')}
                 </label>
                 <textarea
                   id="contact-message"
                   value={formData.message}
                   onChange={(e) => handleInputChange('message', e.target.value)}
-                  placeholder="Tell us about your requirements..."
+                  placeholder={t('contact.form.projectTypePlaceholder')}
                   rows={5}
                   onFocus={() => setFocused('message')}
                   onBlur={() => setFocused(null)}
@@ -293,7 +293,7 @@ export default function Contact() {
                 <AnimatePresence>
                   {formErrors.message && (
                     <motion.span initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} className="text-red-500 text-[0.7rem] font-medium px-1 mt-[-2px]">
-                      This field is required
+                      {t('contact.form.required')}
                     </motion.span>
                   )}
                 </AnimatePresence>
@@ -305,11 +305,10 @@ export default function Contact() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className={`mt-2 p-4 rounded-xl border text-sm font-medium ${
-                      statusMsg.type === 'success' 
-                        ? 'bg-[#00f2fe0a] border-[#00f2fe40] text-[#00f2fe]' 
-                        : 'bg-red-500/10 border-red-500/40 text-red-400'
-                    }`}
+                    className={`mt-2 p-4 rounded-xl border text-sm font-medium ${statusMsg.type === 'success'
+                      ? 'bg-[#00f2fe0a] border-[#00f2fe40] text-[#00f2fe]'
+                      : 'bg-red-500/10 border-red-500/40 text-red-400'
+                      }`}
                   >
                     {statusMsg.text}
                   </motion.div>
@@ -319,19 +318,18 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`w-full flex items-center justify-center gap-3 py-5 rounded-xl text-[#050507] font-display font-bold shadow-xl mt-2 transition-all ${
-                  isLoading 
-                    ? 'bg-gradient-to-r from-[#00f2fe] to-[#4facfe] opacity-80 cursor-not-allowed pointer-events-none' 
-                    : 'bg-gradient-to-r from-[#00f2fe] to-[#4facfe] hover:-translate-y-[2px] hover:shadow-[0_20px_40px_rgba(0,242,254,0.3)] hover:scale-[0.99] active:scale-95'
-                }`}
+                className={`w-full flex items-center justify-center gap-3 py-5 rounded-xl text-[#050507] font-display font-bold shadow-xl mt-2 transition-all ${isLoading
+                  ? 'bg-gradient-to-r from-[#00f2fe] to-[#4facfe] opacity-80 cursor-not-allowed pointer-events-none'
+                  : 'bg-gradient-to-r from-[#00f2fe] to-[#4facfe] hover:-translate-y-[2px] hover:shadow-[0_20px_40px_rgba(0,242,254,0.3)] hover:scale-[0.99] active:scale-95'
+                  }`}
               >
                 {isLoading ? (
                   <>
-                    <FiLoader size={16} className="animate-spin" /> Sending...
+                    <FiLoader size={16} className="animate-spin" /> {t('contact.form.sending')}
                   </>
                 ) : (
                   <>
-                    Submit Inquiry <FiSend size={16} />
+                    {t('contact.form.submit')} <FiSend size={16} />
                   </>
                 )}
               </button>

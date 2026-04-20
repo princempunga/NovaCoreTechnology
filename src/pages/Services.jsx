@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import { FiMonitor, FiSmartphone, FiDatabase, FiLock, FiArrowRight, FiCheck, FiBarChart2 } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import TechStack from '../components/TechStack'
+import FAQ from '../components/FAQ'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -79,13 +81,13 @@ export default function Services() {
         <div className="max-w-[1280px] mx-auto px-6 md:px-24 text-center relative z-10">
           <motion.div variants={fadeUp} initial="hidden" animate="visible">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#ff6a0020] border border-[#ff6a0040] text-[#ff6a00] font-display text-xs font-bold tracking-widest uppercase mb-6">
-              {t('services.headerLabel')}
+              {t('services.badge')}
             </div>
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
-              {t('services.headerTitle')}
+              {t('services.title')}
             </h1>
             <p className="text-slate-400 mx-auto max-w-3xl text-lg md:text-xl leading-relaxed">
-              {t('services.headerDesc')}
+              {t('services.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -136,20 +138,20 @@ export default function Services() {
                       className="text-xs font-display font-bold uppercase tracking-widest mb-1"
                       style={{ color: srv.accent }}
                     >
-                      {t(`services.items.${srv.transKey}.tagline`)}
+                      {t(`services.service0${idx + 1}.tagline`)}
                     </div>
                     <div className="text-[10px] font-display font-bold text-slate-500 uppercase tracking-widest mb-3">
-                      FOR: {srv.clientType}
+                      {t(`services.service0${idx + 1}.for`)}
                     </div>
                     <h2 className="text-3xl font-heading font-bold text-white">
-                      {t(`services.items.${srv.transKey}.title`)}
+                      {t(`services.service0${idx + 1}.title`)}
                     </h2>
                   </div>
                   <span
                     className="hidden sm:flex ml-auto text-xs font-display font-bold uppercase tracking-widest items-center gap-2 px-4 py-2 rounded-full border opacity-60 group-hover:opacity-100 transition-opacity"
                     style={{ borderColor: `${srv.accent}40`, color: srv.accent }}
                   >
-                    Service #{String(idx + 1).padStart(2, '0')}
+                    {t(`services.service0${idx + 1}.number`)}
                   </span>
                 </div>
 
@@ -159,18 +161,18 @@ export default function Services() {
                   <div className="flex flex-col gap-3">
                     <h4 className="text-xs font-display font-bold text-slate-500 uppercase tracking-widest flex items-center gap-2">
                       <span className="w-4 h-[1px] bg-slate-600 inline-block" />
-                      {t(`services.items.${srv.transKey}.challengeLabel`)}
+                      {t(`services.service0${idx + 1}.challenge.title`)}
                     </h4>
-                    <p className="text-slate-400 leading-relaxed text-sm">{t(`services.items.${srv.transKey}.challengeDesc`)}</p>
+                    <p className="text-slate-400 leading-relaxed text-sm">{t(`services.service0${idx + 1}.challenge.text`)}</p>
                   </div>
 
                   {/* Architecture */}
                   <div className="flex flex-col gap-3">
                     <h4 className="text-xs font-display font-bold text-slate-500 uppercase tracking-widest flex items-center gap-2">
                       <span className="w-4 h-[1px] bg-slate-600 inline-block" />
-                      {t(`services.items.${srv.transKey}.archLabel`)}
+                      {t(`services.service0${idx + 1}.architecture.title`)}
                     </h4>
-                    <p className="text-slate-400 leading-relaxed text-sm">{t(`services.items.${srv.transKey}.archDesc`)}</p>
+                    <p className="text-slate-400 leading-relaxed text-sm">{t(`services.service0${idx + 1}.architecture.text`)}</p>
                   </div>
 
                   {/* Outcome */}
@@ -180,10 +182,10 @@ export default function Services() {
                   >
                     <h4 className="text-xs font-display font-bold uppercase tracking-widest flex items-center gap-2" style={{ color: srv.accent }}>
                       <FiCheck size={14} />
-                      {t(`services.items.${srv.transKey}.outcomeLabel`)}
+                      {t(`services.service0${idx + 1}.outcome.title`)}
                     </h4>
                     <p className="text-slate-300 leading-relaxed text-sm italic">
-                      "{t(`services.items.${srv.transKey}.outcomeDesc`)}"
+                      "{t(`services.service0${idx + 1}.outcome.text`)}"
                     </p>
                   </div>
                 </div>
@@ -201,6 +203,12 @@ export default function Services() {
           ))}
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQ />
+
+      {/* TECH STACK */}
+      <TechStack />
 
       {/* CTA */}
       <section className="pb-24 md:pb-32">
@@ -220,19 +228,20 @@ export default function Services() {
               animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 7, repeat: Infinity, delay: 1.5 }}
             />
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">{t('services.ctaTitle')}</h2>
-              <p className="text-slate-400 max-w-2xl mx-auto text-lg mb-2">{t('services.ctaDesc')}</p>
-              <p className="text-white max-w-2xl mx-auto text-lg font-medium mb-12">{t('services.ctaParagraph')}</p>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">{t('services.cta.title')}</h2>
+              <p className="text-slate-400 max-w-2xl mx-auto text-lg mb-2">{t('services.cta.subtitle')}</p>
+              <p className="text-white max-w-2xl mx-auto text-lg font-medium mb-12">{t('services.cta.body')}</p>
               <Link to="/contact"
                 className="group inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#00f2fe] to-[#4facfe] text-[#050507] font-display font-bold text-lg shadow-xl hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,242,254,0.3)] transition-all"
               >
-                {t('services.ctaBtn')}
+                {t('services.cta.button')}
                 <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </motion.div>
         </div>
       </section>
+
     </motion.div>
   )
 }
