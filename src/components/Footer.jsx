@@ -63,6 +63,13 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+
+            {/* SSL Badge */}
+            <div className="mt-4 inline-flex items-center gap-3 px-3 py-1 rounded-full border border-white/5 bg-white/[0.02] text-slate-500 text-[10px] uppercase tracking-wider">
+              <span>🔒 {t('footer.ssl')}</span>
+              <span className="w-px h-2.5 bg-white/10" />
+              <span>✓ {t('footer.dataProtected')}</span>
+            </div>
           </div>
 
           {/* Quick Links Column */}
@@ -127,11 +134,20 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="py-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-slate-500 text-xs">
+        <div className="py-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+          <p className="text-slate-500 text-xs order-2 md:order-1">
             {t('footer.copyright')}
           </p>
-          <p className="text-slate-500 text-xs italic">
+          
+          <div className="flex items-center gap-4 text-slate-500 text-xs order-1 md:order-2 flex-wrap justify-center">
+            <Link to="/privacy" className="hover:text-white transition-colors">{t('footer.privacy')}</Link>
+            <span className="opacity-20">·</span>
+            <Link to="/terms" className="hover:text-white transition-colors">{t('footer.terms')}</Link>
+            <span className="opacity-20">·</span>
+            <Link to="/cookies" className="hover:text-white transition-colors">{t('footer.cookies')}</Link>
+          </div>
+
+          <p className="text-slate-500 text-xs italic order-3">
             {t('footer.tagline')}
           </p>
         </div>

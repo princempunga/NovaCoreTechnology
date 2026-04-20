@@ -620,7 +620,12 @@
     "services": "SERVICES",
     "contact": "CONTACT",
     "copyright": "© 2026 Novacoretechnology. Tous droits réservés.",
-    "tagline": "Construit avec précision · Propulsé par l'innovation"
+    "tagline": "Conçu avec précision · Propulsé par l'innovation",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation",
+    "cookies": "Politique des Cookies",
+    "ssl": "SSL Sécurisé",
+    "dataProtected": "Données Protégées"
   },
   "notFound": {
     "badge": "CODE_ERREUR: 404 | ROUTE_NON_TROUVÉE",

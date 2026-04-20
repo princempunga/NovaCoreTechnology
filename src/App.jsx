@@ -12,6 +12,9 @@ import EstimationCalculator from './pages/EstimationCalculator'
 import Contact from './pages/Contact'
 import PageLoader from './components/PageLoader'
 import NotFound from './pages/NotFound'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfService from './pages/TermsOfService'
+import CookiePolicy from './pages/CookiePolicy'
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -25,6 +28,9 @@ function AnimatedRoutes() {
         <Route path="/estimate"  element={<EstimationCalculator />} />
         <Route path="/features"  element={<Features />} />
         <Route path="/contact"   element={<Contact />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms"   element={<TermsOfService />} />
+        <Route path="/cookies" element={<CookiePolicy />} />
         <Route path="*"          element={<NotFound />} />
       </Routes>
     </AnimatePresence>
