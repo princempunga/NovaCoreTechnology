@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom'
 import { FiMail, FiPhone, FiMapPin, FiSend, FiCheck, FiLoader } from 'react-icons/fi'
 import { useTranslation } from 'react-i18next'
 import emailjs from '@emailjs/browser'
+import SEO from '../components/SEO'
 
 emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
 
@@ -114,6 +115,10 @@ export default function Contact() {
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
     >
+      <SEO 
+        title={t('seo.contact.title')} 
+        description={t('seo.contact.description')} 
+      />
       {/* Header */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <motion.div

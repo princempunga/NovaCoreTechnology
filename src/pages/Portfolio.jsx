@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiExternalLink, FiGithub, FiArrowRight } from 'react-icons/fi'
 import { useTranslation } from 'react-i18next'
+import SEO from '../components/SEO'
 
 export default function Portfolio() {
   const { t } = useTranslation()
@@ -87,6 +88,10 @@ export default function Portfolio() {
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
     >
+      <SEO 
+        title={t('seo.portfolio.title')} 
+        description={t('seo.portfolio.description')} 
+      />
       {/* Header */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <motion.div

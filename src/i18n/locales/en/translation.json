@@ -9,6 +9,34 @@
     "contact": "Contact",
     "startProject": "Start a Project"
   },
+  "seo": {
+    "defaultTitle": "Engineering the Digital Future of Africa",
+    "defaultDescription": "NovaCore Technology is a premier digital engineering firm dedicated to building high-performance systems including Enterprise Web Apps, School Management Ecosystems, and Cyber-Auditing solutions.",
+    "home": {
+      "title": "Home",
+      "description": "Leading Software Engineering & Cybersecurity partner in Africa. We build scalable, secure, and modern digital ecosystems for visionary institutions."
+    },
+    "about": {
+      "title": "Our Engineering Philosophy",
+      "description": "Learn about NovaCore Technology's mission to bridge the digital divide through world-class software architecture and reliable technical ecosystems."
+    },
+    "services": {
+      "title": "Enterprise Services & Solutions",
+      "description": "Explore our core engineering capabilities: Global Web Architecture, School Management Systems, Native Mobile Apps, and Enterprise Cyber-Auditing."
+    },
+    "portfolio": {
+      "title": "Digital Portfolio & Proof of Work",
+      "description": "A curated collection of mission-critical systems engineered by NovaCore Technology for leading institutions across Africa and beyond."
+    },
+    "estimate": {
+      "title": "Project Estimation & ROI Calculator",
+      "description": "Get a precise technical and financial estimate for your next digital engineering project with NovaCore Technology."
+    },
+    "contact": {
+      "title": "Connect with Our Architects",
+      "description": "Ready to scale? Contact our engineering team for inquiries about enterprise software development, system auditing, or custom technical solutions."
+    }
+  },
   "about": {
     "badge": "OUR MISSION",
     "title": "Engineering the Digital",

@@ -4,6 +4,7 @@ import { FiTarget, FiAward, FiTwitter, FiGithub, FiZap, FiFacebook } from 'react
 import { FaXTwitter } from 'react-icons/fa6'
 import { useTranslation } from 'react-i18next'
 import AnimatedCounter from '../components/AnimatedCounter'
+import SEO from '../components/SEO'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -52,6 +53,10 @@ export default function About() {
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
     >
+      <SEO 
+        title={t('seo.about.title')} 
+        description={t('seo.about.description')} 
+      />
       {/* Header */}
       <section className="relative pt-40 pb-24 overflow-hidden">
         <motion.div

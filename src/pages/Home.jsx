@@ -9,6 +9,7 @@ import AnimatedCounter from '../components/AnimatedCounter'
 import HowWeWork from '../components/HowWeWork'
 import Testimonials from '../components/Testimonials'
 import TechStack from '../components/TechStack'
+import SEO from '../components/SEO'
 
 const TECH_STACK = [
   { name: 'React', icon: <FaReact size={22} color="#61DAFB" /> },
@@ -59,6 +60,10 @@ export default function Home() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
     >
+      <SEO 
+        title={t('seo.home.title')} 
+        description={t('seo.home.description')} 
+      />
       {/* ── HERO ── */}
       <section className="relative min-h-[95vh] flex items-center pt-32 pb-20 md:py-40 overflow-hidden">
         {/* Background image */}

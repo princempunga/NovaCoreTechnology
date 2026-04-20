@@ -3,6 +3,7 @@ import { motion, animate } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FiGlobe, FiSmartphone, FiMonitor, FiBarChart2, FiLock, FiCheck, FiZap, FiActivity, FiCalendar } from 'react-icons/fi'
 import { useTranslation } from 'react-i18next'
+import SEO from '../components/SEO'
 
 function AnimatedPriceRange({ total }) {
   const { t } = useTranslation()
@@ -104,6 +105,10 @@ export default function EstimationCalculator() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
     >
+      <SEO 
+        title={t('seo.estimate.title')} 
+        description={t('seo.estimate.description')} 
+      />
       <div className="max-w-4xl mx-auto flex flex-col gap-16">
 
         {/* Header */}

@@ -9,6 +9,34 @@
     "contact": "Contact",
     "startProject": "Démarrer un Projet"
   },
+  "seo": {
+    "defaultTitle": "Ingénierie du Futur Numérique de l'Afrique",
+    "defaultDescription": "NovaCore Technology est une entreprise d'ingénierie numérique de premier plan dédiée à la construction de systèmes performants, notamment des applications Web d'entreprise, des écosystèmes de gestion scolaire et des solutions de cyber-audit.",
+    "home": {
+      "title": "Accueil",
+      "description": "Partenaire de premier plan en ingénierie logicielle et cybersécurité en Afrique. Nous construisons des écosystèmes numériques évolutifs, sécurisés et modernes pour des institutions visionnaires."
+    },
+    "about": {
+      "title": "Notre Philosophie d'Ingénierie",
+      "description": "Découvrez la mission de NovaCore Technology : combler le fossé numérique grâce à une architecture logicielle de classe mondiale et des écosystèmes techniques fiables."
+    },
+    "services": {
+      "title": "Services et Solutions d'Entreprise",
+      "description": "Explorez nos capacités d'ingénierie fondamentales : architecture Web mondiale, systèmes de gestion scolaire, applications mobiles natives et cyber-audit d'entreprise."
+    },
+    "portfolio": {
+      "title": "Portfolio Numérique & Preuve de Travail",
+      "description": "Une collection organisée de systèmes critiques pour la mission, conçus par NovaCore Technology pour des institutions de premier plan en Afrique et au-delà."
+    },
+    "estimate": {
+      "title": "Estimateur de Projet & Calculateur de ROI",
+      "description": "Obtenez une estimation technique et financière précise pour votre prochain projet d'ingénierie numérique avec NovaCore Technology."
+    },
+    "contact": {
+      "title": "Connectez-vous avec nos Architectes",
+      "description": "Prêt à évoluer ? Contactez notre équipe d'ingénierie pour toute demande concernant le développement de logiciels d'entreprise, l'audit de systèmes ou des solutions techniques personnalisées."
+    }
+  },
   "about": {
     "badge": "NOTRE MISSION",
     "title": "Concevoir le Futur",
