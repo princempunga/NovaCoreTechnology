@@ -105,7 +105,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-6">
               <li className="flex items-start gap-3">
                 <FiMail className="text-[#00f2fe] mt-1 shrink-0" />
-                <a href="mailto:princempunga5@gmail.com" className="text-slate-400 text-sm hover:text-white transition-colors">
+                <a href="mailto:novacoretechnology37@gmail.com" className="text-slate-400 text-sm hover:text-white transition-colors">
                   {t('contact.info.email.value')}
                 </a>
               </li>

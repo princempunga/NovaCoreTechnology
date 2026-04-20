@@ -238,10 +238,10 @@ export default function NotFound() {
           <motion.p {...fadeSlideUp(0.75)} className="text-slate-500 text-sm">
             {t('notfound.hint')}{' '}
             <a
-              href="mailto:princempunga5@gmail.com"
+              href="mailto:novacoretechnology37@gmail.com"
               className="text-[#00ffff] hover:underline transition-colors"
             >
-              princempunga5@gmail.com
+              novacoretechnology37@gmail.com
             </a>
           </motion.p>
         </motion.div>

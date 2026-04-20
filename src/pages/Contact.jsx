@@ -46,28 +46,26 @@ export default function Contact() {
     },
   ]
 
+  // Fix 1: State Variables
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [projectType, setProjectType] = useState(presetSubject)
+  const [message, setMessage] = useState('')
+
   const [focused, setFocused] = useState(null)
-  const [formData, setFormData] = useState({ name: '', email: '', subject: presetSubject, message: '' })
   const [formErrors, setFormErrors] = useState({})
   const [isLoading, setIsLoading] = useState(false)
   const [statusMsg, setStatusMsg] = useState(null)
 
-  const handleInputChange = (field, value) => {
-    setFormData(prev => ({ ...prev, [field]: value }))
-    if (formErrors[field]) {
-      setFormErrors(prev => ({ ...prev, [field]: null }))
-    }
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    // Validate all fields manually to show inline custom messages
+    // Fix 4: Validation
     const errors = {}
-    if (!formData.name.trim()) errors.name = true
-    if (!formData.email.trim()) errors.email = true
-    if (!formData.subject) errors.subject = true
-    if (!formData.message.trim()) errors.message = true
+    if (!fullName.trim()) errors.fullName = true
+    if (!email.trim()) errors.email = true
+    if (!projectType) errors.projectType = true
+    if (!message.trim()) errors.message = true
 
     if (Object.keys(errors).length > 0) {
       setFormErrors(errors)
@@ -77,18 +75,24 @@ export default function Contact() {
     setIsLoading(true)
     setStatusMsg(null)
 
+    // Fix 2: EmailJS Send
     emailjs.send(
       import.meta.env.VITE_EMAILJS_SERVICE_ID,
       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
       {
-        from_name: formData.name,
-        from_email: formData.email,
-        project_type: formData.subject,
-        message: formData.message,
+        from_name: fullName,
+        from_email: email,
+        project_type: projectType,
+        message: message,
         to_email: t('contact.info.email.value')
       }
     ).then(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' })
+      // Fix 3: Form Reset after success
+      setFullName('')
+      setEmail('')
+      setProjectType('')
+      setMessage('')
+      setFormErrors({})
       setIsLoading(false)
       setStatusMsg({
         type: 'success',
@@ -205,37 +209,42 @@ export default function Contact() {
 
             <form onSubmit={handleSubmit} noValidate className="relative flex flex-col gap-5">
               <div className="grid sm:grid-cols-2 gap-5">
-                {[
-                  { id: 'name', label: t('contact.form.fullName'), type: 'text', placeholder: t('contact.form.fullNamePlaceholder') },
-                  { id: 'email', label: t('contact.form.email'), type: 'email', placeholder: t('contact.form.emailPlaceholder') },
-                ].map(field => (
-                  <div key={field.id} className="flex flex-col gap-2">
-                    <label htmlFor={`contact-${field.id}`} className="text-[0.65rem] font-display font-bold text-slate-500 uppercase tracking-widest ml-1">
-                      {field.label}
-                    </label>
-                    <input
-                      type={field.type}
-                      id={`contact-${field.id}`}
-                      placeholder={field.placeholder}
-                      value={formData[field.id]}
-                      onChange={(e) => handleInputChange(field.id, e.target.value)}
-                      onFocus={() => setFocused(field.id)}
-                      onBlur={() => setFocused(null)}
-                      className="bg-white/[0.03] border border-white/10 rounded-xl p-4 text-white text-sm placeholder:text-slate-600 focus:outline-none transition-all"
-                      style={{
-                        borderColor: focused === field.id ? '#00f2fe60' : undefined,
-                        boxShadow: focused === field.id ? '0 0 0 3px rgba(0,242,254,0.08)' : 'none',
-                      }}
-                    />
-                    <AnimatePresence>
-                      {formErrors[field.id] && (
-                        <motion.span initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} className="text-red-500 text-[0.7rem] font-medium px-1 mt-[-2px]">
-                          {t('contact.form.required')}
-                        </motion.span>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ))}
+                  {[
+                    { id: 'fullName', label: t('contact.form.fullName'), type: 'text', placeholder: t('contact.form.fullNamePlaceholder'), value: fullName, setter: setFullName },
+                    { id: 'email', label: t('contact.form.email'), type: 'email', placeholder: t('contact.form.emailPlaceholder'), value: email, setter: setEmail },
+                  ].map(field => (
+                    <div key={field.id} className="flex flex-col gap-2">
+                      <label htmlFor={`contact-${field.id}`} className="text-[0.65rem] font-display font-bold text-slate-500 uppercase tracking-widest ml-1">
+                        {field.label}
+                      </label>
+                      <input
+                        type={field.type}
+                        id={`contact-${field.id}`}
+                        placeholder={field.placeholder}
+                        value={field.value}
+                        onChange={(e) => {
+                          field.setter(e.target.value)
+                          if (formErrors[field.id]) {
+                            setFormErrors(prev => ({ ...prev, [field.id]: null }))
+                          }
+                        }}
+                        onFocus={() => setFocused(field.id)}
+                        onBlur={() => setFocused(null)}
+                        className="bg-white/[0.03] border border-white/10 rounded-xl p-4 text-white text-sm placeholder:text-slate-600 focus:outline-none transition-all"
+                        style={{
+                          borderColor: focused === field.id ? '#00f2fe60' : undefined,
+                          boxShadow: focused === field.id ? '0 0 0 3px rgba(0,242,254,0.08)' : 'none',
+                        }}
+                      />
+                      <AnimatePresence>
+                        {formErrors[field.id] && (
+                          <motion.span initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} className="text-red-500 text-[0.7rem] font-medium px-1 mt-[-2px]">
+                            {t('contact.form.required')}
+                          </motion.span>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ))}
               </div>
 
               <div className="flex flex-col gap-2">
@@ -244,8 +253,13 @@ export default function Contact() {
                 </label>
                 <select
                   id="contact-subject"
-                  value={formData.subject}
-                  onChange={(e) => handleInputChange('subject', e.target.value)}
+                  value={projectType}
+                  onChange={(e) => {
+                    setProjectType(e.target.value)
+                    if (formErrors.projectType) {
+                      setFormErrors(prev => ({ ...prev, projectType: null }))
+                    }
+                  }}
                   onFocus={() => setFocused('subject')}
                   onBlur={() => setFocused(null)}
                   className="bg-[#0d0f14] border border-white/10 rounded-xl p-4 text-sm text-white focus:outline-none transition-all appearance-none cursor-pointer"
@@ -254,19 +268,32 @@ export default function Contact() {
                     boxShadow: focused === 'subject' ? '0 0 0 3px rgba(0,242,254,0.08)' : 'none',
                   }}
                 >
-                  <option value="" className="bg-[#0d0f14]">{t('contact.form.projectTypePlaceholder')}</option>
-                  <option value="web" className="bg-[#0d0f14]">{t('nav.services')}</option>
-                  <option value="mobile" className="bg-[#0d0f14]">{t('services.service03.title')}</option>
-                  <option value="enterprise" className="bg-[#0d0f14]">{t('services.service01.title')}</option>
-                  <option value="analytics" className="bg-[#0d0f14]">{t('services.service05.title')}</option>
-                  <option value="cyber" className="bg-[#0d0f14]">{t('services.service04.title')}</option>
-                  <option value="school" className="bg-[#0d0f14]">{t('services.service02.title')}</option>
-                  <option value="other" className="bg-[#0d0f14]">{t('faq.categories.general')}</option>
+                  <option value="" disabled className="bg-[#0d0f14]">
+                    Select a project type...
+                  </option>
+                  <option value="Enterprise Web Applications" className="bg-[#0d0f14]">
+                    Enterprise Web Applications
+                  </option>
+                  <option value="School Management Ecosystems" className="bg-[#0d0f14]">
+                    School Management Ecosystems
+                  </option>
+                  <option value="Native & Hybrid Mobile Apps" className="bg-[#0d0f14]">
+                    Native & Hybrid Mobile Apps
+                  </option>
+                  <option value="Data & Analytics Dashboards" className="bg-[#0d0f14]">
+                    Data & Analytics Dashboards
+                  </option>
+                  <option value="Cybersecurity & Auditing" className="bg-[#0d0f14]">
+                    Cybersecurity & Auditing
+                  </option>
+                  <option value="General" className="bg-[#0d0f14]">
+                    General
+                  </option>
                 </select>
                 <AnimatePresence>
-                  {formErrors.subject && (
+                  {formErrors.projectType && (
                     <motion.span initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} className="text-red-500 text-[0.7rem] font-medium px-1 mt-[-2px]">
-                      {t('contact.form.required')}
+                      Please select a project type
                     </motion.span>
                   )}
                 </AnimatePresence>
@@ -278,8 +305,13 @@ export default function Contact() {
                 </label>
                 <textarea
                   id="contact-message"
-                  value={formData.message}
-                  onChange={(e) => handleInputChange('message', e.target.value)}
+                  value={message}
+                  onChange={(e) => {
+                    setMessage(e.target.value)
+                    if (formErrors.message) {
+                      setFormErrors(prev => ({ ...prev, message: null }))
+                    }
+                  }}
                   placeholder={t('contact.form.projectTypePlaceholder')}
                   rows={5}
                   onFocus={() => setFocused('message')}
