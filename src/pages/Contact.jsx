@@ -248,11 +248,13 @@ export default function Contact() {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="contact-subject" className="text-[0.65rem] font-display font-bold text-slate-500 uppercase tracking-widest ml-1">
+                <label htmlFor="contact-project-type" className="text-[0.65rem] font-display font-bold text-slate-500 uppercase tracking-widest ml-1">
                   {t('contact.form.projectType')}
                 </label>
-                <select
-                  id="contact-subject"
+                <input
+                  type="text"
+                  id="contact-project-type"
+                  placeholder={t('contact.form.projectTypePlaceholder')}
                   value={projectType}
                   onChange={(e) => {
                     setProjectType(e.target.value)
@@ -260,40 +262,18 @@ export default function Contact() {
                       setFormErrors(prev => ({ ...prev, projectType: null }))
                     }
                   }}
-                  onFocus={() => setFocused('subject')}
+                  onFocus={() => setFocused('projectType')}
                   onBlur={() => setFocused(null)}
-                  className="bg-[#0d0f14] border border-white/10 rounded-xl p-4 text-sm text-white focus:outline-none transition-all appearance-none cursor-pointer"
+                  className="bg-white/[0.03] border border-white/10 rounded-xl p-4 text-white text-sm placeholder:text-slate-600 focus:outline-none transition-all w-full"
                   style={{
-                    borderColor: focused === 'subject' ? '#00f2fe60' : undefined,
-                    boxShadow: focused === 'subject' ? '0 0 0 3px rgba(0,242,254,0.08)' : 'none',
+                    borderColor: focused === 'projectType' ? '#00f2fe60' : undefined,
+                    boxShadow: focused === 'projectType' ? '0 0 0 3px rgba(0,242,254,0.08)' : 'none',
                   }}
-                >
-                  <option value="" disabled className="bg-[#0d0f14]">
-                    Select a project type...
-                  </option>
-                  <option value="Enterprise Web Applications" className="bg-[#0d0f14]">
-                    Enterprise Web Applications
-                  </option>
-                  <option value="School Management Ecosystems" className="bg-[#0d0f14]">
-                    School Management Ecosystems
-                  </option>
-                  <option value="Native & Hybrid Mobile Apps" className="bg-[#0d0f14]">
-                    Native & Hybrid Mobile Apps
-                  </option>
-                  <option value="Data & Analytics Dashboards" className="bg-[#0d0f14]">
-                    Data & Analytics Dashboards
-                  </option>
-                  <option value="Cybersecurity & Auditing" className="bg-[#0d0f14]">
-                    Cybersecurity & Auditing
-                  </option>
-                  <option value="General" className="bg-[#0d0f14]">
-                    General
-                  </option>
-                </select>
+                />
                 <AnimatePresence>
                   {formErrors.projectType && (
                     <motion.span initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} className="text-red-500 text-[0.7rem] font-medium px-1 mt-[-2px]">
-                      Please select a project type
+                      {t('contact.form.required')}
                     </motion.span>
                   )}
                 </AnimatePresence>

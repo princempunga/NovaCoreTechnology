@@ -602,7 +602,7 @@
       "email": "EMAIL ADDRESS",
       "emailPlaceholder": "john@company.com",
       "projectType": "PROJECT TYPE",
-      "projectTypePlaceholder": "Select a project type...",
+      "projectTypePlaceholder": "e.g. Mobile App, School System, Web Platform...",
       "projectDetails": "PROJECT DETAILS",
       "submit": "Submit Inquiry",
       "sending": "Sending...",

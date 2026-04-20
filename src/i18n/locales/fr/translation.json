@@ -601,7 +601,7 @@
       "email": "ADRESSE EMAIL",
       "emailPlaceholder": "jean@entreprise.com",
       "projectType": "TYPE DE PROJET",
-      "projectTypePlaceholder": "Sélectionnez un type...",
+      "projectTypePlaceholder": "ex. Application Mobile, Système Scolaire, Plateforme Web...",
       "projectDetails": "DÉTAILS DU PROJET",
       "submit": "Envoyer la Demande",
       "sending": "Envoi...",
