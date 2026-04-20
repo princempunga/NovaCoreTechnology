@@ -40,7 +40,7 @@ export default function Footer() {
 
             <div className="mt-2 mb-2 flex items-center gap-2 text-sm">
               <span className="text-slate-400">{t('footer.cta.text')}</span>
-              <Link to="/contact" className="text-[#00ffff] hover:underline transition-all">
+              <Link to="/contact" className="text-[#00ffff] hover:text-[#ff6b35] transition-all duration-200">
                 {t('footer.cta.link')}
               </Link>
             </div>
@@ -57,7 +57,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-slate-400 text-xl hover:text-[#00ffff] hover:border-[#00ffff] hover:shadow-[0_0_15px_rgba(0,255,255,0.4)] transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-slate-400 text-xl hover:text-[#ff6b35] hover:border-[#ff6b35] hover:shadow-[0_0_15px_rgba(255,107,53,0.4)] transition-all duration-200"
                 >
                   {social.icon}
                 </a>
@@ -78,7 +78,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
               {QUICK_LINKS.map(({ to, key }) => (
                 <li key={to}>
-                  <Link to={to} className="text-slate-400 text-sm hover:text-[#00f2fe] hover:translate-x-1 transition-all inline-block">
+                  <Link to={to} className="text-slate-400 text-sm hover:text-[#ff6b35] hover:translate-x-1 transition-all duration-200 inline-block">
                     {t(`nav.${key}`)}
                   </Link>
                 </li>
@@ -98,7 +98,7 @@ export default function Footer() {
                 { id: '05' }
               ].map((svc) => (
                 <li key={svc.id}>
-                  <Link to={`/services#service-${svc.id}`} className="text-slate-400 text-sm hover:text-[#00f2fe] hover:translate-x-1 transition-all inline-block">
+                  <Link to={`/services#service-${svc.id}`} className="text-slate-400 text-sm hover:text-[#ff6b35] hover:translate-x-1 transition-all duration-200 inline-block">
                     {t(`services.service${svc.id}.title`)}
                   </Link>
                 </li>
@@ -112,13 +112,13 @@ export default function Footer() {
             <ul className="flex flex-col gap-6">
               <li className="flex items-start gap-3">
                 <FiMail className="text-[#00f2fe] mt-1 shrink-0" />
-                <a href="mailto:novacoretechnology37@gmail.com" className="text-slate-400 text-sm hover:text-white transition-colors">
+                <a href="mailto:novacoretechnology37@gmail.com" className="text-slate-400 text-sm hover:text-[#ff6b35] transition-all duration-200">
                   {t('contact.info.email.value')}
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <FiPhone className="text-[#ff6a00] mt-1 shrink-0" />
-                <a href="tel:+256784630448" className="text-slate-400 text-sm hover:text-white transition-colors">
+                <a href="tel:+256784630448" className="text-slate-400 text-sm hover:text-[#ff6b35] transition-all duration-200">
                   +256 784630448
                 </a>
               </li>
@@ -134,20 +134,20 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="py-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-          <p className="text-slate-500 text-xs order-2 md:order-1">
+        <div className="py-10 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-8 text-center lg:text-left">
+          <p className="text-slate-500 text-xs order-2 lg:order-1">
             {t('footer.copyright')}
           </p>
           
-          <div className="flex items-center gap-4 text-slate-500 text-xs order-1 md:order-2 flex-wrap justify-center">
-            <Link to="/privacy" className="hover:text-white transition-colors">{t('footer.privacy')}</Link>
+          <div className="flex items-center gap-4 text-slate-500 text-[10px] sm:text-xs order-1 lg:order-2 flex-wrap justify-center font-medium uppercase tracking-wider">
+            <Link to="/privacy-policy" className="hover:text-[#ff6b35] transition-all duration-200">{t('footer.privacy')}</Link>
             <span className="opacity-20">·</span>
-            <Link to="/terms" className="hover:text-white transition-colors">{t('footer.terms')}</Link>
+            <Link to="/terms-of-service" className="hover:text-[#ff6b35] transition-all duration-200">{t('footer.terms')}</Link>
             <span className="opacity-20">·</span>
-            <Link to="/cookies" className="hover:text-white transition-colors">{t('footer.cookies')}</Link>
+            <Link to="/cookie-policy" className="hover:text-[#ff6b35] transition-all duration-200">{t('footer.cookies')}</Link>
           </div>
 
-          <p className="text-slate-500 text-xs italic order-3">
+          <p className="text-slate-500 text-[10px] sm:text-xs italic order-3">
             {t('footer.tagline')}
           </p>
         </div>
