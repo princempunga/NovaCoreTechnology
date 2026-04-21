@@ -16,7 +16,7 @@ export default function SEO({
   const metaDescription = description || t('seo.defaultDescription')
   
   // Base URL for og:image - should be full path for social media crawlers
-  const siteUrl = 'https://novacoretechnology.netlify.app'
+  const siteUrl = 'https://novacoretechnology.it.com'
   const ogImage = `${siteUrl}${image}`
 
   return (
