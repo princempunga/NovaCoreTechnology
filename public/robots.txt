@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://novacoretechnology.com/sitemap.xml
+Sitemap: https://novacoretechnology.netlify.app/sitemap.xml
