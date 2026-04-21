@@ -1,0 +1,786 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "estimate": "Estimate",
+    "demo": "Demo",
+    "contact": "Contact",
+    "startProject": "Start a Project"
+  },
+  "seo": {
+    "defaultTitle": "Engineering the Digital Future of Africa",
+    "defaultDescription": "NovaCore Technology is a premier digital engineering firm dedicated to building high-performance systems including Enterprise Web Apps, School Management Ecosystems, and Cyber-Auditing solutions.",
+    "home": {
+      "title": "Home",
+      "description": "Leading Software Engineering & Cybersecurity partner in Africa. We build scalable, secure, and modern digital ecosystems for visionary institutions."
+    },
+    "about": {
+      "title": "Our Engineering Philosophy",
+      "description": "Learn about NovaCore Technology's mission to bridge the digital divide through world-class software architecture and reliable technical ecosystems."
+    },
+    "services": {
+      "title": "Enterprise Services & Solutions",
+      "description": "Explore our core engineering capabilities: Global Web Architecture, School Management Systems, Native Mobile Apps, and Enterprise Cyber-Auditing."
+    },
+    "portfolio": {
+      "title": "Digital Portfolio & Proof of Work",
+      "description": "A curated collection of mission-critical systems engineered by NovaCore Technology for leading institutions across Africa and beyond."
+    },
+    "estimate": {
+      "title": "Project Estimation & ROI Calculator",
+      "description": "Get a precise technical and financial estimate for your next digital engineering project with NovaCore Technology."
+    },
+    "contact": {
+      "title": "Connect with Our Architects",
+      "description": "Ready to scale? Contact our engineering team for inquiries about enterprise software development, system auditing, or custom technical solutions."
+    }
+  },
+  "about": {
+    "badge": "OUR MISSION",
+    "title": "Engineering the Digital",
+    "titleHighlight": "Future of Africa",
+    "description": "NovaCore Technology is a premier digital engineering firm dedicated to building high-performance systems that empower organizations to scale without limits.",
+    "philosophy": {
+      "title": "Our Philosophy",
+      "desc1": "We believe that software should be an asset, not a liability. We build systems that are ",
+      "desc1Bold": "secure, scalable, and intuitive",
+      "desc1Suffix": " for the long term.",
+      "desc2": "Our architectural approach prioritizes performance and maintainability over short-term hacks."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "desc1": "To provide world-class digital infrastructure for institutions across Africa, bridging the gap between local challenges and global technology standards.",
+      "desc2": "We aim to be the technical backbone for the continent's most ambitious digital transformations."
+    },
+    "stats": {
+      "badge": "BY THE NUMBERS",
+      "title": "Our Impact in Metrics",
+      "stat1": "Projects Delivered",
+      "stat2": "Uptime Guarantee",
+      "stat3": "System Security",
+      "stat4": "Support Response"
+    },
+    "team": {
+      "badge": "THE ENGINES",
+      "title": "Meet the Architects",
+      "description": "A collective of senior engineers, designers, and strategy consultants committed to technical excellence.",
+      "roles": {
+        "ceo": "CHIEF EXECUTIVE OFFICER & FOUNDER",
+        "cto": "CO-FOUNDER & CHIEF TECHNOLOGY OFFICER",
+        "design": "CO-FOUNDER & HEAD OF PRODUCT DESIGN"
+      },
+      "bios": {
+        "ceo": "Founder of NovaCoreTechnology and a passionate full-stack developer focused on building practical, impactful digital solutions. Prince leads the vision and development of the company, driving projects from concept to deployment. He has developed multiple systems including Wi-Fi request platforms, document management systems, and academic tools, with a strong focus on security, usability, and real-world application.",
+        "cto": "Full-stack developer specializing in backend architecture and system development. Jacob is responsible for designing and maintaining the core technology behind NovaCoreTechnology's products. He ensures that applications are efficient, scalable, and reliable, while contributing to the continuous improvement of development processes and system performance.",
+        "design": "Frontend developer with a strong eye for design and user experience. Joseph leads the product design direction, ensuring that every application is intuitive, responsive, and visually engaging. He focuses on creating clean interfaces that enhance usability while aligning with modern design standards."
+      }
+    }
+  },
+  "hero": {
+    "badge": "",
+    "title1": "We Don't Build",
+    "title2": "Websites.",
+    "title3": "We Engineer",
+    "title4": "Digital Infrastructure.",
+    "subtitle": "We are a Kampala-based software team building custom web platforms, mobile apps, and secure digital systems for schools, businesses, and institutions across Africa.",
+    "cta1": "View Our Work",
+    "cta2": "Start a Project"
+  },
+  "services": {
+    "badge": "ENGINEERING DOMAINS",
+    "title": "Our Capabilities",
+    "subtitle": "We don't just write code; we solve complex operational bottlenecks. Explore our specialized engineering divisions designed to modernize and scale your online presence.",
+    "service01": {
+      "tagline": "HIGH-AVAILABILITY BESPOKE WEB ARCHITECTURES.",
+      "title": "Enterprise Web Applications",
+      "number": "SERVICE #01",
+      "for": "FOR: Startups & Corporate Enterprises",
+      "challenge": {
+        "title": "THE CHALLENGE",
+        "text": "Off-the-shelf software often forces organizations into restrictive workflows. When user concurrency spikes or data models become complex, generic CMS platforms crash."
+      },
+      "architecture": {
+        "title": "OUR ARCHITECTURE",
+        "text": "We engineer custom single-page applications (SPAs) and dynamic server-side rendered (SSR) web apps from scratch. Utilizing React, Next.js, and Node.js, we decouple the frontend from the backend (headless architecture) for extreme scalability."
+      },
+      "outcome": {
+        "title": "THE OUTCOME",
+        "text": "A lightning-fast, tailored interface that perfectly mirrors your business processes with guaranteed 99.9% uptime under high traffic loads."
+      }
+    },
+    "service02": {
+      "tagline": "UNIFIED DIGITAL PLATFORMS FOR PROGRESSIVE INSTITUTIONS.",
+      "title": "School Management Ecosystems",
+      "number": "SERVICE #02",
+      "for": "FOR: Schools, Universities & Training Institutes",
+      "challenge": {
+        "title": "THE CHALLENGE",
+        "text": "Schools typically juggle disjointed systems: one for grades, another for finance, another for SMS. This creates massive data silos and administrative friction."
+      },
+      "architecture": {
+        "title": "OUR ARCHITECTURE",
+        "text": "We deploy unified centralized portals. Our systems integrate strict role-based access control, real-time fee payment gateways (including Mobile Money), automated report generation, and bulk SMS pipelines."
+      },
+      "outcome": {
+        "title": "THE OUTCOME",
+        "text": "An institution running at peak efficiency, reducing administrative burden by up to 60% and providing radical transparency to parents and leadership."
+      }
+    },
+    "service03": {
+      "tagline": "YOUR ENTERPRISE IN THE PALM OF THEIR HANDS.",
+      "title": "Native & Hybrid Mobile Apps",
+      "number": "SERVICE #03",
+      "for": "FOR: Businesses Targeting Mobile-First Users",
+      "challenge": {
+        "title": "THE CHALLENGE",
+        "text": "Mobile users demand sub-second load times and native feel. Poorly ported web-to-mobile apps destroy brand credibility and suffer high uninstall rates."
+      },
+      "architecture": {
+        "title": "OUR ARCHITECTURE",
+        "text": "We build rigorous cross-platform (React Native/Flutter) and pure Native (Swift/Kotlin) applications. We implement offline-first data caching and strict state management to handle poor network conditions common in emerging markets."
+      },
+      "outcome": {
+        "title": "THE OUTCOME",
+        "text": "Fluid, engaging mobile experiences that achieve 5-star ratings and operate flawlessly across all Android and iOS devices."
+      }
+    },
+    "service04": {
+      "tagline": "IMPENETRABLE DEFENSE LINES FOR SENSITIVE DATA.",
+      "title": "Cybersecurity & Auditing",
+      "number": "SERVICE #04",
+      "for": "FOR: Fintech, Healthcare & Government Institutions",
+      "challenge": {
+        "title": "THE CHALLENGE",
+        "text": "As operations digitize, attack surfaces expand. A single vulnerability can lead to catastrophic financial and reputational ruin."
+      },
+      "architecture": {
+        "title": "OUR ARCHITECTURE",
+        "text": "Security is not a plugin — it's a core principle. We conduct aggressive penetration testing, implement zero-trust network boundaries, OAuth2/OIDC SSO integrations, and AES-256 database encryption."
+      },
+      "outcome": {
+        "title": "THE OUTCOME",
+        "text": "Absolute peace of mind. Your data lakes and user credentials remain protected against modern attack vectors and ransomware."
+      }
+    },
+    "service05": {
+      "tagline": "TURNING RAW DATA INTO STRATEGIC CLARITY.",
+      "title": "Data & Analytics Dashboards",
+      "number": "SERVICE #05",
+      "for": "FOR: Executives, Finance Teams & Operations Managers",
+      "challenge": {
+        "title": "THE CHALLENGE",
+        "text": "Organizations collect enormous volumes of operational data but lack the tools to interpret it in real time. Static spreadsheet reports are too slow for modern decision-making."
+      },
+      "architecture": {
+        "title": "OUR ARCHITECTURE",
+        "text": "We build high-performance interactive dashboards using React, Vue, Python, and GraphQL. We connect directly to your existing databases and APIs to surface live KPIs, transaction flows, and trend forecasts with role-based data visibility."
+      },
+      "outcome": {
+        "title": "THE OUTCOME",
+        "text": "A real-time command center for your business — executives and managers see exactly what they need, when they need it, with zero lag and full drill-down capability."
+      }
+    },
+    "cta": {
+      "title": "Don't See Your Specific Needs?",
+      "subtitle": "Our engineering team excels in tackling undocumented, complex problems. We build APIs, cloud architectures, and IoT integrations.",
+      "body": "Every business is unique. Tell us your challenge and we'll architect a tailored solution and get back to you within 48 hours.",
+      "button": "Request Custom Analysis"
+    }
+  },
+  "portfolio": {
+    "badge": "OUR WORK",
+    "title": "Featured Projects",
+    "subtitle": "A selection of enterprise systems and digital platforms we have engineered for our clients.",
+    "filters": {
+      "all": "ALL",
+      "web": "WEB APPLICATION",
+      "enterprise": "ENTERPRISE SOFTWARE",
+      "mobile": "MOBILE APP",
+      "architecture": "SYSTEM ARCHITECTURE"
+    },
+    "projects": {
+      "item1": {
+        "slug": "edusphere",
+        "title": "EduSphere Admin Portal",
+        "desc": "A comprehensive school management system handling 50,000+ active student records with real-time grading, attendance, and fee processing.",
+        "caseStudy": "View Case Study"
+      },
+      "item2": {
+        "slug": "fincore",
+        "title": "FinCore Dashboard",
+        "desc": "High-performance interactive financial dashboard providing deep analytics and real-time transaction monitoring for corporate clients.",
+        "caseStudy": "View Case Study"
+      },
+      "item3": {
+        "slug": "healthlink",
+        "title": "HealthLink Mobile",
+        "desc": "Cross-platform telemedicine application facilitating secure patient-doctor consultations, e-prescriptions, and health tracking.",
+        "caseStudy": "View Case Study"
+      },
+      "item4": {
+        "slug": "ecologistics",
+        "title": "EcoLogistics Platform",
+        "desc": "IoT integrated supply chain tracker for eco-friendly logistics optimization, reducing carbon footprint through smart route planning.",
+        "caseStudy": "View Case Study"
+      }
+    },
+    "caseStudies": {
+      "edusphere": {
+        "title": "EduSphere Admin Portal",
+        "category": "Education Ecosystem",
+        "year": "2024",
+        "description": "A comprehensive cloud-based academic management platform designed to replace disjointed manual processes with a unified digital backbone for large-scale institutions.",
+        "challenge": {
+          "title": "The Challenge",
+          "content": "The institution was struggling with massive data silos. Student enrollment, fee payments, and grading were all handled in separate physical ledgers and disconnected spreadsheets. This led to high administrative overhead, frequent data entry errors, and zero real-time visibility into the school's financial health. Scaling beyond 5,000 students was becoming operationally impossible."
+        },
+        "solution": {
+          "title": "The Architecture",
+          "content": "We engineered a centralized Multi-Tenant SaaS architecture using React for the admin dashboard and a high-performance Node.js REST API. We implemented a strict RBAC (Role-Based Access Control) system to manage 50,000+ student records securely. For financial transparency, we integrated a real-time Mobile Money gateway (MTN/Airtel) that automatically reconciles fee payments with student accounts."
+        },
+        "impact": [
+          { "label": "Admin efficiency", "value": "+65%" },
+          { "label": "Payment transparency", "value": "100%" },
+          { "label": "Active students", "value": "50K+" }
+        ],
+        "features": [
+          "Real-time Academic Reporting",
+          "Automated Fee Reconciliation",
+          "Biometric Attendance Integration",
+          "Secure Parent Portals"
+        ]
+      },
+      "fincore": {
+        "title": "FinCore Dashboard",
+        "category": "Fintech Analytics",
+        "year": "2024",
+        "description": "A high-performance interactive financial command center providing real-time transaction monitoring and predictive analytics for corporate holdings.",
+        "challenge": {
+          "title": "The Challenge",
+          "content": "Our client needed to monitor thousands of daily transactions across four regional branches. Existing tools were too slow, often lagging behind live data by several hours. Decision-makers required a sub-second interactive experience to detect anomalies and manage liquidity across diverse portfolios without waiting for end-of-day reports."
+        },
+        "solution": {
+          "title": "The Architecture",
+          "content": "We developed a real-time data orchestration layer using GraphQL and PostgreSQL. By implementing specialized materialized views and Redis caching, we reduced query latency from 8 seconds to under 150ms. The UI features interactive WebGL-based visualization charts that handle massive datasets without dropping frame rates, giving executives instant tactical clarity."
+        },
+        "impact": [
+          { "label": "Query latency", "value": "<150ms" },
+          { "label": "Transaction visibility", "value": "Live" },
+          { "label": "Daily volume", "value": "100K+" }
+        ],
+        "features": [
+          "Predictive Flow Modeling",
+          "Fraud Detection Engine",
+          "Cross-Branch Liquidity View",
+          "Multi-Currency Auto-Sync"
+        ]
+      },
+      "healthlink": {
+        "title": "HealthLink Mobile",
+        "category": "Healthcare Connectivity",
+        "year": "2023",
+        "description": "An offline-first telemedicine application bridging the gap between remote patients and urban medical specialists through secure mobile technology.",
+        "challenge": {
+          "title": "The Challenge",
+          "content": "Field agents and nurses in rural areas often operate with zero or intermittent network connectivity. Standard telemedicine apps would lose data or crash when the connection dropped. The challenge was to maintain full medical record integrity and enable consultations in areas where 2G or edge networks are the norm."
+        },
+        "solution": {
+          "title": "The Architecture",
+          "content": "We built a robust React Native application with an 'Offline-First' architecture using WatermelonDB for local persistence. Data is synced in the background using a state-machine-driven conflict resolution strategy once the network is restored. All patient data is encrypted locally using AES-256 before being transmitted via TLS 1.3 to a HIPAA-compliant cloud storage."
+        },
+        "impact": [
+          { "label": "Offline functionality", "value": "100%" },
+          { "label": "Sync success rate", "value": "99.9%" },
+          { "label": "Rural reach", "value": "15 Districts" }
+        ],
+        "features": [
+          "End-to-End Encrypted Messaging",
+          "Remote Voucher Redemption",
+          "E-Prescription Workflow",
+          "Background Data Sync"
+        ]
+      },
+      "ecologistics": {
+        "title": "EcoLogistics Platform",
+        "category": "IoT Logistics",
+        "year": "2023",
+        "description": "A smart logistics ecosystem integrating IoT sensors and routing algorithms to optimize supply chains and reduce environmental impact.",
+        "challenge": {
+          "title": "The Challenge",
+          "content": "Logistics companies in growing urban centers face massive delays due to unpredictable traffic and poor road infrastructure. Traditional GPS tracking only showed *where* trucks were, but didn't provide enough data to optimize fuel consumption or reduce empty-mileage trips that hurt both profit and the environment."
+        },
+        "solution": {
+          "title": "The Architecture",
+          "content": "We integrated custom IoT hardware with a Golang-powered event-streaming backend. This allowed for real-time monitoring of engine health, cargo temperature, and vibration. We then implemented a custom A* pathfinding algorithm that considers historical traffic patterns and urban weight restrictions to calculate the most fuel-efficient routes."
+        },
+        "impact": [
+          { "label": "Fuel cost reduction", "value": "22%" },
+          { "label": "Route optimization", "value": "+35%" },
+          { "label": "Sensor uptime", "value": "99.8%" }
+        ],
+        "features": [
+          "IoT Payload Decryption",
+          "Smart Traffic Rerouting",
+          "Carbon Footprint Analytics",
+          "Predictive Fleet Maintenance"
+        ]
+      }
+    }
+  },
+  "howWeWork": {
+    "badge": "OUR PROCESS",
+    "title": "How We Build Your Vision",
+    "subtitle": "A proven engineering lifecycle designed for clarity and quality at every step.",
+    "phases": {
+      "phase1": {
+        "title": "Discovery & Architecture",
+        "duration": "Week 1-2",
+        "desc": "We conduct deep technical discovery sessions to map your business logic, define system architecture, choose the optimal tech stack, and deliver a detailed project blueprint before writing a single line of code.",
+        "tags": ["REQUIREMENTS", "SYSTEM DESIGN", "TECH STACK"]
+      },
+      "phase2": {
+        "title": "UI/UX Design",
+        "duration": "Week 2-3",
+        "desc": "Our design team crafts high-fidelity wireframes and interactive prototypes in Figma. Every screen is reviewed with you before development begins — guaranteeing zero design surprises at handoff.",
+        "tags": ["WIREFRAMES", "PROTOTYPES", "USER FLOWS"]
+      },
+      "phase3": {
+        "title": "Agile Development",
+        "duration": "Week 3-10",
+        "desc": "Engineers work in tight two-week sprints pushing to a live staging URL after every iteration. You get a working, testable build at the end of each sprint with full CI/CD pipeline automation.",
+        "tags": ["SPRINTS", "CI/CD", "STAGING BUILDS"]
+      },
+      "phase4": {
+        "title": "QA & Security Hardening",
+        "duration": "Week 10-12",
+        "desc": "We run comprehensive test suites — unit, integration, and end-to-end. Penetration testing and vulnerability scanning are performed before any public launch to ensure zero-trust security from day one.",
+        "tags": ["PENTESTING", "UNIT TESTS", "ZERO-TRUST"]
+      },
+      "phase5": {
+        "title": "Deployment & Launch",
+        "duration": "Week 12-13",
+        "desc": "We orchestrate zero-downtime deployments to your cloud infrastructure using Docker, Kubernetes, or serverless pipelines. DNS, SSL certificates, CDN configuration, and load balancing are all handled for you.",
+        "tags": ["ZERO DOWNTIME", "CLOUD INFRA", "SSL & CDN"]
+      },
+      "phase6": {
+        "title": "Post-Launch Support",
+        "duration": "Ongoing",
+        "desc": "After go-live, our team remains on standby for 30 days at no extra cost. We monitor uptime, fix bugs within 24 hours, and provide detailed analytics reports so you can make informed product decisions from day one.",
+        "tags": ["24H BUG FIX", "MONITORING", "ANALYTICS"]
+      }
+    },
+    "cta": {
+      "text": "Ready to start your project?",
+      "button": "Begin Phase 01 →"
+    }
+  },
+  "testimonials": {
+    "badge": "SOCIAL PROOF",
+    "title": "Trusted by Ambitious Organizations",
+    "subtitle": "From school systems to fintech platforms — here's what our clients say about working with NovaCore.",
+    "note": "* Client names have been changed for privacy. Real references available upon request.",
+    "clients": {
+      "row1": {
+        "item1": {
+          "quote": "NovaCore completely transformed how our school operates. The unified portal they built handles 1,200 students, fee payments via Mobile Money, and automated report cards. Our admin workload dropped by 60%.",
+          "name": "Dr. Sarah Nakamura",
+          "title": "Head of Administration",
+          "company": "Kampala International Academy",
+          "badge": "EDUCATION"
+        },
+        "item2": {
+          "quote": "The financial dashboard they delivered gives our CFO real-time visibility into every transaction across all 4 branches. The GraphQL API performance is exceptional — sub-200ms on every query.",
+          "name": "Michael Okonkwo",
+          "title": "CTO",
+          "company": "AfriBank Holdings",
+          "badge": "FINTECH"
+        },
+        "item3": {
+          "quote": "We needed a mobile app that worked flawlessly on low-end Android devices with poor network. NovaCore's offline-first architecture was exactly what our field agents needed. 4.8 stars on the Play Store.",
+          "name": "Amina Hassan",
+          "title": "Product Director",
+          "company": "FieldForce Uganda",
+          "badge": "MOBILE APP"
+        },
+        "item4": {
+          "quote": "Their cybersecurity audit uncovered 3 critical vulnerabilities in our existing system that we had no idea about. The zero-trust architecture they implemented has given our board complete confidence.",
+          "name": "James Mwangi",
+          "title": "IT Security Manager",
+          "company": "SecureGov Rwanda",
+          "badge": "CYBERSECURITY"
+        },
+        "item5": {
+          "quote": "From discovery to deployment in 8 weeks. NovaCore delivered our e-commerce platform on time, under budget, and with features we didn't even ask for but absolutely needed. Truly a world-class team.",
+          "name": "Grace Achieng",
+          "title": "CEO & Founder",
+          "company": "MarketPlace Kenya",
+          "badge": "E-COMMERCE"
+        }
+      },
+      "row2": {
+        "item1": {
+          "quote": "The school management system NovaCore built for us handles fee collection, attendance tracking, and parent communication all in one place. Parents love the transparency. We renewed our contract for year two immediately.",
+          "name": "Prof. Emmanuel Ssali",
+          "title": "Director",
+          "company": "Makerere Technical Institute",
+          "badge": "EDUCATION"
+        },
+        "item2": {
+          "quote": "We were skeptical about a local agency handling our enterprise ERP integration. NovaCore proved us completely wrong. Their Node.js microservices architecture handles 50,000 daily transactions without breaking a sweat.",
+          "name": "Fatima Al-Rashid",
+          "title": "Operations Director",
+          "company": "LogiChain Africa",
+          "badge": "ENTERPRISE"
+        },
+        "item3": {
+          "quote": "The React Native app they built for our hospital works on every device our nurses carry, even offline in the wards. Patient data sync happens automatically when connectivity returns. Absolutely critical for our operations.",
+          "name": "Dr. Peter Kimani",
+          "title": "Chief Medical Officer",
+          "company": "HealthNet Tanzania",
+          "badge": "HEALTHCARE"
+        },
+        "item4": {
+          "quote": "NovaCore's attention to security is unmatched. They implemented AES-256 encryption, OAuth2 SSO, and passed our third-party penetration test on the first attempt. That's rare in this market.",
+          "name": "Sandra Uwimana",
+          "title": "CISO",
+          "company": "DataVault Rwanda",
+          "badge": "CYBERSECURITY"
+        },
+        "item5": {
+          "quote": "The interactive analytics dashboard they built gives our executive team live KPIs from 6 data sources simultaneously. Decision-making that used to take days now happens in real time. ROI was immediate.",
+          "name": "Benjamin Otieno",
+          "title": "Head of Strategy",
+          "company": "GrowthMetrics EA",
+          "badge": "ANALYTICS"
+        }
+      }
+    }
+  },
+  "techStack": {
+    "badge": "OUR ARSENAL",
+    "title": "Built With World-Class Technology",
+    "subtitle": "We use only proven, reliable tools to engineer your digital infrastructure.",
+    "rows": {
+      "frontend": "— Frontend & Mobile",
+      "backend": "— Backend & Databases",
+      "devops": "— DevOps & Tools"
+    },
+    "stats": {
+      "technologies": "Technologies Mastered",
+      "experience": "Years Combined Experience",
+      "uptime": "Average Uptime Delivered",
+      "projects": "Projects Shipped"
+    },
+    "cta": {
+      "text": "Don't see a technology you need?",
+      "subtext": "We evaluate and adopt new technologies based on project requirements.",
+      "button": "Discuss Your Tech Requirements →"
+    },
+    "tags": {
+      "frontend": "FRONTEND",
+      "backend": "BACKEND",
+      "mobile": "MOBILE",
+      "database": "DATABASE",
+      "devops": "DEVOPS",
+      "cloud": "CLOUD",
+      "api": "API",
+      "language": "LANGUAGE",
+      "styling": "STYLING",
+      "animation": "ANIMATION",
+      "state": "STATE",
+      "orm": "ORM",
+      "cdn": "CDN",
+      "hosting": "HOSTING",
+      "baas": "BAAS",
+      "server": "SERVER",
+      "vcs": "VCS"
+    }
+  },
+  "faq": {
+    "badge": "COMMON QUESTIONS",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know before starting your project with NovaCore.",
+    "search": "Search questions...",
+    "noResults": "No results found for",
+    "categories": {
+      "general": "General",
+      "pricing": "Pricing & Budgets",
+"technical": "Technical",
+      "timeline": "Timeline & Process",
+      "legal": "Legal & Security"
+    },
+    "cta": {
+      "text": "Still have questions?",
+      "button": "Talk to Our Team →"
+    },
+    "questions": {
+      "general": {
+        "q1": {
+          "q": "Do you work with clients outside Uganda?",
+          "a": "Absolutely. NovaCore Technology works with clients across East Africa and internationally. We collaborate fully remotely using tools like Slack, Notion, Figma, and GitHub. Timezone differences have never been a blocker for us — we adapt to your schedule."
+        },
+        "q2": {
+          "q": "What industries do you specialize in?",
+          "a": "We have deep expertise in Education (school management systems), Fintech (dashboards and payment platforms), Healthcare (patient management apps), Government & NGOs, and E-commerce. However, our engineering approach adapts to any industry that needs scalable digital infrastructure."
+        },
+        "q3": {
+          "q": "How do I get started with NovaCore?",
+          "a": "Simply fill out our contact form or email us directly at novacoretechnology37@gmail.com. We'll schedule a free 30-minute technical discovery call within 24 hours to understand your requirements, timeline, and budget before proposing a solution."
+        },
+        "q4": {
+          "q": "Do you provide post-launch maintenance?",
+          "a": "Yes. Every project includes a 30-day free post-launch support window for bug fixes and minor adjustments. After that, we offer flexible monthly maintenance retainers covering security patches, performance optimization, feature updates, and 24/7 uptime monitoring."
+        },
+        "q5": {
+          "q": "Can I see examples of your previous work?",
+          "a": "Yes — visit our Portfolio page to see detailed case studies of our completed projects including school management systems, fintech dashboards, mobile apps, and enterprise platforms. We can also provide private demos and client references upon request during our discovery call."
+        }
+      },
+      "pricing": {
+        "q1": {
+          "q": "How much does a typical project cost?",
+          "a": "Project costs vary significantly based on complexity, features, and timeline. As a baseline: simple web applications start from $1,200, mobile apps from $2,000, and enterprise systems from $3,500. Use our interactive Project Estimator tool on this website for a personalized baseline range, then contact us for a detailed formal quote."
+        },
+        "q2": {
+          "q": "What payment structure do you use?",
+          "a": "We use a milestone-based payment structure designed to protect both parties: 40% upfront to begin work, 40% at mid-project milestone (after design approval and core development), and 20% upon final delivery and your approval. We accept bank transfers, Mobile Money (MTN & Airtel), and international wire transfers."
+        },
+        "q3": {
+          "q": "Do you offer payment plans for startups?",
+          "a": "Yes. We understand that promising startups often have limited initial capital. We evaluate startup payment plans on a case-by-case basis. In some cases, we also consider equity-for-service arrangements for exceptional early-stage ventures with strong business models. Contact us to discuss."
+        },
+        "q4": {
+          "q": "Are there any hidden costs after delivery?",
+          "a": "No hidden costs — ever. Every proposal includes a fully itemized cost breakdown covering design, development, testing, and deployment. Third-party costs like hosting, domain registration, and SMS gateway fees are always listed separately and transparently in your project proposal."
+        }
+      },
+      "technical": {
+        "q1": {
+          "q": "What tech stack do you use?",
+          "a": "Our core stack includes React and Next.js for web frontends, Node.js and Laravel for backends, PostgreSQL and MySQL for databases, React Native and Flutter for mobile, and AWS for cloud infrastructure. We choose the optimal stack for each project's specific performance and scalability requirements rather than forcing a one-size-fits-all approach."
+        },
+        "q2": {
+          "q": "Will I own the source code after delivery?",
+          "a": "Yes — 100%. Upon final payment, full intellectual property rights and source code ownership transfer completely to you. We provide a clean, documented GitHub repository with complete commit history, README documentation, and deployment guides so your internal team can maintain it independently."
+        },
+        "q3": {
+          "q": "Can you integrate with our existing systems?",
+          "a": "Yes. API integration is one of our core competencies. We have successfully integrated with Mobile Money APIs (MTN, Airtel), banking systems, government databases, SMS gateways, ERP platforms, and various third-party SaaS tools. We conduct a technical audit of your existing systems during the discovery phase."
+        },
+        "q4": {
+          "q": "Do you build for offline use?",
+          "a": "Yes — especially for mobile applications targeting East African markets where network connectivity can be inconsistent. We implement offline-first architecture using local data caching, background sync, and conflict resolution strategies so your app remains fully functional without an internet connection."
+        },
+        "q5": {
+          "q": "What hosting and infrastructure do you recommend?",
+          "a": "For most projects we recommend AWS or DigitalOcean for backend infrastructure, Vercel or Netlify for frontend deployments, and Cloudflare for DNS and DDoS protection. We handle the full server setup, SSL configuration, and CI/CD pipeline during deployment — you don't need any technical knowledge to manage it."
+        }
+      },
+      "timeline": {
+        "q1": {
+          "q": "How long does a typical project take?",
+          "a": "Timelines depend on scope: simple web applications typically take 3-5 weeks, mobile apps 6-10 weeks, and complex enterprise systems 10-16 weeks. We provide a detailed project timeline with milestones in our proposal so you always know exactly where we are in the process."
+        },
+        "q2": {
+          "q": "How do you handle project communication?",
+          "a": "Every client gets a dedicated Slack channel with their lead developer and project manager. We conduct weekly video check-ins, provide access to a live staging environment from week two onwards, and use Notion for shared project documentation. You are never left guessing about progress."
+        },
+        "q3": {
+          "q": "What happens if I want to change requirements mid-project?",
+          "a": "We follow an Agile methodology that accommodates change requests. Minor adjustments within the original scope are handled at no extra cost. Significant scope changes are documented in a formal Change Order with a revised timeline and cost estimate — always approved by you before implementation."
+        },
+        "q4": {
+          "q": "Do you work on existing codebases or only new projects?",
+          "a": "Both. We frequently take over legacy codebases for modernization, performance optimization, and security hardening. We conduct a full technical audit first to assess code quality, security vulnerabilities, and architectural limitations before proposing a remediation roadmap."
+        }
+      },
+      "legal": {
+        "q1": {
+          "q": "Do you sign NDAs?",
+          "a": "Absolutely. We sign Non-Disclosure Agreements as standard practice before any sensitive business information is shared during the discovery phase. We treat all client data, business logic, and system architecture details with strict confidentiality — always."
+        },
+        "q2": {
+          "q": "How do you handle our users' data and privacy compliance?",
+          "a": "We engineer with data privacy as a core principle, not an afterthought. All systems are built with secure data handling practices, AES-256 encryption for sensitive data at rest, TLS 1.3 for data in transit, and strict role-based access controls to ensure only authorized personnel can access sensitive information."
+        },
+        "q3": {
+          "q": "What happens to our data if we end the relationship with NovaCore?",
+          "a": "You retain 100% ownership of all your data at all times. Upon project completion or contract termination, we provide a complete data export in standard formats, remove all client data from our systems within 30 days, and deliver full documentation so you can migrate to any other provider or internal team without friction."
+        }
+      }
+    }
+  },
+
+  "estimate": {
+    "badge": "PROJECT ESTIMATOR",
+    "title": "Estimate Your Project",
+    "subtitle": "Select your requirements and get an instant baseline estimate.",
+    "step1": {
+      "title": "Select Project Type"
+    },
+    "step2": {
+      "title": "What features do you need?"
+    },
+    "step3": {
+      "title": "What is your deadline?"
+    },
+    "price": {
+      "title": "Estimated Budget Range",
+      "note": "* This is a baseline estimate. Final pricing depends on specific requirements discussed during consultation.",
+      "est": "Est. $"
+    },
+    "cta": "Get a Detailed Quote",
+    "startingAt": "Starting at",
+    "types": {
+      "web": "Web Application",
+      "mobile": "Mobile App",
+      "enterprise": "Enterprise Software",
+      "analytics": "Analytics Dashboard",
+      "cyber": "Cybersecurity Audit"
+    },
+    "features": {
+      "auth": "User Authentication",
+      "payment": "Payment Gateway",
+      "admin": "Admin Dashboard",
+      "mm": "Mobile Money Integration",
+      "sms": "SMS Notifications",
+      "i18n": "Multi-language Support",
+      "api": "API Integration",
+      "realtime": "Real-time Updates",
+      "offline": "Offline Mode",
+      "reports": "Analytics & Reports"
+    },
+    "timelines": {
+      "rush": "Rush (1-2 months)",
+      "standard": "Standard (3-4 months)",
+      "flexible": "Flexible (5+ months)"
+    }
+  },
+  "featuresPage": {
+    "badge1": "Live Demo",
+    "title": "System Demo & Features",
+    "subtitle": "Take a closer look at our flagship school management dashboard and experience the power of Novacore systems firsthand.",
+    "badge2": "Inside the System",
+    "title2": "Features That Empower Administration",
+    "subtitle2": "Our platform replaces disjointed tools with a unified suite that automates workflows and provides actionable insights.",
+    "list": {
+      "item1": {
+        "title": "Role-Based Access Control",
+        "desc": "Secure boundaries between admins, teachers, and students."
+      },
+      "item2": {
+        "title": "Real-time Analytics",
+        "desc": "Graphical dashboards detailing enrollment, performance, and revenue."
+      },
+      "item3": {
+        "title": "Automated Communications",
+        "desc": "Bulk SMS and email integrations for vital announcements."
+      },
+      "item4": {
+        "title": "Financial Integration",
+        "desc": "Seamless fee tracking, invoicing, and mobile money hookups."
+      }
+    },
+    "stats": {
+      "revenue": "Revenue Growth",
+      "users": "Active Users",
+      "growth": "+14% this month"
+    }
+  },
+  "notfound": {
+    "title": "This Route Isn't in Our Architecture",
+    "subtitle": "The page you're looking for doesn't exist or has been moved to a different endpoint. Let's get you back on the right path.",
+    "terminal": {
+      "scan": "> Scanning route registry...",
+      "error1": "> ERROR: Path not found in router",
+      "check": "> Checking archived endpoints...",
+      "error2": "> ERROR: No match found",
+      "suggest": "> Suggestion: Return to /home"
+    },
+    "cta1": "Return to Base",
+    "cta2": "View Our Services",
+    "hint": "Lost? Try navigating from the menu above or contact us at"
+  },
+  "contact": {
+    "badge": "CONNECT",
+    "title1": "Let's Work",
+    "title2": "Together",
+    "subtitle": "Whether you need a complete enterprise system overhaul or a specialized web application, our team is ready to deliver.",
+    "consultation": {
+      "title": "Technical Consultation",
+      "subtitle": "Reach out to us directly or fill out the form, and a technical coordinator will get back to you within 24 hours."
+    },
+    "info": {
+      "email": {
+        "title": "Email Us",
+        "value": "novacoretechnology37@gmail.com",
+        "note": "Responses within 24h"
+      },
+      "phone": {
+        "title": "Call Us",
+        "supportLabel": "SUPPORT AVAILABILITY",
+        "note": "Mon-Fri, 8am-6pm EAT"
+      },
+      "location": {
+        "title": "Visit Us",
+        "value": "Kampala, Uganda",
+        "note": "East Africa"
+      }
+    },
+    "form": {
+      "title": "Send a Message",
+      "fullName": "FULL NAME",
+      "fullNamePlaceholder": "John Doe",
+      "email": "EMAIL ADDRESS",
+      "emailPlaceholder": "john@company.com",
+      "projectType": "PROJECT TYPE",
+      "projectTypePlaceholder": "e.g. Mobile App, School System, Web Platform...",
+      "projectDetails": "PROJECT DETAILS",
+      "submit": "Submit Inquiry",
+      "sending": "Sending...",
+      "success": "✓ Your message was sent successfully! We'll get back to you within 24 hours.",
+      "error": "✗ Something went wrong. Please try again or refresh the page.",
+      "required": "This field is required"
+    }
+  },
+  "footer": {
+    "description": "Building scalable, secure, and modern digital solutions for institutions and businesses across Africa and beyond.",
+    "cta": {
+      "text": "Ready to start a project?",
+      "link": "Let's Talk →"
+    },
+    "quickLinks": "QUICK LINKS",
+    "services": "SERVICES",
+    "contact": "CONTACT",
+    "copyright": "© 2026 Novacoretechnology. All rights reserved.",
+    "tagline": "Built with precision · Powered by innovation",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
+    "ssl": "SSL Secured",
+    "dataProtected": "Data Protected"
+  },
+  "notFound": {
+    "badge": "ERROR_CODE: 404 | ROUTE_NOT_FOUND",
+    "title": "404",
+    "heading": "This Route Isn't in Our Architecture",
+    "subtext": "The page you're looking for doesn't exist or has been moved to a different endpoint. Let's get you back on the right path.",
+    "terminal": {
+      "line1": "> Scanning route registry...",
+      "line2": "> ERROR: Path not found in router",
+      "line3": "> Checking archived endpoints...",
+      "line4": "> ERROR: No match found",
+      "line5": "> Suggestion: Return to /home"
+    },
+    "buttons": {
+      "home": "Return to Base →",
+      "services": "View Our Services"
+    },
+    "hint": "Lost? Try navigating from the menu above or contact us at"
+  },
+  "loader": {
+    "tagline": "Built with precision · Powered by innovation"
+  }
+}
