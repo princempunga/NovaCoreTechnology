@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { 
-  FiGithub, FiLinkedin, FiTwitter, FiMail, FiPhone, FiMapPin 
+  FiGithub, FiLinkedin, FiMail, FiPhone, FiMapPin 
 } from 'react-icons/fi'
+import { FaXTwitter } from 'react-icons/fa6'
+import { SiIndeed } from 'react-icons/si'
 import { HiLockClosed, HiCheckCircle } from 'react-icons/hi'
 import { useTranslation } from 'react-i18next'
 
@@ -49,8 +51,9 @@ export default function Footer() {
             <div className="flex items-center gap-4">
               {[
                 { icon: <FiGithub />, label: 'GitHub', href: 'https://github.com/princempunga' },
-                { icon: <FiLinkedin />, label: 'LinkedIn', href: '#' },
-                { icon: <FiTwitter />, label: 'Twitter', href: '#' },
+                { icon: <FiLinkedin />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/princempunga' },
+                { icon: <FaXTwitter />, label: 'X', href: 'https://x.com/princempunga' },
+                { icon: <SiIndeed />, label: 'Indeed', href: 'https://www.indeed.com/me/princempunga' },
               ].map((social, i) => (
                 <a
                   key={i}
