@@ -38,17 +38,17 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-[1200] px-6 md:px-24 py-4 transition-all duration-300 ${scrolled ? 'bg-[#0d0f14db] backdrop-blur-xl border-b border-white/10 shadow-lg py-3' : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-[1200] px-4 sm:px-6 md:px-24 py-4 transition-all duration-300 ${scrolled ? 'bg-[#0d0f14db] backdrop-blur-xl border-b border-white/10 shadow-lg py-3' : 'bg-transparent'
           }`}
       >
-        <div className="max-w-[1280px] mx-auto flex justify-between items-center gap-8">
+        <div className="max-w-[1280px] mx-auto flex justify-between items-center gap-2 sm:gap-8">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0" onClick={() => setMenuOpen(false)}>
             <div className="w-[42px] h-[42px] rounded-[10px] overflow-hidden shadow-[0_0_15px_rgba(0,242,254,0.4)] border border-[#00f2fe]/20">
               <img src="/logo.png" alt="NovaCore Logo" className="w-full h-full object-cover" />
             </div>
-            <span className="font-heading text-[1.1rem] font-bold text-white tracking-tight">
-              NovaCore<span className="text-[#00f2fe]">Technology</span>
+            <span className="font-heading text-[1rem] sm:text-[1.1rem] font-bold text-white tracking-tight">
+              NovaCore<span className="hidden min-[400px]:inline text-[#00f2fe]">Technology</span>
             </span>
           </Link>
 
@@ -70,13 +70,13 @@ export default function Navbar() {
           </nav>
 
           {/* Controls */}
-          <div className="flex items-center gap-4 ml-auto lg:ml-0">
+          <div className="flex items-center gap-2 sm:gap-4 ml-auto lg:ml-0">
             <button
               onClick={toggleLanguage}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 text-slate-300 font-display text-xs font-semibold hover:bg-white/5 transition-colors"
+              className="flex items-center gap-1.5 px-2 py-1 sm:px-3 sm:py-1.5 rounded-full border border-white/10 text-slate-300 font-display text-[10px] sm:text-xs font-semibold hover:bg-white/5 transition-colors"
               aria-label="Toggle language"
             >
-              <FiGlobe /> {i18n.language.startsWith('fr') ? 'EN' : 'FR'}
+              <FiGlobe className="text-sm sm:text-base" /> {i18n.language.startsWith('fr') ? 'EN' : 'FR'}
             </button>
 
             {/* Hidden on mobile header, shown in hamburger menu */}
