@@ -26,14 +26,14 @@ const TEAM_MEMBERS = [
     id: 2,
     name: 'Jacob Kitambala',
     transKey: 'cto',
-    image: '/team/founder2.png',
+    image: '/team/founder2.jpeg',
     accent: '#ff6b35',
   },
   {
     id: 3,
     name: 'Joseph Tshimpanga',
     transKey: 'design',
-    image: '/team/founder1.png',
+    image: '/team/founder1.jpeg',
     accent: '#00ffff',
   },
 ]
