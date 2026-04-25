@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { FiPlay, FiPause, FiCheckCircle } from 'react-icons/fi'
 import { useTranslation } from 'react-i18next'
-import DemoVideo from '../assets/NovaCoreTechnology.mp4'
+import DemoVideo from '../assets/NovacoreTechnology1.mp4'
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 30 },
