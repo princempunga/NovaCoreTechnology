@@ -125,9 +125,17 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <FiPhone className="text-[#ff6a00] mt-1 shrink-0" />
-                <a href="tel:+256784630448" className="text-slate-400 text-sm hover:text-[#ff6b35] transition-all duration-200">
-                  +256 784630448
-                </a>
+                <div className="flex flex-col gap-2">
+                  <a href="tel:+256784630448" className="text-slate-400 text-sm hover:text-[#ff6b35] transition-all duration-200">
+                    +256 784630448
+                  </a>
+                  <a href="tel:+256775267911" className="text-slate-400 text-sm hover:text-[#ff6b35] transition-all duration-200">
+                    +256 775267911
+                  </a>
+                  <a href="tel:+256705507066" className="text-slate-400 text-sm hover:text-[#ff6b35] transition-all duration-200">
+                    +256 705507066
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <FiMapPin className="text-[#00f2fe] mt-1 shrink-0" />

@@ -34,7 +34,11 @@ export default function Contact() {
       icon: <FiPhone size={22} />,
       title: t('contact.info.phone.title'),
       info: '+256 784630448',
-      href: 'tel:+256784630448',
+      phones: [
+        { label: '+256 784630448', link: 'tel:+256784630448' },
+        { label: '+256 775267911', link: 'tel:+256775267911' },
+        { label: '+256 705507066', link: 'tel:+256705507066' },
+      ],
       accent: '#ff6a00',
       sub: t('contact.info.phone.note'),
     },
@@ -184,7 +188,15 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-white font-heading font-bold mb-0.5">{method.title}</h4>
-                    {method.href ? (
+                    {method.phones ? (
+                      <div className="flex flex-col gap-1">
+                        {method.phones.map((p, idx) => (
+                          <a key={idx} href={p.link} className="text-slate-400 hover:text-[#00f2fe] transition-colors text-sm w-fit">
+                            {p.label}
+                          </a>
+                        ))}
+                      </div>
+                    ) : method.href ? (
                       <a href={method.href} className="text-slate-400 hover:text-[#00f2fe] transition-colors text-sm">{method.info}</a>
                     ) : (
                       <span className="text-slate-400 text-sm">{method.info}</span>
