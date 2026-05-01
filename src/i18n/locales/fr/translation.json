@@ -731,9 +731,9 @@
     "form": {
       "title": "Envoyer un Message",
       "fullName": "NOM COMPLET",
-      "fullNamePlaceholder": "Jean Dupont",
+      "fullNamePlaceholder": "Écrivez votre nom",
       "email": "ADRESSE EMAIL",
-      "emailPlaceholder": "jean@entreprise.com",
+      "emailPlaceholder": "Écrivez votre e-mail",
       "projectType": "TYPE DE PROJET",
       "projectTypePlaceholder": "ex. Application Mobile, Système Scolaire, Plateforme Web...",
       "projectDetails": "DÉTAILS DU PROJET",

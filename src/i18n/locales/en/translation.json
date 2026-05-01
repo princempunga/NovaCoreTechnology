@@ -732,9 +732,9 @@
     "form": {
       "title": "Send a Message",
       "fullName": "FULL NAME",
-      "fullNamePlaceholder": "John Doe",
+      "fullNamePlaceholder": "Write your name",
       "email": "EMAIL ADDRESS",
-      "emailPlaceholder": "john@company.com",
+      "emailPlaceholder": "Write your email",
       "projectType": "PROJECT TYPE",
       "projectTypePlaceholder": "e.g. Mobile App, School System, Web Platform...",
       "projectDetails": "PROJECT DETAILS",
