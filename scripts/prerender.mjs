@@ -28,7 +28,7 @@ const PRODUCTION_URL = 'https://novacoretechnology.it.com'
 const LOCAL_ORIGIN = `http://localhost:${PORT}`
 
 // Every route the app serves, plus the dynamic portfolio case-study slugs.
-const CASE_STUDY_SLUGS = ['mayele-booking', 'proconnect', 'iuea', 'ngt']
+const CASE_STUDY_SLUGS = ['mayele-booking', 'proconnect', 'penepene', 'ngt']
 const ROUTES = [
   '/',
   '/about',

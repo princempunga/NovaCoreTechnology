@@ -192,7 +192,6 @@
       "all": "ALL",
       "web": "WEB PLATFORMS",
       "marketplace": "MARKETPLACES",
-      "institutional": "INSTITUTIONAL SYSTEMS",
       "brand": "BRAND & WEB DESIGN"
     },
     "projects": {
@@ -209,9 +208,9 @@
         "caseStudy": "View Case Study"
       },
       "item3": {
-        "slug": "iuea",
-        "title": "IUEA University Platform",
-        "desc": "A bilingual university website for IUEA with a role-based admin dashboard and an integrated e-commerce shop.",
+        "slug": "penepene",
+        "title": "PenePene",
+        "desc": "A multi-vendor local marketplace connecting buyers with verified sellers across several African cities, supporting French, English, Lingala, and Kiswahili.",
         "caseStudy": "View Case Study"
       },
       "item4": {
@@ -260,23 +259,28 @@
           "Production security hardening (IDOR, brute-force protection, CV access control)"
         ]
       },
-      "iuea": {
-        "title": "IUEA University Platform",
-        "category": "Higher Education",
-        "description": "A full bilingual website and content platform for the International University of East Africa (IUEA), pairing a Next.js frontend with a Laravel API backend.",
+      "penepene": {
+        "title": "PenePene",
+        "category": "Local Marketplace",
+        "description": "A multi-vendor marketplace platform — tagline \"Tout proche.\" (Right nearby) — connecting buyers with verified local sellers across several cities in Africa.",
         "challenge": {
           "title": "The Challenge",
-          "content": "IUEA needed a single platform that could serve content in two languages, give staff a proper admin dashboard to manage it, and support an on-site shop — rather than juggling separate tools for each."
+          "content": "Buyers looking for everyday goods — electronics, vehicles, shoes, and clothing — across DRC cities had no trusted, structured place to find verified local sellers, negotiate directly, and arrange delivery, and sellers had no simple way to list products and reach nearby buyers."
         },
         "solution": {
           "title": "The Architecture",
-          "content": "We paired a Next.js and Tailwind CSS frontend (with Framer Motion for interaction) with a Laravel 11 API backend authenticated via Sanctum. The build includes a role-based admin dashboard, a full bilingual content system, and an integrated e-commerce shop, all on one codebase."
+          "content": "We built a Laravel and Tailwind CSS marketplace where buyers browse listings by category, then message sellers directly through an in-app chat to negotiate before ordering and arranging delivery. The platform ships in French, English, Lingala, and Kiswahili, with delivery defaulting to Kinshasa and support for over 20 cities."
         },
+        "impact": [
+          { "label": "Active listings", "value": "25K+" },
+          { "label": "Verified sellers", "value": "2.5K+" },
+          { "label": "Cities covered", "value": "20+" }
+        ],
         "features": [
-          "Role-based admin dashboard",
-          "Full bilingual (EN/FR) content system",
-          "Integrated e-commerce shop",
-          "Sanctum-authenticated Laravel API backend"
+          "In-app buyer-to-seller chat and negotiation",
+          "Verified seller listings across 20+ cities",
+          "Categories spanning electronics, vehicles, shoes, and apparel",
+          "Interface in French, English, Lingala, and Kiswahili"
         ]
       },
       "ngt": {

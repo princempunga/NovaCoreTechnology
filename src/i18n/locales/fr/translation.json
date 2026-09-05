@@ -192,7 +192,6 @@
       "all": "TOUS",
       "web": "PLATEFORMES WEB",
       "marketplace": "MARKETPLACES",
-      "institutional": "SYSTÈMES INSTITUTIONNELS",
       "brand": "MARQUE & WEB DESIGN"
     },
     "projects": {
@@ -209,9 +208,9 @@
         "caseStudy": "Voir l'Étude de Cas"
       },
       "item3": {
-        "slug": "iuea",
-        "title": "Plateforme Universitaire IUEA",
-        "desc": "Un site universitaire bilingue pour l'IUEA avec un tableau de bord admin basé sur les rôles et une boutique e-commerce intégrée.",
+        "slug": "penepene",
+        "title": "PenePene",
+        "desc": "Une marketplace multi-vendeurs locale connectant des acheteurs à des vendeurs locaux vérifiés dans plusieurs villes d'Afrique, disponible en français, anglais, lingala et kiswahili.",
         "caseStudy": "Voir l'Étude de Cas"
       },
       "item4": {
@@ -260,23 +259,28 @@
           "Durcissement sécurité en production (IDOR, anti brute-force, contrôle d'accès aux CV)"
         ]
       },
-      "iuea": {
-        "title": "Plateforme Universitaire IUEA",
-        "category": "Enseignement Supérieur",
-        "description": "Un site web et une plateforme de contenu bilingue complète pour l'International University of East Africa (IUEA), associant un frontend Next.js à un backend API Laravel.",
+      "penepene": {
+        "title": "PenePene",
+        "category": "Marketplace Locale",
+        "description": "Une plateforme marketplace multi-vendeurs — slogan « Tout proche. » — connectant des acheteurs à des vendeurs locaux vérifiés dans plusieurs villes d'Afrique.",
         "challenge": {
           "title": "Le Défi",
-          "content": "L'IUEA avait besoin d'une plateforme unique capable de diffuser du contenu en deux langues, de donner au personnel un vrai tableau de bord admin pour le gérer, et de supporter une boutique intégrée — plutôt que de jongler avec des outils séparés pour chaque besoin."
+          "content": "Les acheteurs à la recherche de produits du quotidien — électronique, véhicules, chaussures et habillement — dans les villes de la RDC n'avaient aucun espace structuré et de confiance pour trouver des vendeurs locaux vérifiés, négocier directement et organiser la livraison, et les vendeurs n'avaient aucun moyen simple de publier leurs produits et de toucher les acheteurs à proximité."
         },
         "solution": {
           "title": "L'Architecture",
-          "content": "Nous avons associé un frontend Next.js et Tailwind CSS (avec Framer Motion pour les interactions) à un backend API Laravel 11 authentifié via Sanctum. Le projet inclut un tableau de bord admin basé sur les rôles, un système de contenu bilingue complet, et une boutique e-commerce intégrée, le tout sur une seule base de code."
+          "content": "Nous avons construit une marketplace Laravel et Tailwind CSS où les acheteurs parcourent les annonces par catégorie, puis contactent directement les vendeurs via un chat intégré pour négocier avant de commander et d'organiser la livraison. La plateforme est disponible en français, anglais, lingala et kiswahili, avec une livraison réglée par défaut sur Kinshasa et une couverture de plus de 20 villes."
         },
+        "impact": [
+          { "label": "Annonces actives", "value": "25K+" },
+          { "label": "Vendeurs vérifiés", "value": "2,5K+" },
+          { "label": "Villes couvertes", "value": "20+" }
+        ],
         "features": [
-          "Tableau de bord admin basé sur les rôles",
-          "Système de contenu bilingue complet (EN/FR)",
-          "Boutique e-commerce intégrée",
-          "Backend API Laravel authentifié via Sanctum"
+          "Chat intégré acheteur-vendeur pour la négociation",
+          "Vendeurs vérifiés dans plus de 20 villes",
+          "Catégories couvrant électronique, véhicules, chaussures et habillement",
+          "Interface en français, anglais, lingala et kiswahili"
         ]
       },
       "ngt": {

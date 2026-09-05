@@ -13,7 +13,6 @@ export default function Portfolio() {
     { key: 'all', label: t('portfolio.filters.all') },
     { key: 'web', label: t('portfolio.filters.web') },
     { key: 'marketplace', label: t('portfolio.filters.marketplace') },
-    { key: 'institutional', label: t('portfolio.filters.institutional') },
     { key: 'brand', label: t('portfolio.filters.brand') },
   ]
 
@@ -40,12 +39,12 @@ export default function Portfolio() {
     },
     {
       id: 3,
-      slug: 'iuea',
+      slug: 'penepene',
       transKey: 'item3',
-      category: 'Institutional Platform',
-      categoryKey: 'institutional',
-      tags: ['Next.js', 'Laravel', 'Tailwind CSS', 'MySQL'],
-      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000&auto=format&fit=crop',
+      category: 'Local Marketplace',
+      categoryKey: 'marketplace',
+      tags: ['Laravel', 'Tailwind CSS', 'MySQL', 'In-App Chat'],
+      image: 'https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1000&auto=format&fit=crop',
       accent: '#00f2fe',
     },
     {
