@@ -4,7 +4,6 @@
     "about": "About",
     "services": "Services",
     "portfolio": "Portfolio",
-    "estimate": "Estimate",
     "demo": "Demo",
     "contact": "Contact",
     "startProject": "Start a Project"
@@ -27,10 +26,6 @@
     "portfolio": {
       "title": "Digital Portfolio & Proof of Work",
       "description": "A curated collection of mission-critical systems engineered by NovaCore Technology for leading institutions across Africa and beyond."
-    },
-    "estimate": {
-      "title": "Project Estimation & ROI Calculator",
-      "description": "Get a precise technical and financial estimate for your next digital engineering project with NovaCore Technology."
     },
     "contact": {
       "title": "Connect with Our Architects",
@@ -613,51 +608,6 @@
     }
   },
 
-  "estimate": {
-    "badge": "PROJECT ESTIMATOR",
-    "title": "Estimate Your Project",
-    "subtitle": "Select your requirements and get an instant baseline estimate.",
-    "step1": {
-      "title": "Select Project Type"
-    },
-    "step2": {
-      "title": "What features do you need?"
-    },
-    "step3": {
-      "title": "What is your deadline?"
-    },
-    "price": {
-      "title": "Estimated Budget Range",
-      "note": "* This is a baseline estimate. Final pricing depends on specific requirements discussed during consultation.",
-      "est": "Est. $"
-    },
-    "cta": "Get a Detailed Quote",
-    "startingAt": "Starting at",
-    "types": {
-      "web": "Web Application",
-      "mobile": "Mobile App",
-      "enterprise": "Enterprise Software",
-      "analytics": "Analytics Dashboard",
-      "cyber": "Cybersecurity Audit"
-    },
-    "features": {
-      "auth": "User Authentication",
-      "payment": "Payment Gateway",
-      "admin": "Admin Dashboard",
-      "mm": "Mobile Money Integration",
-      "sms": "SMS Notifications",
-      "i18n": "Multi-language Support",
-      "api": "API Integration",
-      "realtime": "Real-time Updates",
-      "offline": "Offline Mode",
-      "reports": "Analytics & Reports"
-    },
-    "timelines": {
-      "rush": "Rush (1-2 months)",
-      "standard": "Standard (3-4 months)",
-      "flexible": "Flexible (5+ months)"
-    }
-  },
   "featuresPage": {
     "badge1": "Live Demo",
     "title": "System Demo & Features",

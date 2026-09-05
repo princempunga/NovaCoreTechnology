@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FiArrowRight, FiCode, FiLayout, FiDatabase, FiShield, FiCheckCircle, FiZap } from 'react-icons/fi'
+import { FiArrowRight, FiCode, FiLayout, FiDatabase, FiShield, FiZap } from 'react-icons/fi'
 import { FaReact, FaNodeJs, FaAws, FaDocker, FaPython, FaVuejs, FaSwift } from 'react-icons/fa'
 import { SiPostgresql, SiGraphql, SiGo, SiFlutter, SiTailwindcss } from 'react-icons/si'
 import { useTranslation } from 'react-i18next'
@@ -39,12 +39,6 @@ const FEATURE_CARDS = [
   { icon: <FiLayout size={28} />, titleKey: 'services.service03.title', descKey: 'services.service03.challenge.text', accent: '#ff6a00', glow: 'rgba(255,106,0,0.15)' },
   { icon: <FiDatabase size={28} />, titleKey: 'services.service05.title', descKey: 'services.service05.challenge.text', accent: '#00f2fe', glow: 'rgba(0,242,254,0.15)' },
   { icon: <FiShield size={28} />, titleKey: 'services.service04.title', descKey: 'services.service04.challenge.text', accent: '#ff6a00', glow: 'rgba(255,106,0,0.15)' },
-]
-
-const PROCESS_STEPS = [
-  { num: '01', titleKey: 'howWeWork.phases.phase01.title', descKey: 'howWeWork.phases.phase01.description', accent: '#00f2fe' },
-  { num: '02', titleKey: 'howWeWork.phases.phase03.title', descKey: 'howWeWork.phases.phase03.description', accent: '#ff6a00' },
-  { num: '03', titleKey: 'howWeWork.phases.phase05.title', descKey: 'howWeWork.phases.phase05.description', accent: '#00f2fe' },
 ]
 
 export default function Home() {
@@ -144,7 +138,7 @@ export default function Home() {
               {[
                 { val: '10+', label: t('techStack.stats.projects'), color: '#ff6a00' },
                 { val: '99%', label: t('techStack.stats.uptime'), color: '#00f2fe' },
-                { val: '24/7', label: t('contact.info.supportLabel'), color: '#ffffff' },
+                { val: '24/7', label: t('contact.info.phone.supportLabel'), color: '#ffffff' },
               ].map((s, i) => (
                 <div key={i} className="flex-1 flex flex-col items-center py-6 bg-[#0d0f14] border-r border-white/5 last:border-r-0 hover:bg-[#161922] transition-colors">
                   <span className="text-3xl font-heading font-bold leading-none mb-2" style={{ color: s.color }}>
@@ -343,83 +337,6 @@ export default function Home() {
 
       {/* ── TECH STACK ── */}
       <TechStack />
-
-      {/* ── PROCESS / METHODOLOGY ── */}
-      <section className="py-24 md:py-32 bg-[#0a0c10] relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none opacity-[0.02]"
-          style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }}
-        />
-        <div className="max-w-[1280px] mx-auto px-6 sm:px-12 md:px-24 relative">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <motion.div
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00f2fe1a] border border-[#00f2fe33] text-[#00f2fe] font-display text-xs font-bold tracking-widest uppercase mb-8">
-                {t('howWeWork.badge')}
-              </div>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">{t('howWeWork.title')}</h2>
-              <p className="text-lg text-slate-400 mb-12">{t('howWeWork.subtitle')}</p>
-
-              <div className="flex flex-col gap-0">
-                {PROCESS_STEPS.map((step, i) => (
-                  <motion.div
-                    key={i}
-                    className="relative flex gap-6 pb-10 last:pb-0 group"
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  >
-                    {/* Timeline line */}
-                    {i < PROCESS_STEPS.length - 1 && (
-                      <div className="absolute left-[1.6rem] top-14 bottom-0 w-[1px] bg-gradient-to-b from-white/10 to-transparent" />
-                    )}
-                    {/* Step number bubble */}
-                    <div
-                      className="shrink-0 w-[3.2rem] h-[3.2rem] rounded-full flex items-center justify-center font-heading font-bold text-sm border-2 transition-all duration-300 group-hover:scale-110"
-                      style={{ borderColor: step.accent, color: step.accent, background: `${step.accent}10` }}
-                    >
-                      {step.num}
-                    </div>
-                    <div className="pt-2">
-                      <h4 className="text-xl font-heading font-bold text-white mb-2 group-hover:text-[#00f2fe] transition-colors">{t(step.titleKey)}</h4>
-                      <p className="text-sm text-slate-500 leading-relaxed">{t(step.descKey)}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="relative rounded-[2.5rem] overflow-hidden aspect-square p-[1.5px]"
-              style={{ background: 'linear-gradient(135deg, rgba(0,242,254,0.3), rgba(255,106,0,0.3))' }}
-              initial={{ opacity: 0, x: 60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <img
-                src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1000&auto=format&fit=crop"
-                alt="Software Engineering"
-                className="w-full h-full object-cover rounded-[calc(2.5rem-1.5px)]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#050507]/20 to-[#050507]/40 pointer-events-none rounded-[calc(2.5rem-1.5px)]" />
-              {/* Floating stat chip */}
-              <motion.div
-                className="absolute bottom-8 right-8 px-5 py-3 rounded-2xl bg-[#0d0f14] border border-white/10 flex items-center gap-3"
-                animate={{ y: [0, -4, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <FiCheckCircle size={18} color="#00f2fe" />
-                <div>
-                  <p className="text-white font-heading font-bold text-sm">Production Ready</p>
-                  <p className="text-slate-400 text-xs">Secure by Design</p>
-                </div>
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* ── CTA ── */}
       <section className="py-24 md:py-32">

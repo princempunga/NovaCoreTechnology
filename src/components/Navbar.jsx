@@ -9,7 +9,6 @@ const NAV_KEYS = [
   { to: '/about', key: 'about' },
   { to: '/services', key: 'services' },
   { to: '/portfolio', key: 'portfolio' },
-  { to: '/estimate', key: 'estimate' },
   { to: '/features', key: 'demo' },
   { to: '/contact', key: 'contact' },
 ]

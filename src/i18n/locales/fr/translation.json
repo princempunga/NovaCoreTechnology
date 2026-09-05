@@ -4,7 +4,6 @@
     "about": "À Propos",
     "services": "Services",
     "portfolio": "Portfolio",
-    "estimate": "Estimation",
     "demo": "Démo",
     "contact": "Contact",
     "startProject": "Démarrer un Projet"
@@ -27,10 +26,6 @@
     "portfolio": {
       "title": "Portfolio Numérique & Preuve de Travail",
       "description": "Une collection organisée de systèmes critiques pour la mission, conçus par NovaCore Technology pour des institutions de premier plan en Afrique et au-delà."
-    },
-    "estimate": {
-      "title": "Estimateur de Projet & Calculateur de ROI",
-      "description": "Obtenez une estimation technique et financière précise pour votre prochain projet d'ingénierie numérique avec NovaCore Technology."
     },
     "contact": {
       "title": "Connectez-vous avec nos Architectes",
@@ -610,51 +605,6 @@
           "a": "Vous conservez à tout moment la pleine propriété de toutes vos données. À la fin du projet ou à la résiliation du contrat, nous fournissons une exportation complète des données dans des formats standards, supprimons toutes les données clients de nos systèmes sous 30 jours et livrons une documentation complète afin que vous puissiez migrer vers tout autre fournisseur ou équipe interne sans friction."
         }
       }
-    }
-  },
-  "estimate": {
-    "badge": "ESTIMATEUR DE PROJET",
-    "title": "Estimez Votre Projet",
-    "subtitle": "Sélectionnez vos besoins et obtenez une estimation instantanée.",
-    "step1": {
-      "title": "Sélectionnez le Type de Projet"
-    },
-    "step2": {
-      "title": "De quelles fonctionnalités avez-vous besoin ?"
-    },
-    "step3": {
-      "title": "Quel est votre délai ?"
-    },
-    "price": {
-      "title": "Fourchette de Budget Estimée",
-      "note": "* Il s'agit d'une estimation de base. Le prix final dépend des besoins spécifiques discutés lors de la consultation.",
-      "est": "Est. $"
-    },
-    "cta": "Obtenir un Devis Détaillé →",
-    "startingAt": "À partir de",
-    "types": {
-      "web": "Application Web",
-      "mobile": "Application Mobile",
-      "enterprise": "Logiciel Entreprise",
-      "analytics": "Tableau de Bord Analytique",
-      "cyber": "Audit de Cybersécurité"
-    },
-    "features": {
-      "auth": "Authentification Utilisateur",
-      "payment": "Passerelle de Paiement",
-      "admin": "Tableau de Bord Admin",
-      "mm": "Intégration Mobile Money",
-      "sms": "Notifications SMS",
-      "i18n": "Support Multilingue",
-      "api": "Intégration API",
-      "realtime": "Mises à jour en Temps Réel",
-      "offline": "Mode Hors Ligne",
-      "reports": "Analyses & Rapports"
-    },
-    "timelines": {
-      "rush": "Urgent (1-2 mois)",
-      "standard": "Standard (3-4 mois)",
-      "flexible": "Flexible (5+ mois)"
     }
   },
   "featuresPage": {
