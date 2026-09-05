@@ -190,136 +190,112 @@
     "subtitle": "Une sélection de systèmes d'entreprise et de plateformes numériques que nous avons conçus pour nos clients.",
     "filters": {
       "all": "TOUS",
-      "web": "APPLICATION WEB",
-      "enterprise": "LOGICIEL ENTREPRISE",
-      "mobile": "APPLICATION MOBILE",
-      "architecture": "ARCHITECTURE SYSTÈME"
+      "web": "PLATEFORMES WEB",
+      "marketplace": "MARKETPLACES",
+      "institutional": "SYSTÈMES INSTITUTIONNELS",
+      "brand": "MARQUE & WEB DESIGN"
     },
     "projects": {
       "item1": {
-        "slug": "edusphere",
-        "title": "Portail Admin EduSphere",
-        "desc": "Un système complet de gestion scolaire gérant plus de 50 000 dossiers d'élèves avec notation en temps réel, présence et traitement des frais.",
+        "slug": "mayele-booking",
+        "title": "Mayélé Booking",
+        "desc": "Une plateforme de réservation de salles de fête pour le marché de Kinshasa, avec un tableau de bord admin pour gérer les réservations, les disponibilités et la communication avec les clients.",
         "caseStudy": "Voir l'Étude de Cas"
       },
       "item2": {
-        "slug": "fincore",
-        "title": "Tableau de Bord FinCore",
-        "desc": "Tableau de bord financier interactif haute performance fournissant des analyses approfondies et une surveillance des transactions en temps réel.",
+        "slug": "proconnect",
+        "title": "ProConnect",
+        "desc": "Une marketplace multi-rôles connectant clients, artisans et demandeurs d'emploi à travers la RDC, en production avec paiements Mobile Money et sécurité renforcée.",
         "caseStudy": "Voir l'Étude de Cas"
       },
       "item3": {
-        "slug": "healthlink",
-        "title": "HealthLink Mobile",
-        "desc": "Application de télémédecine multiplateforme facilitant les consultations sécurisées patient-médecin, les ordonnances électroniques et le suivi de santé.",
+        "slug": "iuea",
+        "title": "Plateforme Universitaire IUEA",
+        "desc": "Un site universitaire bilingue pour l'IUEA avec un tableau de bord admin basé sur les rôles et une boutique e-commerce intégrée.",
         "caseStudy": "Voir l'Étude de Cas"
       },
       "item4": {
-        "slug": "ecologistics",
-        "title": "Plateforme EcoLogistics",
-        "desc": "Traqueur de chaîne d'approvisionnement intégré IoT pour l'optimisation de la logistique écologique, réduisant l'empreinte carbone grâce à une planification intelligente.",
+        "slug": "ngt",
+        "title": "New Generation Translator",
+        "desc": "Une identité de marque et un site vitrine animé pour un service de traduction de documents basé à Kinshasa, aidant les étudiants congolais à candidater à l'étranger.",
         "caseStudy": "Voir l'Étude de Cas"
       }
     },
     "caseStudies": {
-      "edusphere": {
-        "title": "Portail Admin EduSphere",
-        "category": "Écosystème Éducatif",
-        "year": "2024",
-        "description": "Une plateforme complète de gestion académique basée sur le cloud, conçue pour remplacer les processus manuels décousus par une épine dorsale numérique unifiée pour les institutions de grande envergure.",
+      "mayele-booking": {
+        "title": "Mayélé Booking",
+        "category": "Événementiel & Hôtellerie",
+        "description": "Une plateforme de réservation conçue pour les propriétaires de salles de fête à Kinshasa, pour gérer réservations, disponibilités et communication client depuis un seul tableau de bord.",
         "challenge": {
           "title": "Le Défi",
-          "content": "L'institution luttait contre d'énormes silos de données. L'inscription des étudiants, le paiement des frais et les notes étaient tous gérés dans des registres physiques distincts et des feuilles de calcul déconnectées. Cela entraînait une charge administrative élevée, de fréquentes erreurs de saisie et une visibilité nulle en temps réel sur la santé financière de l'école. Dépasser les 5 000 étudiants devenait opérationnellement impossible."
+          "content": "Les propriétaires de salles de fête à Kinshasa coordonnaient leurs réservations par téléphone et registres papier, ce qui rendait facile de doubler une réservation sur une même date ou de perdre le fil des salles disponibles à court terme."
         },
         "solution": {
           "title": "L'Architecture",
-          "content": "Nous avons conçu une architecture SaaS multi-tenant centralisée utilisant React pour le tableau de bord admin et une API REST Node.js haute performance. Nous avons implémenté un système de RBAC (contrôle d'accès basé sur les rôles) strict pour gérer plus de 50 000 dossiers d'étudiants en toute sécurité. Pour la transparence financière, nous avons intégré une passerelle Mobile Money en temps réel (MTN/Airtel) qui réconcilie automatiquement les paiements avec les comptes des étudiants."
+          "content": "Nous avons construit une plateforme Laravel et Tailwind CSS centrée sur un panneau admin professionnel — un design bleu marine et or avec une barre latérale en accordéon Alpine.js pour une navigation groupée, un tableau de bord en direct résumant les réservations à venir, et des graphiques suivant l'activité des réservations dans le temps."
         },
-        "impact": [
-          { "label": "Efficacité admin", "value": "+65%" },
-          { "label": "Transparence paiement", "value": "100%" },
-          { "label": "Étudiants actifs", "value": "50K+" }
-        ],
         "features": [
-          "Rapports Académiques en Temps Réel",
-          "Réconciliation Automatique des Frais",
-          "Intégration de présence Biométrique",
-          "Portails Parents Sécurisés"
+          "Calendrier de réservation avec suivi des disponibilités",
+          "Tableau de bord admin avec statistiques et flux d'activité",
+          "Navigation groupée et repliable pour la gestion multi-salles",
+          "Outils de communication client intégrés à chaque réservation"
         ]
       },
-      "fincore": {
-        "title": "Tableau de Bord FinCore",
-        "category": "Analyses Fintech",
-        "year": "2024",
-        "description": "Un centre de commandement financier interactif haute performance fournissant une surveillance des transactions en temps réel et des analyses prédictives pour les holdings d'entreprise.",
+      "proconnect": {
+        "title": "ProConnect",
+        "category": "Marketplace Multi-Facettes",
+        "description": "Une marketplace en production connectant clients, artisans indépendants et demandeurs d'emploi à travers la République Démocratique du Congo, structurée autour de trois espaces : services, offres d'emploi et annuaire d'artisans.",
         "challenge": {
           "title": "Le Défi",
-          "content": "Notre client devait surveiller des milliers de transactions quotidiennes dans quatre branches régionales. Les outils existants étaient trop lents, accusant souvent un retard de plusieurs heures sur les données en direct. Les décideurs avaient besoin d'une expérience interactive à la sous-seconde pour détecter les anomalies et gérer la liquidité sur divers portefeuilles sans attendre les rapports de fin de journée."
+          "content": "Clients, artisans et demandeurs d'emploi en RDC n'avaient aucun espace de confiance unique pour se trouver — les services s'organisaient de manière informelle, et il n'existait aucun moyen structuré pour les artisans de bâtir une réputation ou pour les demandeurs d'emploi de parcourir et postuler aux offres en ligne."
         },
         "solution": {
           "title": "L'Architecture",
-          "content": "Nous avons développé une couche d'orchestration de données en temps réel utilisant GraphQL et PostgreSQL. En implémentant des vues matérialisées spécialisées et une mise en cache Redis, nous avons réduit la latence des requêtes de 8 secondes à moins de 150 ms. L'interface utilisateur propose des graphiques de visualisation interactifs basés sur WebGL qui gèrent des ensembles de données massifs sans chute de fluidité, offrant aux dirigeants une clarté tactique instantanée."
+          "content": "Nous avons construit une plateforme Laravel 12 avec trois marketplaces intégrées (services, emplois, artisans), un modèle d'abonnement freemium avec des niveaux de progression pour les artisans, et des paiements Mobile Money natifs via K-PAY. Elle est déployée en production sur un VPS auto-géré (Nginx, PHP, MySQL), et nous avons mené un audit de sécurité dédié couvrant les corrections IDOR, le contrôle d'accès aux CV, la protection contre le brute-force et le durcissement des en-têtes HTTP."
         },
-        "impact": [
-          { "label": "Latence requête", "value": "<150ms" },
-          { "label": "Visibilité transactions", "value": "En direct" },
-          { "label": "Volume quotidien", "value": "100K+" }
-        ],
         "features": [
-          "Modélisation Prédictive des Flux",
-          "Moteur de Détection de Fraude",
-          "Vue de Liquidité Inter-branches",
-          "Auto-sync Multi-devises"
+          "Trois marketplaces intégrées : services, emplois, artisans",
+          "Paiements Mobile Money via K-PAY",
+          "Abonnements freemium avec niveaux de progression pour les artisans",
+          "Durcissement sécurité en production (IDOR, anti brute-force, contrôle d'accès aux CV)"
         ]
       },
-      "healthlink": {
-        "title": "HealthLink Mobile",
-        "category": "Connectivité Santé",
-        "year": "2023",
-        "description": "Une application de télémédecine 'Offline-First' comblant l'écart entre les patients éloignés et les spécialistes médicaux urbains grâce à une technologie mobile sécurisée.",
+      "iuea": {
+        "title": "Plateforme Universitaire IUEA",
+        "category": "Enseignement Supérieur",
+        "description": "Un site web et une plateforme de contenu bilingue complète pour l'International University of East Africa (IUEA), associant un frontend Next.js à un backend API Laravel.",
         "challenge": {
           "title": "Le Défi",
-          "content": "Les agents de terrain et les infirmières dans les zones rurales opèrent souvent avec une connectivité réseau nulle ou intermittente. Les applications de télémédecine standard perdraient des données ou planteraient en cas de coupure de connexion. Le défi était de maintenir l'intégrité totale des dossiers médicaux et de permettre des consultations dans des zones où les réseaux 2G ou Edge sont la norme."
+          "content": "L'IUEA avait besoin d'une plateforme unique capable de diffuser du contenu en deux langues, de donner au personnel un vrai tableau de bord admin pour le gérer, et de supporter une boutique intégrée — plutôt que de jongler avec des outils séparés pour chaque besoin."
         },
         "solution": {
           "title": "L'Architecture",
-          "content": "Nous avons construit une application React Native robuste avec une architecture 'Offline-First' utilisant WatermelonDB pour la persistance locale. Les données sont synchronisées en arrière-plan à l'aide d'une stratégie de résolution de conflits pilotée par machine d'état une fois le réseau rétabli. Toutes les données des patients sont cryptées localement en AES-256 avant d'être transmises via TLS 1.3 vers un stockage cloud conforme HIPAA."
+          "content": "Nous avons associé un frontend Next.js et Tailwind CSS (avec Framer Motion pour les interactions) à un backend API Laravel 11 authentifié via Sanctum. Le projet inclut un tableau de bord admin basé sur les rôles, un système de contenu bilingue complet, et une boutique e-commerce intégrée, le tout sur une seule base de code."
         },
-        "impact": [
-          { "label": "Fonctionnalité hors-ligne", "value": "100%" },
-          { "label": "Taux succès sync", "value": "99.9%" },
-          { "label": "Portée rurale", "value": "15 Districts" }
-        ],
         "features": [
-          "Messagerie Chiffrée de Bout en Bout",
-          "Rachat de Coupons à Distance",
-          "Flux d'Ordonnance Électronique",
-          "Sync des Données en Arrière-plan"
+          "Tableau de bord admin basé sur les rôles",
+          "Système de contenu bilingue complet (EN/FR)",
+          "Boutique e-commerce intégrée",
+          "Backend API Laravel authentifié via Sanctum"
         ]
       },
-      "ecologistics": {
-        "title": "Plateforme EcoLogistics",
-        "category": "Logistique IoT",
-        "year": "2023",
-        "description": "Un écosystème logistique intelligent intégrant des capteurs IoT et des algorithmes de routage pour optimiser les chaînes d'approvisionnement et réduire l'impact environnemental.",
+      "ngt": {
+        "title": "New Generation Translator",
+        "category": "Marque & Présence Digitale",
+        "description": "Une identité de marque et un site web animé multi-pages pour New Generation Translator (NGT), un service de traduction de documents basé à Kinshasa pour les étudiants congolais candidatant à l'étranger.",
         "challenge": {
           "title": "Le Défi",
-          "content": "Les entreprises de logistique dans les centres urbains en pleine croissance font face à des retards massifs dus à un trafic imprévisible et à une infrastructure routière médiocre. Le suivi GPS traditionnel montrait seulement *où* se trouvaient les camions, mais ne fournissait pas assez de données pour optimiser la consommation de carburant ou réduire les trajets à vide qui nuisent à la fois au profit et à l'environnement."
+          "content": "NGT avait besoin d'une présence en ligne professionnelle et d'une identité visuelle construite de zéro — une identité capable d'inspirer confiance aux étudiants et familles préparant des candidatures d'études à l'étranger, souvent stressantes et importantes."
         },
         "solution": {
           "title": "L'Architecture",
-          "content": "Nous avons intégré du matériel IoT personnalisé à un backend de streaming d'événements propulsé par Golang. Cela a permis une surveillance en temps réel de la santé du moteur, de la température de la cargaison et des vibrations. Nous avons ensuite implémenté un algorithme de recherche de chemin A* personnalisé qui prend en compte les modèles de trafic historiques et les restrictions de poids urbaines pour calculer les itinéraires les plus économes en carburant."
+          "content": "Nous avons conçu l'identité de marque, y compris le logo, et construit un site animé multi-pages complet avec routage côté client, effets de curseur personnalisés, transitions de page et animations au défilement — avec un backend FastAPI et MySQL prévu pour la prochaine phase afin de traiter les soumissions directement."
         },
-        "impact": [
-          { "label": "Réduction carburant", "value": "22%" },
-          { "label": "Optimisation trajets", "value": "+35%" },
-          { "label": "Disponibilité capteurs", "value": "99.8%" }
-        ],
         "features": [
-          "Décryptage de Payload IoT",
-          "Routage Intelligent de Trafic",
-          "Analyses d'Empreinte Carbone",
-          "Maintenance Prédictive de Flotte"
+          "Identité de marque & création de logo",
+          "Site animé multi-pages avec routage côté client",
+          "Effets de curseur personnalisés & animations au défilement",
+          "Intégration backend FastAPI + MySQL (prévue)"
         ]
       }
     }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiExternalLink, FiGithub, FiArrowRight } from 'react-icons/fi'
+import { FiArrowRight } from 'react-icons/fi'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
@@ -12,55 +12,51 @@ export default function Portfolio() {
   const CATEGORIES = [
     { key: 'all', label: t('portfolio.filters.all') },
     { key: 'web', label: t('portfolio.filters.web') },
-    { key: 'enterprise', label: t('portfolio.filters.enterprise') },
-    { key: 'mobile', label: t('portfolio.filters.mobile') },
-    { key: 'architecture', label: t('portfolio.filters.architecture') },
+    { key: 'marketplace', label: t('portfolio.filters.marketplace') },
+    { key: 'institutional', label: t('portfolio.filters.institutional') },
+    { key: 'brand', label: t('portfolio.filters.brand') },
   ]
 
   const PORTFOLIO_ITEMS = [
     {
       id: 1,
-      slug: 'edusphere',
+      slug: 'mayele-booking',
       transKey: 'item1',
       category: 'Web Application',
       categoryKey: 'web',
-      tags: ['React', 'Node.js', 'PostgreSQL', 'Redis'],
-      image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1000&auto=format&fit=crop',
+      tags: ['Laravel', 'Tailwind CSS', 'Alpine.js', 'MySQL'],
+      image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1000&auto=format&fit=crop',
       accent: '#00f2fe',
-      year: '2024',
     },
     {
       id: 2,
-      slug: 'fincore',
+      slug: 'proconnect',
       transKey: 'item2',
-      category: 'Enterprise Software',
-      categoryKey: 'enterprise',
-      tags: ['Vue', 'Python', 'GraphQL', 'AWS'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop',
+      category: 'Marketplace',
+      categoryKey: 'marketplace',
+      tags: ['Laravel', 'Tailwind CSS', 'MySQL', 'K-PAY'],
+      image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1000&auto=format&fit=crop',
       accent: '#ff6a00',
-      year: '2024',
     },
     {
       id: 3,
-      slug: 'healthlink',
+      slug: 'iuea',
       transKey: 'item3',
-      category: 'Mobile App',
-      categoryKey: 'mobile',
-      tags: ['React Native', 'Firebase', 'WebRTC'],
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop',
+      category: 'Institutional Platform',
+      categoryKey: 'institutional',
+      tags: ['Next.js', 'Laravel', 'Tailwind CSS', 'MySQL'],
+      image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000&auto=format&fit=crop',
       accent: '#00f2fe',
-      year: '2023',
     },
     {
       id: 4,
-      slug: 'ecologistics',
+      slug: 'ngt',
       transKey: 'item4',
-      category: 'System Architecture',
-      categoryKey: 'architecture',
-      tags: ['Next.js', 'Go', 'MongoDB', 'Docker'],
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop',
+      category: 'Brand & Web Design',
+      categoryKey: 'brand',
+      tags: ['HTML', 'CSS', 'JavaScript', 'Brand Identity'],
+      image: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=1000&auto=format&fit=crop',
       accent: '#ff6a00',
-      year: '2023',
     }
   ]
 
@@ -82,9 +78,9 @@ export default function Portfolio() {
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
     >
-      <SEO 
-        title={t('seo.portfolio.title')} 
-        description={t('seo.portfolio.description')} 
+      <SEO
+        title={t('seo.portfolio.title')}
+        description={t('seo.portfolio.description')}
       />
       {/* Header */}
       <section className="relative pt-40 pb-24 overflow-hidden">
@@ -158,7 +154,7 @@ export default function Portfolio() {
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0d0f14] via-[#0d0f1460] to-transparent" />
 
-                    {/* Category + Year badge */}
+                    {/* Category badge */}
                     <div className="absolute top-4 left-4 flex items-center gap-2">
                       <span
                         className="px-3 py-1 rounded-full text-[0.6rem] font-display font-bold uppercase tracking-widest"
@@ -166,29 +162,6 @@ export default function Portfolio() {
                       >
                         {t(`portfolio.filters.${item.categoryKey}`)}
                       </span>
-                      <span className="px-3 py-1 rounded-full bg-[#050507] text-slate-400 text-[0.6rem] font-display font-bold border border-white/10">
-                        {item.year}
-                      </span>
-                    </div>
-
-                    {/* Actions overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-400">
-                      {[
-                        { icon: <FiExternalLink size={20} />, hoverColor: item.accent },
-                        { icon: <FiGithub size={20} />, hoverColor: '#ffffff' },
-                      ].map((btn, i) => (
-                        <motion.a
-                          key={i}
-                          href="#"
-                          className="w-12 h-12 rounded-full bg-[#050507] border border-white/10 flex items-center justify-center text-white transition-all duration-300"
-                          whileHover={{ scale: 1.15, backgroundColor: btn.hoverColor, color: '#050507' }}
-                          initial={{ y: 20, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          transition={{ delay: i * 0.05 }}
-                        >
-                          {btn.icon}
-                        </motion.a>
-                      ))}
                     </div>
                   </div>
 

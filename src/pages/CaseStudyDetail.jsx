@@ -68,7 +68,7 @@ export default function CaseStudyDetail() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
               <div className="max-w-3xl">
                 <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-[#00f2fe10] border border-[#00f2fe20] text-[#00f2fe] text-[0.65rem] font-display font-bold uppercase tracking-widest mb-6">
-                  {study.category} • {study.year}
+                  {study.year ? `${study.category} • ${study.year}` : study.category}
                 </div>
                 <h1 className="text-5xl md:text-8xl font-heading font-bold text-white mb-8 leading-[0.9] tracking-tight">
                   {study.title}
@@ -83,22 +83,24 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* ── METRICS BAR ── */}
-      <section className="py-12 border-b border-white/5 bg-white/[0.01]">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-24">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
-            {study.impact && study.impact.map((stat, i) => (
-              <motion.div 
-                key={i}
-                variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i}
-                className="flex flex-col"
-              >
-                <span className="text-4xl md:text-6xl font-heading font-bold text-white mb-2">{stat.value}</span>
-                <span className="text-xs font-display font-bold text-slate-500 uppercase tracking-widest">{stat.label}</span>
-              </motion.div>
-            ))}
+      {study.impact && study.impact.length > 0 && (
+        <section className="py-12 border-b border-white/5 bg-white/[0.01]">
+          <div className="max-w-[1280px] mx-auto px-6 md:px-24">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
+              {study.impact.map((stat, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i}
+                  className="flex flex-col"
+                >
+                  <span className="text-4xl md:text-6xl font-heading font-bold text-white mb-2">{stat.value}</span>
+                  <span className="text-xs font-display font-bold text-slate-500 uppercase tracking-widest">{stat.label}</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── CHALLENGE & SOLUTION ── */}
       <section className="py-32 px-6 md:px-24">

@@ -7,7 +7,6 @@ import { SiPostgresql, SiGraphql, SiGo, SiFlutter, SiTailwindcss } from 'react-i
 import { useTranslation } from 'react-i18next'
 import AnimatedCounter from '../components/AnimatedCounter'
 import HowWeWork from '../components/HowWeWork'
-import Testimonials from '../components/Testimonials'
 import TechStack from '../components/TechStack'
 import SEO from '../components/SEO'
 
@@ -331,9 +330,6 @@ export default function Home() {
 
       {/* ── HOW WE WORK ── */}
       <HowWeWork />
-
-      {/* ── TESTIMONIALS ── */}
-      <Testimonials />
 
       {/* ── TECH STACK ── */}
       <TechStack />
